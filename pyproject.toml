@@ -1,0 +1,78 @@
+[project]
+name = "climatewatch-env"
+version = "1.0.0"
+description = "ClimateWatch — Environmental Sensor AI Environment for OpenEnv hackathon"
+authors = [
+    { name = "Ramana Ganthan S" },
+    { name = "Sre Sandhya K" },
+]
+readme = "README.md"
+requires-python = ">=3.11"
+
+dependencies = [
+    "fastapi==0.115.6",
+    "uvicorn[standard]==0.32.1",
+    "pydantic==2.10.4",
+    "openai>=1.58.0",
+    "requests==2.32.3",
+    "numpy==2.2.1",
+    "python-dotenv==1.0.1",
+]
+
+[project.optional-dependencies]
+test = [
+    "pytest>=8.0.0",
+    "httpx>=0.27.0",        # required by FastAPI TestClient
+    "pytest-asyncio>=0.23.0",
+]
+dev = [
+    "pytest>=8.0.0",
+    "httpx>=0.27.0",
+    "pytest-asyncio>=0.23.0",
+    "ruff>=0.3.0",
+    "taskipy>=1.13.0",
+]
+
+# ── UV configuration ──────────────────────────────────────────────────────────
+[dependency-groups]
+dev = [
+    "pytest>=8.0.0",
+    "httpx>=0.27.0",
+    "pytest-asyncio>=0.23.0",
+    "ruff>=0.3.0",
+    "taskipy>=1.13.0",
+]
+
+# ── Taskipy tasks  →  run with:  uv run task <name> ───────────────────────────
+[tool.taskipy.tasks]
+pre_serve = "python scripts/kill_port.py 7860"
+serve     = "uvicorn app.main:app --host 0.0.0.0 --port 7860 --reload"
+test      = "pytest tests/ -v"
+test-cov  = "pytest tests/ -v --tb=long"
+lint      = "ruff check ."
+fmt       = "ruff format ."
+kill      = "python scripts/kill_port.py 7860"
+infer     = "python inference.py"
+
+# ── Pytest configuration ──────────────────────────────────────────────────────
+[tool.pytest.ini_options]
+testpaths    = ["tests"]
+addopts      = "-v --tb=short"
+asyncio_mode = "auto"
+
+# ── Ruff linter configuration ─────────────────────────────────────────────────
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I"]    # pycodestyle + pyflakes + isort
+ignore = ["E501"]                 # long lines OK in data files
+
+# ── Build system (required by pyproject.toml spec) ────────────────────────────
+[build-system]
+requires      = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["app"]

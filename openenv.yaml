@@ -1,0 +1,19 @@
+name: climatewatch-env
+version: "1.0.0"
+description: >
+  Real-world environmental sensor data quality and compliance monitoring.
+  AI agents detect faults, clean corrupted readings, and verify regulatory
+  compliance across industrial sensor networks used by BP, EPA, and NOAA.
+  Covers 8 fault types across oil fields, urban air quality, and research stations.
+tags:
+  - openenv
+tasks:
+  - id: task1_detect
+    name: "Single Sensor Anomaly Detection"
+    difficulty: easy
+  - id: task2_clean
+    name: "Multi-Sensor Data Stream Cleaning"
+    difficulty: medium
+  - id: task3_cascade
+    name: "Cascade Failure & Compliance Audit"
+    difficulty: hard
