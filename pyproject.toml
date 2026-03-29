@@ -46,7 +46,7 @@ dev = [
 # ── Taskipy tasks  →  run with:  uv run task <name> ───────────────────────────
 [tool.taskipy.tasks]
 pre_serve = "python scripts/kill_port.py 7860"
-serve     = "uvicorn app.main:app --host 0.0.0.0 --port 7860 --reload"
+serve     = "uvicorn serve:app --host 0.0.0.0 --port 7860 --reload"
 test      = "pytest tests/ -v"
 test-cov  = "pytest tests/ -v --tb=long"
 lint      = "ruff check ."

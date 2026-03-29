@@ -21,7 +21,7 @@ from typing import Optional
 # Project root = parent of the app/ directory (works on Windows, Linux, Docker)
 _PROJECT_ROOT = pathlib.Path(__file__).parent.parent
 
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Body
 from fastapi.responses import HTMLResponse
 
 from app.models import (
@@ -50,12 +50,13 @@ env = ClimateWatchEnvironment()
 
 @app.post(
     "/reset",
-    response_model=SensorObservation,
     summary="Start a new episode",
     description="Initialise a fresh episode for the given task. Returns the first observation.",
 )
-def reset(req: ResetRequest) -> SensorObservation:
+def reset(body: dict | None = Body(default=None)):
+    data = body or {}
     try:
+        req = ResetRequest(**data)
         return env.reset(task_id=req.task_id, seed=req.seed)
     except ValueError as e:
         raise HTTPException(status_code=400, detail=str(e))
@@ -65,15 +66,16 @@ def reset(req: ResetRequest) -> SensorObservation:
 
 @app.post(
     "/step",
-    response_model=SensorObservation,
     summary="Submit an action",
     description=(
         "Send the agent's analysis/action for the current step. "
         "Returns reward, feedback, and updated observation."
     ),
 )
-def step(req: StepRequest) -> SensorObservation:
+def step(body: dict | None = Body(default=None)):
+    data = body or {}
     try:
+        req = StepRequest(**data) if data else StepRequest(action={})
         return env.step(req.action)
     except RuntimeError as e:
         raise HTTPException(status_code=400, detail=str(e))
@@ -1083,3 +1085,5 @@ refreshEpisodeBar();
 </script>
 </body>
 </html>"""
+
+
