@@ -15,7 +15,11 @@ from __future__ import annotations
 
 import subprocess
 import sys
+import pathlib
 from typing import Optional
+
+# Project root = parent of the app/ directory (works on Windows, Linux, Docker)
+_PROJECT_ROOT = pathlib.Path(__file__).parent.parent
 
 from fastapi import FastAPI, HTTPException
 from fastapi.responses import HTMLResponse
@@ -262,7 +266,7 @@ def baseline() -> BaselineResponse:
         capture_output=True,
         text=True,
         timeout=1200,   # 20 minute hard limit
-        cwd="/app",
+        cwd=str(_PROJECT_ROOT),   # works on Windows locally and /app in Docker
     )
     return BaselineResponse(
         stdout=result.stdout,

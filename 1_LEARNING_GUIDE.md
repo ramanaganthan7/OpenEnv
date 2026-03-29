@@ -694,4 +694,4 @@ if __name__ == "__main__":
 
 ---
 
-*ALGORITHMIC AVENGERS — Ramana Ganthan S + Sre Sandhya K*
+*ALGORITHMIC AVENGERS — Ramana Ganthan  + Sre Sandhya *
