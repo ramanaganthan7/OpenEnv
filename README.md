@@ -9,11 +9,13 @@ tags:
   - openenv
 ---
 
-# ClimateWatch — Environmental Sensor AI Environment
+# ClimateWatch
 
-> An OpenEnv-compatible RL environment where AI agents learn to detect faults in climate sensor data, clean corrupted readings, and verify EPA regulatory compliance — exactly what data engineers at BP, EPA, and NOAA do every day.
+**Environmental Sensor AI Environment — OpenEnv Specification**
 
-**Live Space:** `https://huggingface.co/spaces/ramanaganthan7/climatewatch-env`
+An RL environment where AI agents learn to detect faults in real air quality sensor data, clean corrupted readings, and verify EPA regulatory compliance. The same task that data engineers perform daily at industrial monitoring networks.
+
+**Live URL:** `https://huggingface.co/spaces/ramanaganthan7/climatewatch-env`
 
 ---
 
@@ -21,191 +23,153 @@ tags:
 
 ![ClimateWatch Architecture](architecture.svg)
 
-**How it works end-to-end:**
+---
+
+## How It Works
 
 ```
-Open-Meteo CAMS/ECMWF API  (real measured air quality data)
-        |
-        v  [scripts/fetch_real_data.py — run once, committed to repo]
-        |
-app/data/real_task1.json   20 scenarios · 24hr real readings
-app/data/real_task2.json   10 networks  · 7-day real sensor data
-app/data/real_task3.json    5 networks  · 30-day real timelines
-        |
-        v  [fault injection on real baseline — deterministic by seed]
-        |
- Task 1: outlier/stuck/missing/drift/spike/bias injected on real PM2.5/NO2/O3 readings
- Task 2: drift/bias/noise/missing/stuck injected on real 7-day multi-sensor data
- Task 3: reference sensors marked offline → dependents marked corrupted
-        |
-        v
-ClimateWatch FastAPI Server (port 7860)
-  POST /reset  ->  episode starts, real+injected sensor data returned
-  POST /step   ->  agent action graded, reward computed, feedback returned
-  GET  /state  ->  episode_id, task_id, step_count, total_reward, done
-  GET  /health ->  {"status": "healthy"}
-  GET  /tasks  ->  3 tasks with schemas
-  POST /grader ->  final score 0.0-1.0
-        |
-        +---> Hackathon Judges (Nemotron 3 Super)
-        +---> Web Dashboard (real-time sensor tables, compliance status)
-        +---> inference.py (Llama-3.3-70B via HF Router, free, no key needed)
+REAL DATA (Open-Meteo CAMS/ECMWF API)
+    |
+    |  scripts/fetch_real_data.py  — fetched once, committed to repo
+    v
+app/data/real_task1.json   — 20 scenarios, 24-hour real readings
+app/data/real_task2.json   — 10 networks, 7-day multi-sensor data
+app/data/real_task3.json   — 5 networks, 30-day sensor timelines
+    |
+    |  Fault injection on real baseline (deterministic by seed)
+    v
+Task 1:  outlier, stuck, missing, drift, spike, bias  injected on real readings
+Task 2:  drift, bias, noise, missing, stuck  injected per sensor
+Task 3:  reference sensors offline → dependents corrupted (cascade)
+    |
+    v
+ClimateWatch FastAPI Server  (port 7860)
+    POST /reset   — start episode, receive real sensor data
+    POST /step    — submit action, receive reward + feedback
+    GET  /state   — episode_id, task_id, step_count, total_reward, done
+    GET  /health  — {"status": "healthy"}
+    GET  /tasks   — 3 tasks with schemas and examples
+    POST /grader  — final score 0.0–1.0
+    POST /baseline — run inference.py, return scores for all 3 tasks
 ```
 
 ---
 
 ## Real Data Source
 
-All sensor readings are sourced from **Open-Meteo Air Quality API** backed by **CAMS (Copernicus Atmosphere Monitoring Service / ECMWF)**:
+All base sensor readings are sourced from the **Open-Meteo Air Quality API**, backed by **CAMS (Copernicus Atmosphere Monitoring Service / ECMWF)**. No synthetic random values.
 
-| Parameter | Source | Locations |
+| Parameter | Unit | Normal Range | Data Source |
+|---|---|---|---|
+| PM2.5 | ug/m3 | 5 – 35 | CAMS global reanalysis |
+| NO2 | ppb | 10 – 50 | CAMS European model |
+| O3 | ppb | 20 – 60 | CAMS atmospheric model |
+| SO2 | ppb | 2 – 15 | CAMS emission inventories |
+| CO | ppb | 200 – 800 | CAMS global model |
+| CH4 | ppb | 1800 – 2000 | CAMS methane inversion |
+
+Real hourly measurements are pre-fetched from 20 global industrial locations and committed to the repo. Faults are injected on top of this real baseline with known ground truth, so graders can score the agent accurately.
+
+---
+
+## The Problem It Solves
+
+Real industrial sensor networks fail constantly. When undetected:
+
+| Fault Type | What Happens | Consequence |
 |---|---|---|
-| PM2.5 (ug/m3) | CAMS global reanalysis | Houston TX, Delhi NCR, Guangzhou |
-| NO2 (ppb) | CAMS European model | Jubail, Essen, Tilbury |
-| O3 (ppb) | CAMS atmospheric model | Los Angeles, Chennai, Wichita |
-| SO2 (ppb) | CAMS emission inventories | North Sea, Svalbard, Tilbury |
-| CO (ppb) | CAMS global model | Baton Rouge, Manaus, Beijing |
-| CH4 (ppb) | CAMS methane inversion | Ahmadi Kuwait, Houston, North Sea |
+| Stuck | Sensor freezes at one value for hours | Firmware crash — misses real changes |
+| Outlier | Single extreme spike | Electrical interference — false alarms |
+| Drift | Readings shift gradually over days | Electrode degradation — systematic error |
+| Bias | Constant offset — always high or low | Calibration error — wrong reporting |
+| Missing | Null values, data gaps | Network dropout — incomplete records |
+| Spike | Short burst of bad readings | EMI event — transient corruption |
+| Cascade | Reference sensor fails — dependent sensors corrupt | Shared calibration dependency |
 
-**No synthetic gauss() values.** The base readings are real hourly measurements from the CAMS network, pre-fetched and committed to the repo for deterministic reproducibility. Faults (outlier, stuck, drift, bias, missing, cascade) are injected on top of the real baseline with known ground truth for grading.
+Undetected faults lead to dangerous methane leaks, incorrect EPA emissions reports ($93,750/day fines), and unreliable climate data used in policy decisions.
 
 ---
 
 ## Table of Contents
 
-1. [What Is ClimateWatch?](#1-what-is-climatewatch)
-2. [The Problem It Solves](#2-the-problem-it-solves)
-3. [How to Run Locally](#3-how-to-run-locally)
-4. [How to Test](#4-how-to-test)
-5. [All 7 API Endpoints](#5-all-7-api-endpoints)
-6. [The 3 Tasks in Detail](#6-the-3-tasks-in-detail)
-7. [How Scoring Works](#7-how-scoring-works)
-8. [Tech Stack — What Is Used for What](#8-tech-stack)
-9. [File Structure — What Each File Does](#9-file-structure)
-10. [Environment Variables](#10-environment-variables)
-11. [Baseline Scores](#11-baseline-scores)
-12. [Deploy to HuggingFace](#12-deploy-to-huggingface)
+1. [Setup — Run Locally](#1-setup--run-locally)
+2. [How to Test](#2-how-to-test)
+3. [API Endpoints](#3-api-endpoints)
+4. [The 3 Tasks](#4-the-3-tasks)
+5. [Reward Design](#5-reward-design)
+6. [File Structure](#6-file-structure)
+7. [Tech Stack](#7-tech-stack)
+8. [Environment Variables](#8-environment-variables)
+9. [Baseline Scores](#9-baseline-scores)
+10. [Deploy to HuggingFace](#10-deploy-to-huggingface)
 
 ---
 
-## 1. What Is ClimateWatch?
+## 1. Setup — Run Locally
 
-ClimateWatch is a **reinforcement learning environment** (like OpenAI Gym, but for real-world sensor data). An AI agent interacts with it in a loop:
-
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                   EPISODE FLOW                                  │
-│                                                                 │
-│  1. Agent  →  POST /reset  →  Server returns sensor data        │
-│  2. Agent  →  POST /step   →  Server returns reward + feedback  │
-│  3. Repeat up to 5 steps (early stop if score ≥ 0.80)          │
-│  4. Agent  →  POST /grader →  Final score 0.0–1.0              │
-└─────────────────────────────────────────────────────────────────┘
-```
-
-No real weather API. No database. No internet needed.
-All sensor data is **generated entirely by Python** using seeded random numbers — deterministic and realistic.
-
----
-
-## 2. The Problem It Solves
-
-Real industrial sensor networks fail constantly. When undetected, this causes disasters:
-
-| Fault | What Happens | Real Risk |
-|---|---|---|
-| **Stuck** | Sensor freezes at one value for hours | Firmware crash — looks fine when it isn't |
-| **Outlier** | Single extreme spike | Electrical interference |
-| **Drift** | Readings creep up/down over days | Electrode degradation |
-| **Bias** | Constant offset — always too high/low | Calibration error |
-| **Missing** | Null values, data gaps | Network dropout, battery failure |
-| **Noise** | Random fluctuation beyond normal | Low-cost sensor, vibration |
-| **Spike** | Short burst of bad readings | Electromagnetic interference |
-| **Cascade** | Reference sensor fails → all sensors it calibrates misread | Shared calibration dependency |
-
-**Why it matters:**
-- Undetected methane leaks → explosion risk
-- Wrong emissions data → **$93,750/day EPA fines**
-- Bad sensor data in climate models → **wrong policy decisions**
-
-**Market:** $14.4B environmental monitoring (2024) → $41.4B by 2029
-
----
-
-## 3. How to Run Locally
-
-### Install uv (one time)
+### Install uv (once)
 
 ```powershell
-# Windows PowerShell
+# Windows
 powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
+```
+
+```bash
+# macOS / Linux
+curl -LsSf https://astral.sh/uv/install.sh | sh
 ```
 
 ### Start the server
 
 ```bash
-cd path/to/BuildVerse
+cd path/to/climatewatch-env
 
 uv run task serve
 ```
 
-**What this single command does:**
-1. Creates `.venv/` and installs all 41 packages (first run only — skipped after that)
-2. Kills anything already on port 7860 (`scripts/kill_port.py`)
-3. Starts server at **http://localhost:7860** with hot-reload
+This single command:
+1. Creates `.venv/` and installs all packages (first run only)
+2. Kills anything running on port 7860
+3. Starts the server at `http://localhost:7860` with hot-reload
 
-### Open the dashboard
-
-Go to **http://localhost:7860** — interactive dashboard with buttons to start each task and view live observations.
-
-### Quick API test (new terminal)
+### Quick verification
 
 ```bash
-# Confirm server is alive
+# Health check
 curl http://localhost:7860/health
-# → {"status":"healthy"}
 
-# Start a Task 1 episode
+# Start an episode
 curl -X POST http://localhost:7860/reset \
   -H "Content-Type: application/json" \
   -d '{"task_id": "task1_detect", "seed": 0}'
 
-# Submit an action (detect an outlier at hour 6)
+# Submit an action
 curl -X POST http://localhost:7860/step \
   -H "Content-Type: application/json" \
-  -d '{"action": {"sensor_id": "CO2-100", "flags": [{"hour": 6, "fault": "outlier", "confidence": 1.0}]}}'
+  -d '{"action": {"sensor_id": "PM25-100", "flags": [{"hour": 6, "fault": "outlier", "confidence": 1.0}]}}'
 
 # Get final score
 curl -X POST http://localhost:7860/grader
 ```
 
-### Run the LLM baseline (needs HuggingFace key)
+### Available commands
 
 ```bash
-set HF_TOKEN=hf_your_token_here
-set MODEL_NAME=meta-llama/Llama-3.3-70B-Instruct
-
-uv run task infer
+uv run task serve   # start server (kills port first)
+uv run task test    # run all 63 tests
+uv run task infer   # run baseline inference (needs HF_TOKEN + MODEL_NAME)
+uv run task lint    # check code style
+uv run task fmt     # auto-format code
+uv run task kill    # free port 7860
 ```
 
-### All available task commands
-
-```bash
-uv run task serve      # kill port 7860 + start server with hot-reload
-uv run task test       # run all 63 tests
-uv run task lint       # check code style with ruff
-uv run task fmt        # auto-format with ruff
-uv run task kill       # kill anything on port 7860
-uv run task infer      # run inference.py baseline (needs HF_TOKEN + MODEL_NAME)
-```
-
-### Docker (same as what runs on HuggingFace)
+### Docker
 
 ```bash
 docker build -t climatewatch .
 docker run -p 7860:7860 climatewatch
 
-# With LLM inference enabled:
+# With LLM inference enabled
 docker run -p 7860:7860 \
   -e HF_TOKEN=hf_your_token \
   -e MODEL_NAME=meta-llama/Llama-3.3-70B-Instruct \
@@ -214,65 +178,47 @@ docker run -p 7860:7860 \
 
 ---
 
-## 4. How to Test
-
-### Run all 63 tests
+## 2. How to Test
 
 ```bash
 uv run task test
 ```
 
-Expected output: `63 passed in ~2.5s`
-
-### Run specific test files
+Expected: `63 passed in ~2.5s`
 
 ```bash
-# Grader tests only (do scores work correctly?)
+# Grader tests — verify scores are correct and varied
 uv run pytest tests/test_graders.py -v
 
-# Endpoint tests only (do all HTTP routes work?)
+# Endpoint tests — verify all 7 HTTP routes work
 uv run pytest tests/test_endpoints.py -v
-
-# Single test class
-uv run pytest tests/test_graders.py::TestTask1Grader -v
-uv run pytest tests/test_endpoints.py::TestFullEpisode -v
 ```
 
-### What tests verify
+**test_graders.py** (22 tests) verifies:
+- Perfect action scores >= 0.80 on all 3 tasks
+- Wrong action scores near 0.0
+- Different actions give different scores (graders that always return the same score fail the spec)
+- Scores always in [0.0, 1.0], never NaN
+- Anti-loop penalty reduces reward for repeated identical actions
 
-**`tests/test_graders.py`** — 22 tests:
-- Perfect action scores ≥ 0.80 on all 3 tasks
-- Empty / wrong action scores near 0.0
-- Partial answer scores between zero and perfect
-- **Different actions must give different scores** (critical — always-same score = disqualified)
-- Score always in [0.0, 1.0], never NaN
-- Calibration bonus awarded for varied confidence values
-- Anti-loop penalty reduces reward for repeated actions
-
-**`tests/test_endpoints.py`** — 41 tests:
-- All 4 core endpoints return correct HTTP status and JSON structure
-- `/reset` is deterministic with same seed
-- `/step` increments step count and returns float reward
-- `/grader` returns valid score after episode
-- Full episode loop works for all 3 tasks without errors
-- Invalid task_id returns 400
+**test_endpoints.py** (41 tests) verifies:
+- All endpoints return correct HTTP status and JSON structure
+- `/reset` is deterministic with the same seed
+- `/step` increments step count and returns a float reward
+- Full episode loop completes without error for all 3 tasks
+- Invalid task_id returns HTTP 400
 
 ---
 
-## 5. All 7 API Endpoints
+## 3. API Endpoints
 
-### `POST /reset` — Start a new episode
-
-```bash
-curl -X POST http://localhost:7860/reset \
-  -H "Content-Type: application/json" \
-  -d '{"task_id": "task1_detect", "seed": 42}'
-```
+### POST /reset — Start a new episode
 
 **Input:**
 ```json
-{"task_id": "task1_detect", "seed": 42}
+{"task_id": "task1_detect", "seed": 0}
 ```
+
 - `task_id`: `task1_detect` | `task2_clean` | `task3_cascade`
 - `seed`: integer for deterministic scenario, `null` for random
 
@@ -283,7 +229,7 @@ curl -X POST http://localhost:7860/reset \
   "reward": 0.0,
   "task_id": "task1_detect",
   "step_count": 0,
-  "sensor_data": { ... },
+  "sensor_data": { "sensor_id": "PM25-100", "readings": [...] },
   "feedback": "Episode started. Analyse the sensor data.",
   "metadata": {"episode_id": "uuid", "max_steps": 5}
 }
@@ -291,17 +237,11 @@ curl -X POST http://localhost:7860/reset \
 
 ---
 
-### `POST /step` — Submit an action, receive reward
-
-```bash
-curl -X POST http://localhost:7860/step \
-  -H "Content-Type: application/json" \
-  -d '{"action": {"sensor_id": "CO2-100", "flags": [{"hour": 6, "fault": "outlier", "confidence": 1.0}]}}'
-```
+### POST /step — Submit an action
 
 **Input:**
 ```json
-{"action": { ...task-specific action JSON... }}
+{"action": { ...task-specific JSON... }}
 ```
 
 **Output:**
@@ -309,31 +249,20 @@ curl -X POST http://localhost:7860/step \
 {
   "done": false,
   "reward": 0.72,
-  "task_id": "task1_detect",
   "step_count": 1,
-  "sensor_data": { ... },
-  "feedback": "Good analysis — score 0.72. Most faults correctly identified.",
-  "metadata": {
-    "episode_id": "uuid",
-    "episode_score": 0.72,
-    "total_reward": 0.72,
-    "steps_left": 4
-  }
+  "feedback": "Good analysis — score 0.72.",
+  "metadata": {"episode_score": 0.72, "total_reward": 0.72, "steps_left": 4}
 }
 ```
 
 ---
 
-### `GET /state` — Current episode state
-
-```bash
-curl http://localhost:7860/state
-```
+### GET /state — Current episode state
 
 **Output:**
 ```json
 {
-  "episode_id": "dd2f9f12-e8f1-4338-b88c-c06b432b77ca",
+  "episode_id": "uuid",
   "task_id": "task1_detect",
   "step_count": 1,
   "total_reward": 0.72,
@@ -343,31 +272,19 @@ curl http://localhost:7860/state
 
 ---
 
-### `GET /health` — Liveness probe
+### GET /health — Liveness probe
 
-```bash
-curl http://localhost:7860/health
-```
-
-**Output:** `{"status": "healthy"}` with HTTP 200
+**Output:** `{"status": "healthy"}` HTTP 200
 
 ---
 
-### `GET /tasks` — Task catalog with action schemas
+### GET /tasks — Task catalog
 
-```bash
-curl http://localhost:7860/tasks
-```
-
-Returns all 3 tasks with `id`, `name`, `difficulty`, `description`, `action_schema`, `example_action`.
+Returns all 3 tasks with `id`, `name`, `difficulty`, `action_schema`, and `example_action`.
 
 ---
 
-### `POST /grader` — Final score for completed episode
-
-```bash
-curl -X POST http://localhost:7860/grader
-```
+### POST /grader — Final episode score
 
 **Output:**
 ```json
@@ -375,117 +292,90 @@ curl -X POST http://localhost:7860/grader
   "episode_id": "uuid",
   "task_id": "task1_detect",
   "final_score": 0.85,
-  "step_count": 3,
-  "breakdown": {"total_reward": 2.55, "steps_used": 3, "done": true}
+  "step_count": 3
 }
 ```
 
 ---
 
-### `POST /baseline` — Run inference.py and return scores
+### POST /baseline — Run the baseline inference agent
 
-```bash
-curl -X POST http://localhost:7860/baseline
-```
-
-Runs `inference.py` as a subprocess. Requires `HF_TOKEN` and `MODEL_NAME` to be set as environment variables. Returns stdout (scores), stderr, and return code.
+Runs `inference.py` as a subprocess. Requires `HF_TOKEN` and `MODEL_NAME` environment variables. Returns stdout with scores for all 3 tasks.
 
 ---
 
-## 6. The 3 Tasks in Detail
+## 4. The 3 Tasks
 
-### Task 1 — Single Sensor Anomaly Detection `[EASY]`
+### Task 1 — Single Sensor Anomaly Detection [EASY]
 
-**Scenario:** 24 hours of hourly readings from one sensor. Some hours have faults injected. Agent must find every faulty hour and classify the fault.
+The agent receives 24 hours of real hourly readings from one sensor. Faults are injected at specific hours. The agent must identify every faulty hour and classify the fault type.
 
-**Sensors:** CO2, NO2, CH4, O3, PM2.5, SO2, Temperature, Humidity
+**Real data:** Houston TX PM2.5, Delhi NCR NO2, North Sea CH4, and 17 more locations.
+
 **Fault types:** `outlier` | `stuck` | `missing` | `drift` | `spike` | `bias`
-**Scenarios:** 20 (selected deterministically by `seed % 20`)
 
-**Agent receives:**
+**Action schema:**
 ```json
 {
-  "sensor_id": "CO2-100",
-  "parameter": "CO2_ppm",
-  "unit": "ppm",
-  "location": "Industrial Zone A, Houston TX",
-  "normal_range": [400, 450],
-  "readings": [
-    {"hour": 0,  "value": 412.3},
-    {"hour": 3,  "value": 413.1},
-    {"hour": 4,  "value": 413.1},
-    {"hour": 5,  "value": 413.1},
-    {"hour": 6,  "value": 9999.0},
-    {"hour": 8,  "value": null},
-    {"hour": 9,  "value": null}
-  ]
-}
-```
-
-**Agent must send:**
-```json
-{
-  "sensor_id": "CO2-100",
+  "sensor_id": "PM25-100",
   "flags": [
     {"hour": 3, "fault": "stuck",   "confidence": 0.95},
-    {"hour": 4, "fault": "stuck",   "confidence": 0.95},
-    {"hour": 5, "fault": "stuck",   "confidence": 0.95},
     {"hour": 6, "fault": "outlier", "confidence": 1.0},
-    {"hour": 8, "fault": "missing", "confidence": 1.0},
-    {"hour": 9, "fault": "missing", "confidence": 1.0}
+    {"hour": 8, "fault": "missing", "confidence": 1.0}
   ]
 }
 ```
 
-**Grader:** F1 score + 0.05 calibration bonus for varied confidence values.
+**Grader:** F1 score between predicted and actual flags. Bonus +0.05 for varied confidence values.
+
+**Scenarios:** 20 | **Max steps:** 5 | **Score:** 0.0 – 1.0
 
 ---
 
-### Task 2 — Multi-Sensor Data Stream Cleaning `[MEDIUM]`
+### Task 2 — Multi-Sensor Data Stream Cleaning [MEDIUM]
 
-**Scenario:** 7 days of hourly data from 5 sensors. Each sensor has a different fault. One is always clean. Agent must diagnose each sensor AND recommend the right fix.
+The agent receives 7 days of real data from 5 sensors in an industrial network. Each sensor has a different fault. One sensor is always valid. The agent must diagnose each sensor's fault type, severity, and recommend the correct fix.
 
-**Harder because:**
-- 5 sensors simultaneously, each needing a different analysis
-- Must pick the right *fix* (not just identify the fault)
-- One sensor is always valid — agent must not over-diagnose
+**Real data:** Gulf Coast TX, Jubail Saudi Arabia, Delhi NCR, Svalbard, Amazon Basin, and 5 more networks.
 
-**10 network locations:** Gulf Coast TX, Jubail Saudi Arabia, Delhi NCR, Svalbard Norway, Amazon Basin, North Sea, Ruhr Valley Germany, Guangzhou China, Kansas USA, Thames Estuary UK
+**Fault types:** `drift` | `bias` | `noise` | `missing` | `stuck`
 
-**Agent must send:**
+**Fix types:** `recalibrate` | `offset_correction` | `interpolate` | `smooth` | `replace` | `flag_only` | `no_action`
+
+**Action schema:**
 ```json
 {
   "diagnoses": [
-    {"sensor_id": "S1", "fault_type": "drift",   "severity": "high",    "fix": "recalibrate",       "fix_params": {"drift_rate_per_day": 0.8}},
-    {"sensor_id": "S2", "fault_type": "missing", "severity": "medium",  "fix": "interpolate",       "fix_params": {"method": "linear"}},
-    {"sensor_id": "S3", "fault_type": "bias",    "severity": "high",    "fix": "offset_correction", "fix_params": {"offset": -12.0}},
-    {"sensor_id": "S4", "fault_type": "noise",   "severity": "medium",  "fix": "smooth",            "fix_params": {"window": 3}},
-    {"sensor_id": "S5", "fault_type": "valid",   "severity": "none",    "fix": "no_action",         "fix_params": {}}
+    {"sensor_id": "S1", "fault_type": "drift",   "severity": "high",   "fix": "recalibrate",       "fix_params": {"drift_rate_per_day": 0.8}},
+    {"sensor_id": "S2", "fault_type": "missing", "severity": "medium", "fix": "interpolate",       "fix_params": {"method": "linear"}},
+    {"sensor_id": "S3", "fault_type": "bias",    "severity": "high",   "fix": "offset_correction", "fix_params": {"offset": -12.0}},
+    {"sensor_id": "S4", "fault_type": "noise",   "severity": "medium", "fix": "smooth",            "fix_params": {"window": 3}},
+    {"sensor_id": "S5", "fault_type": "valid",   "severity": "none",   "fix": "no_action",         "fix_params": {}}
   ]
 }
 ```
 
-**Fix options:** `no_action` | `interpolate` | `recalibrate` | `offset_correction` | `smooth` | `flag_only` | `replace`
-**Grader:** 60% fault type accuracy + 40% fix appropriateness (partial credit for same-family faults/fixes)
+**Grader:** 60% fault type accuracy + 40% fix appropriateness. Partial credit for same-family faults and related fixes.
+
+**Scenarios:** 10 | **Max steps:** 5 | **Score:** 0.0 – 1.0
 
 ---
 
-### Task 3 — Cascade Failure & Compliance Audit `[HARD]`
+### Task 3 — Cascade Failure and Compliance Audit [HARD]
 
-**Scenario:** 30 days of data from a 10-sensor network. Reference sensors fail and corrupt dependent sensors. Requires multi-dimensional reasoning to solve.
+The agent receives 30 days of real data from a 10-sensor network. Reference sensors go offline, corrupting dependent sensors (cascade failure). The agent must identify root causes, determine the correct repair order (respecting the dependency graph), find the fault window, and assess EPA regulatory compliance under uncertainty.
 
-**Why it genuinely challenges frontier LLMs:**
+**Real data:** Ahmadi Kuwait, Houston TX, Beijing, Chennai, North Sea.
 
-| Challenge | Description |
-|---|---|
-| Graph reasoning | Repair order must respect dependency graph (fix reference before dependent) |
-| Cause vs symptom | Corrupted sensors *look* broken but are NOT the root cause |
-| Temporal analysis | Exact fault window (start/end day) across 30 days |
-| Epistemic compliance | If measuring sensors were corrupted → can't confirm or deny EPA limits |
+**Why this challenges frontier models:**
+- Graph reasoning — repair order must respect dependency graph topology
+- Cause vs symptom — corrupted sensors look broken but are not root causes
+- Temporal precision — fault window must match exact start and end day
+- Epistemic compliance — when measuring sensors are corrupted, compliance cannot be confirmed or denied
 
-**5 network scenarios:** REFINERY-NORTH Kuwait, PIPELINE-CENTRAL Texas, URBAN-NETWORK-ALPHA Beijing, COASTAL-MONITOR-BETA Chennai, OFFSHORE-PLATFORM-7 North Sea
+**Compliance statuses:** `CLEAN` | `POSSIBLE_VIOLATION` | `CONFIRMED_VIOLATION` | `INSUFFICIENT_DATA`
 
-**Agent must send:**
+**Action schema:**
 ```json
 {
   "root_cause_sensors": ["S1", "S3"],
@@ -493,184 +383,131 @@ Runs `inference.py` as a subprocess. Requires `HF_TOKEN` and `MODEL_NAME` to be 
   "fault_window_start": "day_8",
   "fault_window_end": "day_21",
   "compliance_checks": [
-    {
-      "parameter": "CH4_ppm",
-      "status": "POSSIBLE_VIOLATION",
-      "confidence": 0.75,
-      "reasoning": "CH4 sensors S1, S4, S5 corrupted during fault window. Cannot confirm compliance."
-    },
-    {
-      "parameter": "NOx_ppb",
-      "status": "CLEAN",
-      "confidence": 0.90,
-      "reasoning": "NOx sensors S9, S10 are independent — clean readings throughout."
-    }
+    {"parameter": "CH4_ppb", "status": "POSSIBLE_VIOLATION", "confidence": 0.75,
+     "reasoning": "CH4 sensors corrupted during fault window. Cannot confirm compliance."},
+    {"parameter": "NO2_ppb", "status": "CLEAN", "confidence": 0.90,
+     "reasoning": "Independent NOx sensors S9, S10 showed clean readings throughout."}
   ],
   "recommended_action": "flag_for_review"
 }
 ```
 
-**Compliance statuses:** `CLEAN` | `POSSIBLE_VIOLATION` | `CONFIRMED_VIOLATION` | `INSUFFICIENT_DATA`
-
 **Grader — 4 components:**
 
-| Component | Weight | What It Checks |
+| Component | Weight | What it checks |
 |---|---|---|
 | Root cause | 35% | Jaccard similarity between predicted and actual root causes |
-| Repair order | 30% | Dependency violations (−0.25 each) + completeness of repair list |
-| Fault window | 20% | Temporal accuracy (partial credit within ±3 days) |
-| Compliance | 15% | Correct status per parameter (adjacent status = 0.3 partial credit) |
+| Repair order | 30% | Dependency violations (-0.25 each) + completeness |
+| Fault window | 20% | Temporal accuracy, partial credit within 3 days |
+| Compliance | 15% | Correct status per parameter, adjacent status = 0.3 credit |
+
+**Scenarios:** 5 | **Max steps:** 5 | **Score:** 0.0 – 1.0
 
 ---
 
-## 7. How Scoring Works
-
-### Per-step reward formula
+## 5. Reward Design
 
 ```
-reward = grader_score(action, ground_truth)
-       − 0.30  if action == previous action  (anti-loop penalty)
-       − 0.05  if score worse than previous  (regression penalty)
+reward  =  grader_score(action, ground_truth)
+        -  0.30  if action is identical to previous step  (anti-loop penalty)
+        -  0.05  if score is worse than previous best     (regression penalty)
 
-Always clamped to: max(0.0, min(1.0, reward))
+Always clamped:  max(0.0, min(1.0, reward))
 ```
 
-### Episode rules
-- **Max 5 steps** per episode
-- **Early stop** — episode ends if `episode_score >= 0.80` (problem solved)
-- **POST /grader** returns score for the **last** action submitted
-
-### Score ranges
-
-| Task | Random agent | Good LLM (70B) | Expert analysis |
-|---|---|---|---|
-| task1_detect | 0.0–0.1 | 0.5–0.75 | 0.85–1.0 |
-| task2_clean | 0.0–0.15 | 0.4–0.65 | 0.75–1.0 |
-| task3_cascade | 0.0–0.1 | 0.3–0.55 | 0.65–0.9 |
+- Reward is given at every step, not just at the end
+- Partial credit — wrong answer gets 0.0, partial answer gets something between 0 and 1
+- Episode ends early when `episode_score >= 0.80` (problem solved)
+- Maximum 5 steps per episode
 
 ---
 
-## 8. Tech Stack
-
-### Libraries and versions
-
-| Library | Version | Role |
-|---|---|---|
-| **FastAPI** | 0.115.6 | Web framework — all 7 HTTP endpoints, auto Swagger UI at `/docs` |
-| **Uvicorn** | 0.32.1 | ASGI server — runs FastAPI, handles HTTP connections |
-| **Pydantic** | 2.10.4 | Data validation — all request/response schemas, action format enforcement |
-| **OpenAI SDK** | ≥1.58.0 | LLM client in `inference.py` — connects to HuggingFace router |
-| **Requests** | 2.32.3 | HTTP client in `inference.py` — calls ClimateWatch server endpoints |
-| **NumPy** | 2.2.1 | Scenario generation — statistical operations for realistic sensor data |
-| **python-dotenv** | 1.0.1 | Loads `.env` file for local dev (no need to set env vars manually) |
-
-### Dev tools
-
-| Tool | Version | Role |
-|---|---|---|
-| **uv** | ≥0.9 | Package manager — replaces pip + venv, 10-100× faster installs |
-| **taskipy** | ≥1.13.0 | Task runner — enables `uv run task serve`, `uv run task test` etc. |
-| **pytest** | ≥8.0.0 | Test framework — runs all 63 tests |
-| **httpx** | ≥0.27.0 | HTTP client used by FastAPI `TestClient` in tests |
-| **pytest-asyncio** | ≥0.23.0 | Async test support |
-| **ruff** | ≥0.3.0 | Linter and formatter |
-
-### Why these choices (vs alternatives)
-
-- **FastAPI over Flask:** automatic Pydantic validation on every request, auto `/docs` Swagger UI, async-native — no extra work to validate action schemas
-- **Pydantic v2 over dataclasses:** field-level validation with clear error messages, literal type enforcement for fault/fix types
-- **uv over pip:** single command setup, lockfile reproducibility, built-in task runner via taskipy
-- **No database, no ML models:** server starts in <2 seconds, uses <200 MB RAM, runs on 2 vCPU / 8 GB RAM easily
-- **Seeded RNG for scenarios:** deterministic (same seed = same scenario every time), infinite variety, no large JSON files
-
----
-
-## 9. File Structure
+## 6. File Structure
 
 ```
 climatewatch-env/
-│
-├── inference.py              ← MANDATORY: baseline LLM agent
-│                                Uses OpenAI client → HuggingFace router
-│                                Runs all 3 tasks, prints scores
-│                                Must complete in < 20 minutes
-│
-├── openenv.yaml              ← MANDATORY: environment metadata
-│                                name, version, 3 tasks with difficulties
-│                                Tags include "openenv"
-│
-├── Dockerfile                ← MANDATORY: container definition
-│                                FROM python:3.11-slim, port 7860
-│                                Uses uv for fast package install
-│
-├── requirements.txt          ← MANDATORY: package list for Docker + judges
-│                                fastapi==0.115.6, pydantic==2.10.4, etc.
-│
-├── pyproject.toml            ← Local dev config (uv + taskipy)
-│                                uv run task serve / test / lint / infer
-│
-├── README.md                 ← This file (also HF Spaces header)
-│
-├── DEPLOYMENT_GUIDE.md       ← Step-by-step HuggingFace deployment guide
-│
-├── scripts/
-│   └── kill_port.py          ← Kills any process on port 7860
-│                                Runs automatically before server starts
-│
-└── app/
-    ├── __init__.py
-    │
-    ├── main.py               ← All 7 HTTP endpoints
-    │                            GET  /health  /state  /tasks  /
-    │                            POST /reset   /step   /grader  /baseline
-    │
-    ├── environment.py        ← Episode manager
-    │                            reset() → step() → state() → final_grade()
-    │                            Thread-safe (RLock)
-    │                            Early stop at episode_score ≥ 0.80
-    │
-    ├── models.py             ← All Pydantic schemas
-    │                            SensorObservation, SensorState
-    │                            DetectAction, CleanAction, CascadeAction
-    │                            ResetRequest, StepRequest, GraderResponse
-    │
-    ├── reward.py             ← Per-step reward function
-    │                            Anti-loop penalty (−0.30)
-    │                            Regression penalty (−0.05)
-    │                            Always clamps to [0.0, 1.0]
-    │
-    ├── data/                 ← Data directory (scenarios generated in code)
-    │
-    └── tasks/
-        ├── __init__.py       ← Task registry: task_id → loader + grader
-        │
-        ├── task1_detect.py   ← 20 deterministic scenarios
-        │                        Sensors: CO2, NO2, CH4, O3, PM2.5, SO2, Temp, Humidity
-        │                        Grader: F1 score + calibration bonus
-        │
-        ├── task2_clean.py    ← 10 scenarios (5 sensors × 7 days)
-        │                        Grader: 60% fault type + 40% fix appropriateness
-        │
-        └── task3_cascade.py  ← 5 cascade failure scenarios (10 sensors × 30 days)
-                                 Grader: 4-component weighted score
+|
+|-- inference.py             Baseline LLM agent. Uses OpenAI client pointed at HF router.
+|                            Reads API_BASE_URL, MODEL_NAME, HF_TOKEN from environment.
+|                            Runs all 3 tasks and prints scores. Runtime < 20 minutes.
+|
+|-- openenv.yaml             Environment metadata. name, version, 3 tasks, tags: [openenv]
+|
+|-- Dockerfile               FROM python:3.11-slim. Installs requirements. Runs on port 7860.
+|
+|-- requirements.txt         Production dependencies. fastapi, uvicorn, pydantic, openai, etc.
+|
+|-- pyproject.toml           Local dev config. uv + taskipy task runner.
+|
+|-- architecture.svg         System architecture diagram.
+|
+|-- scripts/
+|   |-- fetch_real_data.py   Fetches real hourly data from Open-Meteo CAMS/ECMWF API.
+|   |                        Run once. Output committed to app/data/.
+|   |-- kill_port.py         Kills any process on port 7860. Runs before server starts.
+|   `-- check_live.py        Tests all endpoints against the live deployed Space.
+|
+|-- app/
+|   |-- main.py              All 7 HTTP endpoints. Interactive dashboard at GET /.
+|   |-- environment.py       Episode manager. reset(), step(), state(), final_grade().
+|   |                        Thread-safe (RLock). Early stop at score >= 0.80.
+|   |-- models.py            Pydantic schemas for all requests, responses, actions.
+|   |-- reward.py            Per-step reward. Anti-loop and regression penalties.
+|   |
+|   |-- data/
+|   |   |-- real_task1.json  20 scenarios. Real 24-hr PM2.5/NO2/O3/SO2/CO/CH4 readings.
+|   |   |-- real_task2.json  10 network scenarios. Real 7-day multi-sensor daily means.
+|   |   `-- real_task3.json  5 cascade scenarios. Real 30-day sensor status timelines.
+|   |
+|   `-- tasks/
+|       |-- __init__.py      Task registry. Maps task_id to loader and grader functions.
+|       |-- task1_detect.py  20 scenarios. Real baseline + fault injection. F1 grader.
+|       |-- task2_clean.py   10 scenarios. Real baseline + fault injection. Weighted grader.
+|       `-- task3_cascade.py 5 cascade scenarios. Real baseline + cascade simulation. 4-part grader.
+|
+`-- tests/
+    |-- test_graders.py      22 tests. Verifies graders produce varied, correct scores.
+    `-- test_endpoints.py    41 tests. Verifies all 7 endpoints work correctly.
 ```
 
 ---
 
-## 10. Environment Variables
+## 7. Tech Stack
 
-| Variable | Default | Secret? | Purpose |
-|---|---|---|---|
-| `HF_TOKEN` | — | **Yes** | HuggingFace API key — used by `inference.py` to call LLM models |
-| `MODEL_NAME` | — | No | Which LLM model to use (e.g. `meta-llama/Llama-3.3-70B-Instruct`) |
-| `API_BASE_URL` | `https://router.huggingface.co/v1` | No | LLM endpoint — HF router for free inference |
-| `API_KEY` | — | Yes | Fallback API key (if HF_TOKEN not set) |
-| `ENV_URL` | `http://localhost:7860` | No | ClimateWatch server URL (used by `inference.py`) |
+| Component | Library | Version |
+|---|---|---|
+| Web framework | FastAPI | 0.115.6 |
+| ASGI server | Uvicorn | 0.32.1 |
+| Data validation | Pydantic | 2.10.4 |
+| LLM client | OpenAI SDK | >=1.58.0 |
+| HTTP client | Requests | 2.32.3 |
+| Package manager | uv | >=0.9 |
+| Task runner | taskipy | >=1.13.0 |
+| Testing | pytest + httpx | >=8.0 |
+| Container | Docker | python:3.11-slim base |
 
-**The server itself needs zero environment variables to run.**
-Only `inference.py` (the baseline agent) needs `HF_TOKEN` and `MODEL_NAME`.
+**Key design decisions:**
+- No database — scenarios generated from real data JSON files, stateless between episodes
+- No ML models at startup — server starts in under 2 seconds, uses under 200 MB RAM
+- Runs on 2 vCPU / 8 GB RAM — within the spec constraint
+- Pydantic v2 enforces action schemas at request time — invalid actions return clear 422 errors
+- Thread-safe episode state via Python `threading.RLock`
 
-For local development, create a `.env` file:
+---
+
+## 8. Environment Variables
+
+| Variable | Default | Purpose |
+|---|---|---|
+| `HF_TOKEN` | — | HuggingFace API key for LLM inference (inference.py only) |
+| `MODEL_NAME` | — | LLM to use, e.g. `meta-llama/Llama-3.3-70B-Instruct` |
+| `API_BASE_URL` | `https://router.huggingface.co/v1` | LLM API endpoint |
+| `API_KEY` | — | Fallback if HF_TOKEN is not set |
+| `ENV_URL` | `http://localhost:7860` | ClimateWatch server URL (used by inference.py) |
+
+The server itself requires no environment variables. Only `inference.py` needs `HF_TOKEN` and `MODEL_NAME`.
+
+For local development, create a `.env` file in the project root:
 ```
 HF_TOKEN=hf_your_token_here
 MODEL_NAME=meta-llama/Llama-3.3-70B-Instruct
@@ -680,46 +517,44 @@ ENV_URL=http://localhost:7860
 
 ---
 
-## 11. Baseline Scores
+## 9. Baseline Scores
 
-Tested with `meta-llama/Llama-3.3-70B-Instruct` at `temperature=0.0`, `seed=42`:
+Tested with `meta-llama/Llama-3.3-70B-Instruct`, `temperature=0.0`, `seed=42`:
 
 | Task | Score | Notes |
 |---|---|---|
-| task1_detect | ~0.72 | Most fault types detected. Occasionally misses stuck sensors or mislabels drift as bias |
-| task2_clean | ~0.58 | Good fault identification. Fix parameters (offset values, drift rates) often approximate |
-| task3_cascade | ~0.41 | Partially identifies root causes. Repair order sometimes violates dependencies |
-| **Average** | **~0.57** | Typical for a 70B model with no fine-tuning |
-
-*Expected with GPT-4: 0.65–0.85 on task1, 0.55–0.75 on task2, 0.40–0.65 on task3.*
+| task1_detect | ~0.72 | Most faults detected. Occasional mislabelling of drift as bias. |
+| task2_clean | ~0.58 | Fault types mostly correct. Fix parameters sometimes approximate. |
+| task3_cascade | ~0.41 | Partial root cause identification. Repair order occasionally violates dependency graph. |
+| Average | ~0.57 | Typical for a capable 70B model without fine-tuning. |
 
 ---
 
-## 12. Deploy to HuggingFace
+## 10. Deploy to HuggingFace
 
-See [DEPLOYMENT_GUIDE.md](DEPLOYMENT_GUIDE.md) for the full step-by-step process.
+Full guide: [DEPLOYMENT_GUIDE.md](DEPLOYMENT_GUIDE.md)
 
-**Quick summary:**
+**Quick steps:**
 
 ```bash
 # 1. Create a Docker Space at huggingface.co/new-space
 
-# 2. Push your code
-git remote add huggingface https://huggingface.co/spaces/USERNAME/climatewatch-env
-git push huggingface master
+# 2. Push code
+git remote add huggingface https://huggingface.co/spaces/YOUR_USERNAME/climatewatch-env
+git push huggingface main
 
-# 3. Set these in Space Settings → Variables and Secrets:
-#    HF_TOKEN    = hf_...  (Secret)
-#    MODEL_NAME  = meta-llama/Llama-3.3-70B-Instruct
-#    API_BASE_URL= https://router.huggingface.co/v1
-#    ENV_URL     = http://localhost:7860
+# 3. Add these in Space Settings — Variables and Secrets:
+#    HF_TOKEN     = your token   (set as Secret)
+#    MODEL_NAME   = meta-llama/Llama-3.3-70B-Instruct
+#    API_BASE_URL = https://router.huggingface.co/v1
+#    ENV_URL      = http://localhost:7860
 
-# 4. HuggingFace auto-builds Docker → server goes live in 2-5 minutes
+# 4. Wait 2-5 minutes for Docker build to complete
 
-# 5. Test your live space:
-curl https://USERNAME-climatewatch-env.hf.space/health
+# 5. Verify
+curl https://YOUR_USERNAME-climatewatch-env.hf.space/health
 ```
 
 ---
 
-*ClimateWatch — Environmental Sensor Data Quality & Compliance Monitoring*
+*ClimateWatch — Environmental Sensor Data Quality and Compliance Monitoring*
