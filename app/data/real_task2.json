@@ -1,0 +1,3262 @@
+[
+  {
+    "scenario_id": 0,
+    "network_id": "COASTAL-ZONE-3",
+    "location": "Gulf Coast Industrial Corridor, Texas USA",
+    "location_key": "houston_tx",
+    "lat": 29.76,
+    "lon": -95.37,
+    "period_days": 7,
+    "sensors": [
+      {
+        "sensor_id": "S1",
+        "sensor_key": "PM25",
+        "param": "PM25_ugm3",
+        "unit": "\u00b5g/m\u00b3",
+        "normal_range": [
+          5,
+          35
+        ],
+        "daily_means": [
+          {
+            "day": 1,
+            "mean": 6.41,
+            "min": 5.6,
+            "max": 8.2,
+            "missing_hours": 0
+          },
+          {
+            "day": 2,
+            "mean": 10.19,
+            "min": 4.9,
+            "max": 16.2,
+            "missing_hours": 0
+          },
+          {
+            "day": 3,
+            "mean": 11.61,
+            "min": 9.3,
+            "max": 17.5,
+            "missing_hours": 0
+          },
+          {
+            "day": 4,
+            "mean": 9.58,
+            "min": 7.0,
+            "max": 12.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 5,
+            "mean": 6.85,
+            "min": 5.9,
+            "max": 8.2,
+            "missing_hours": 0
+          },
+          {
+            "day": 6,
+            "mean": 7.16,
+            "min": 4.8,
+            "max": 12.3,
+            "missing_hours": 0
+          },
+          {
+            "day": 7,
+            "mean": 11.48,
+            "min": 9.0,
+            "max": 15.7,
+            "missing_hours": 0
+          }
+        ],
+        "overall_mean": 9.04,
+        "total_missing_hours": 0
+      },
+      {
+        "sensor_id": "S2",
+        "sensor_key": "NO2",
+        "param": "NO2_ppb",
+        "unit": "ppb",
+        "normal_range": [
+          10,
+          50
+        ],
+        "daily_means": [
+          {
+            "day": 1,
+            "mean": 6.29,
+            "min": 2.6,
+            "max": 10.5,
+            "missing_hours": 0
+          },
+          {
+            "day": 2,
+            "mean": 11.93,
+            "min": 5.5,
+            "max": 21.6,
+            "missing_hours": 0
+          },
+          {
+            "day": 3,
+            "mean": 12.86,
+            "min": 7.3,
+            "max": 17.5,
+            "missing_hours": 0
+          },
+          {
+            "day": 4,
+            "mean": 11.88,
+            "min": 3.3,
+            "max": 18.4,
+            "missing_hours": 0
+          },
+          {
+            "day": 5,
+            "mean": 8.07,
+            "min": 2.8,
+            "max": 13.3,
+            "missing_hours": 0
+          },
+          {
+            "day": 6,
+            "mean": 6.99,
+            "min": 4.3,
+            "max": 9.7,
+            "missing_hours": 0
+          },
+          {
+            "day": 7,
+            "mean": 12.42,
+            "min": 3.8,
+            "max": 26.8,
+            "missing_hours": 0
+          }
+        ],
+        "overall_mean": 10.06,
+        "total_missing_hours": 0
+      },
+      {
+        "sensor_id": "S3",
+        "sensor_key": "O3",
+        "param": "O3_ppb",
+        "unit": "ppb",
+        "normal_range": [
+          20,
+          60
+        ],
+        "daily_means": [
+          {
+            "day": 1,
+            "mean": 85.33,
+            "min": 72.0,
+            "max": 108.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 2,
+            "mean": 80.62,
+            "min": 54.0,
+            "max": 121.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 3,
+            "mean": 74.75,
+            "min": 48.0,
+            "max": 105.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 4,
+            "mean": 76.58,
+            "min": 52.0,
+            "max": 105.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 5,
+            "mean": 79.42,
+            "min": 64.0,
+            "max": 103.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 6,
+            "mean": 84.67,
+            "min": 70.0,
+            "max": 111.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 7,
+            "mean": 87.33,
+            "min": 44.0,
+            "max": 133.0,
+            "missing_hours": 0
+          }
+        ],
+        "overall_mean": 81.24,
+        "total_missing_hours": 0
+      },
+      {
+        "sensor_id": "S4",
+        "sensor_key": "SO2",
+        "param": "SO2_ppb",
+        "unit": "ppb",
+        "normal_range": [
+          2,
+          15
+        ],
+        "daily_means": [
+          {
+            "day": 1,
+            "mean": 2.28,
+            "min": 1.7,
+            "max": 3.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 2,
+            "mean": 3.52,
+            "min": 1.9,
+            "max": 6.1,
+            "missing_hours": 0
+          },
+          {
+            "day": 3,
+            "mean": 3.34,
+            "min": 2.0,
+            "max": 5.8,
+            "missing_hours": 0
+          },
+          {
+            "day": 4,
+            "mean": 2.86,
+            "min": 2.1,
+            "max": 4.1,
+            "missing_hours": 0
+          },
+          {
+            "day": 5,
+            "mean": 2.43,
+            "min": 2.0,
+            "max": 3.2,
+            "missing_hours": 0
+          },
+          {
+            "day": 6,
+            "mean": 2.72,
+            "min": 1.7,
+            "max": 4.6,
+            "missing_hours": 0
+          },
+          {
+            "day": 7,
+            "mean": 3.64,
+            "min": 2.1,
+            "max": 5.6,
+            "missing_hours": 0
+          }
+        ],
+        "overall_mean": 2.97,
+        "total_missing_hours": 0
+      },
+      {
+        "sensor_id": "S5",
+        "sensor_key": "CO",
+        "param": "CO_ppb",
+        "unit": "ppb",
+        "normal_range": [
+          200,
+          800
+        ],
+        "daily_means": [
+          {
+            "day": 1,
+            "mean": 161.12,
+            "min": 142.0,
+            "max": 175.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 2,
+            "mean": 180.79,
+            "min": 155.0,
+            "max": 232.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 3,
+            "mean": 180.12,
+            "min": 153.0,
+            "max": 204.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 4,
+            "mean": 169.88,
+            "min": 153.0,
+            "max": 194.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 5,
+            "mean": 162.92,
+            "min": 148.0,
+            "max": 179.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 6,
+            "mean": 160.5,
+            "min": 143.0,
+            "max": 178.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 7,
+            "mean": 189.42,
+            "min": 168.0,
+            "max": 241.0,
+            "missing_hours": 0
+          }
+        ],
+        "overall_mean": 172.11,
+        "total_missing_hours": 0
+      }
+    ]
+  },
+  {
+    "scenario_id": 1,
+    "network_id": "REFINERY-SOUTH-7",
+    "location": "Petroleum Complex, Jubail Industrial City, Saudi Arabia",
+    "location_key": "jubail",
+    "lat": 27.0,
+    "lon": 49.66,
+    "period_days": 7,
+    "sensors": [
+      {
+        "sensor_id": "S1",
+        "sensor_key": "PM25",
+        "param": "PM25_ugm3",
+        "unit": "\u00b5g/m\u00b3",
+        "normal_range": [
+          5,
+          35
+        ],
+        "daily_means": [
+          {
+            "day": 1,
+            "mean": 37.93,
+            "min": 27.0,
+            "max": 46.7,
+            "missing_hours": 0
+          },
+          {
+            "day": 2,
+            "mean": 38.27,
+            "min": 17.5,
+            "max": 85.4,
+            "missing_hours": 0
+          },
+          {
+            "day": 3,
+            "mean": 22.37,
+            "min": 15.3,
+            "max": 32.7,
+            "missing_hours": 0
+          },
+          {
+            "day": 4,
+            "mean": 26.82,
+            "min": 17.1,
+            "max": 59.6,
+            "missing_hours": 0
+          },
+          {
+            "day": 5,
+            "mean": 44.9,
+            "min": 11.3,
+            "max": 77.8,
+            "missing_hours": 0
+          },
+          {
+            "day": 6,
+            "mean": 46.7,
+            "min": 25.7,
+            "max": 91.5,
+            "missing_hours": 0
+          },
+          {
+            "day": 7,
+            "mean": 47.09,
+            "min": 33.4,
+            "max": 81.3,
+            "missing_hours": 0
+          }
+        ],
+        "overall_mean": 37.73,
+        "total_missing_hours": 0
+      },
+      {
+        "sensor_id": "S2",
+        "sensor_key": "NO2",
+        "param": "NO2_ppb",
+        "unit": "ppb",
+        "normal_range": [
+          10,
+          50
+        ],
+        "daily_means": [
+          {
+            "day": 1,
+            "mean": 17.69,
+            "min": 9.9,
+            "max": 25.9,
+            "missing_hours": 0
+          },
+          {
+            "day": 2,
+            "mean": 19.07,
+            "min": 8.2,
+            "max": 33.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 3,
+            "mean": 28.52,
+            "min": 12.0,
+            "max": 47.6,
+            "missing_hours": 0
+          },
+          {
+            "day": 4,
+            "mean": 15.16,
+            "min": 8.7,
+            "max": 19.7,
+            "missing_hours": 0
+          },
+          {
+            "day": 5,
+            "mean": 12.78,
+            "min": 1.1,
+            "max": 27.2,
+            "missing_hours": 0
+          },
+          {
+            "day": 6,
+            "mean": 7.46,
+            "min": 2.8,
+            "max": 16.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 7,
+            "mean": 9.67,
+            "min": 4.3,
+            "max": 18.6,
+            "missing_hours": 0
+          }
+        ],
+        "overall_mean": 15.76,
+        "total_missing_hours": 0
+      },
+      {
+        "sensor_id": "S3",
+        "sensor_key": "O3",
+        "param": "O3_ppb",
+        "unit": "ppb",
+        "normal_range": [
+          20,
+          60
+        ],
+        "daily_means": [
+          {
+            "day": 1,
+            "mean": 94.67,
+            "min": 61.0,
+            "max": 127.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 2,
+            "mean": 70.92,
+            "min": 48.0,
+            "max": 101.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 3,
+            "mean": 46.46,
+            "min": 25.0,
+            "max": 78.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 4,
+            "mean": 59.79,
+            "min": 48.0,
+            "max": 77.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 5,
+            "mean": 64.04,
+            "min": 49.0,
+            "max": 88.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 6,
+            "mean": 88.5,
+            "min": 71.0,
+            "max": 114.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 7,
+            "mean": 95.33,
+            "min": 70.0,
+            "max": 130.0,
+            "missing_hours": 0
+          }
+        ],
+        "overall_mean": 74.24,
+        "total_missing_hours": 0
+      },
+      {
+        "sensor_id": "S4",
+        "sensor_key": "SO2",
+        "param": "SO2_ppb",
+        "unit": "ppb",
+        "normal_range": [
+          2,
+          15
+        ],
+        "daily_means": [
+          {
+            "day": 1,
+            "mean": 13.01,
+            "min": 4.4,
+            "max": 22.9,
+            "missing_hours": 0
+          },
+          {
+            "day": 2,
+            "mean": 15.96,
+            "min": 5.4,
+            "max": 23.5,
+            "missing_hours": 0
+          },
+          {
+            "day": 3,
+            "mean": 27.36,
+            "min": 7.8,
+            "max": 50.1,
+            "missing_hours": 0
+          },
+          {
+            "day": 4,
+            "mean": 18.12,
+            "min": 5.0,
+            "max": 34.3,
+            "missing_hours": 0
+          },
+          {
+            "day": 5,
+            "mean": 10.69,
+            "min": 1.6,
+            "max": 21.1,
+            "missing_hours": 0
+          },
+          {
+            "day": 6,
+            "mean": 4.6,
+            "min": 1.6,
+            "max": 11.1,
+            "missing_hours": 0
+          },
+          {
+            "day": 7,
+            "mean": 3.4,
+            "min": 1.3,
+            "max": 8.5,
+            "missing_hours": 0
+          }
+        ],
+        "overall_mean": 13.31,
+        "total_missing_hours": 0
+      },
+      {
+        "sensor_id": "S5",
+        "sensor_key": "CO",
+        "param": "CO_ppb",
+        "unit": "ppb",
+        "normal_range": [
+          200,
+          800
+        ],
+        "daily_means": [
+          {
+            "day": 1,
+            "mean": 233.5,
+            "min": 184.0,
+            "max": 289.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 2,
+            "mean": 187.79,
+            "min": 151.0,
+            "max": 225.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 3,
+            "mean": 193.29,
+            "min": 142.0,
+            "max": 309.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 4,
+            "mean": 143.5,
+            "min": 131.0,
+            "max": 185.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 5,
+            "mean": 157.17,
+            "min": 129.0,
+            "max": 198.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 6,
+            "mean": 173.25,
+            "min": 128.0,
+            "max": 263.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 7,
+            "mean": 184.83,
+            "min": 164.0,
+            "max": 229.0,
+            "missing_hours": 0
+          }
+        ],
+        "overall_mean": 181.9,
+        "total_missing_hours": 0
+      }
+    ]
+  },
+  {
+    "scenario_id": 2,
+    "network_id": "URBAN-GRID-12",
+    "location": "Metropolitan Air Quality Network, Delhi NCR, India",
+    "location_key": "delhi_ncr",
+    "lat": 28.63,
+    "lon": 77.22,
+    "period_days": 7,
+    "sensors": [
+      {
+        "sensor_id": "S1",
+        "sensor_key": "PM25",
+        "param": "PM25_ugm3",
+        "unit": "\u00b5g/m\u00b3",
+        "normal_range": [
+          5,
+          35
+        ],
+        "daily_means": [
+          {
+            "day": 1,
+            "mean": 71.84,
+            "min": 45.6,
+            "max": 109.7,
+            "missing_hours": 0
+          },
+          {
+            "day": 2,
+            "mean": 62.88,
+            "min": 39.3,
+            "max": 87.3,
+            "missing_hours": 0
+          },
+          {
+            "day": 3,
+            "mean": 78.21,
+            "min": 48.2,
+            "max": 108.5,
+            "missing_hours": 0
+          },
+          {
+            "day": 4,
+            "mean": 64.24,
+            "min": 39.2,
+            "max": 86.1,
+            "missing_hours": 0
+          },
+          {
+            "day": 5,
+            "mean": 60.2,
+            "min": 30.3,
+            "max": 93.6,
+            "missing_hours": 0
+          },
+          {
+            "day": 6,
+            "mean": 50.45,
+            "min": 26.8,
+            "max": 71.7,
+            "missing_hours": 0
+          },
+          {
+            "day": 7,
+            "mean": 49.04,
+            "min": 25.6,
+            "max": 75.4,
+            "missing_hours": 0
+          }
+        ],
+        "overall_mean": 62.41,
+        "total_missing_hours": 0
+      },
+      {
+        "sensor_id": "S2",
+        "sensor_key": "NO2",
+        "param": "NO2_ppb",
+        "unit": "ppb",
+        "normal_range": [
+          10,
+          50
+        ],
+        "daily_means": [
+          {
+            "day": 1,
+            "mean": 19.22,
+            "min": 4.9,
+            "max": 39.8,
+            "missing_hours": 0
+          },
+          {
+            "day": 2,
+            "mean": 41.48,
+            "min": 7.9,
+            "max": 75.5,
+            "missing_hours": 0
+          },
+          {
+            "day": 3,
+            "mean": 27.94,
+            "min": 3.0,
+            "max": 85.9,
+            "missing_hours": 0
+          },
+          {
+            "day": 4,
+            "mean": 22.17,
+            "min": 4.1,
+            "max": 44.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 5,
+            "mean": 19.62,
+            "min": 4.7,
+            "max": 42.9,
+            "missing_hours": 0
+          },
+          {
+            "day": 6,
+            "mean": 15.68,
+            "min": 4.7,
+            "max": 27.8,
+            "missing_hours": 0
+          },
+          {
+            "day": 7,
+            "mean": 32.96,
+            "min": 4.6,
+            "max": 80.0,
+            "missing_hours": 0
+          }
+        ],
+        "overall_mean": 25.58,
+        "total_missing_hours": 0
+      },
+      {
+        "sensor_id": "S3",
+        "sensor_key": "O3",
+        "param": "O3_ppb",
+        "unit": "ppb",
+        "normal_range": [
+          20,
+          60
+        ],
+        "daily_means": [
+          {
+            "day": 1,
+            "mean": 94.54,
+            "min": 59.0,
+            "max": 160.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 2,
+            "mean": 79.08,
+            "min": 9.0,
+            "max": 178.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 3,
+            "mean": 89.71,
+            "min": 1.0,
+            "max": 156.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 4,
+            "mean": 100.88,
+            "min": 55.0,
+            "max": 181.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 5,
+            "mean": 94.79,
+            "min": 57.0,
+            "max": 165.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 6,
+            "mean": 82.42,
+            "min": 34.0,
+            "max": 134.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 7,
+            "mean": 87.33,
+            "min": 23.0,
+            "max": 174.0,
+            "missing_hours": 0
+          }
+        ],
+        "overall_mean": 89.82,
+        "total_missing_hours": 0
+      },
+      {
+        "sensor_id": "S4",
+        "sensor_key": "SO2",
+        "param": "SO2_ppb",
+        "unit": "ppb",
+        "normal_range": [
+          2,
+          15
+        ],
+        "daily_means": [
+          {
+            "day": 1,
+            "mean": 19.7,
+            "min": 15.6,
+            "max": 25.7,
+            "missing_hours": 0
+          },
+          {
+            "day": 2,
+            "mean": 29.7,
+            "min": 15.2,
+            "max": 43.4,
+            "missing_hours": 0
+          },
+          {
+            "day": 3,
+            "mean": 22.8,
+            "min": 11.6,
+            "max": 42.9,
+            "missing_hours": 0
+          },
+          {
+            "day": 4,
+            "mean": 19.75,
+            "min": 13.3,
+            "max": 25.6,
+            "missing_hours": 0
+          },
+          {
+            "day": 5,
+            "mean": 20.17,
+            "min": 13.0,
+            "max": 28.9,
+            "missing_hours": 0
+          },
+          {
+            "day": 6,
+            "mean": 15.09,
+            "min": 10.2,
+            "max": 20.4,
+            "missing_hours": 0
+          },
+          {
+            "day": 7,
+            "mean": 26.87,
+            "min": 15.0,
+            "max": 44.5,
+            "missing_hours": 0
+          }
+        ],
+        "overall_mean": 22.01,
+        "total_missing_hours": 0
+      },
+      {
+        "sensor_id": "S5",
+        "sensor_key": "CO",
+        "param": "CO_ppb",
+        "unit": "ppb",
+        "normal_range": [
+          200,
+          800
+        ],
+        "daily_means": [
+          {
+            "day": 1,
+            "mean": 1099.38,
+            "min": 387.0,
+            "max": 2231.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 2,
+            "mean": 897.54,
+            "min": 320.0,
+            "max": 1483.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 3,
+            "mean": 1160.58,
+            "min": 191.0,
+            "max": 2304.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 4,
+            "mean": 830.54,
+            "min": 274.0,
+            "max": 1450.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 5,
+            "mean": 517.58,
+            "min": 279.0,
+            "max": 1028.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 6,
+            "mean": 545.83,
+            "min": 274.0,
+            "max": 1238.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 7,
+            "mean": 633.17,
+            "min": 277.0,
+            "max": 1309.0,
+            "missing_hours": 0
+          }
+        ],
+        "overall_mean": 812.09,
+        "total_missing_hours": 0
+      }
+    ]
+  },
+  {
+    "scenario_id": 3,
+    "network_id": "ARCTIC-STATION-2",
+    "location": "Polar Research Station, Ny-\u00c5lesund, Svalbard Norway",
+    "location_key": "svalbard",
+    "lat": 78.23,
+    "lon": 15.6,
+    "period_days": 7,
+    "sensors": [
+      {
+        "sensor_id": "S1",
+        "sensor_key": "PM25",
+        "param": "PM25_ugm3",
+        "unit": "\u00b5g/m\u00b3",
+        "normal_range": [
+          5,
+          35
+        ],
+        "daily_means": [
+          {
+            "day": 1,
+            "mean": 0.36,
+            "min": 0.2,
+            "max": 0.7,
+            "missing_hours": 0
+          },
+          {
+            "day": 2,
+            "mean": 0.07,
+            "min": 0.0,
+            "max": 0.1,
+            "missing_hours": 0
+          },
+          {
+            "day": 3,
+            "mean": 0.35,
+            "min": 0.2,
+            "max": 0.9,
+            "missing_hours": 0
+          },
+          {
+            "day": 4,
+            "mean": 1.12,
+            "min": 1.0,
+            "max": 1.4,
+            "missing_hours": 0
+          },
+          {
+            "day": 5,
+            "mean": 0.83,
+            "min": 0.5,
+            "max": 1.2,
+            "missing_hours": 0
+          },
+          {
+            "day": 6,
+            "mean": 0.4,
+            "min": 0.2,
+            "max": 0.6,
+            "missing_hours": 0
+          },
+          {
+            "day": 7,
+            "mean": 0.82,
+            "min": 0.3,
+            "max": 1.3,
+            "missing_hours": 0
+          }
+        ],
+        "overall_mean": 0.56,
+        "total_missing_hours": 0
+      },
+      {
+        "sensor_id": "S2",
+        "sensor_key": "NO2",
+        "param": "NO2_ppb",
+        "unit": "ppb",
+        "normal_range": [
+          10,
+          50
+        ],
+        "daily_means": [
+          {
+            "day": 1,
+            "mean": 0.09,
+            "min": 0.0,
+            "max": 0.1,
+            "missing_hours": 0
+          },
+          {
+            "day": 2,
+            "mean": 0.06,
+            "min": 0.0,
+            "max": 0.1,
+            "missing_hours": 0
+          },
+          {
+            "day": 3,
+            "mean": 0.08,
+            "min": 0.0,
+            "max": 0.1,
+            "missing_hours": 0
+          },
+          {
+            "day": 4,
+            "mean": 0.0,
+            "min": 0.0,
+            "max": 0.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 5,
+            "mean": 0.0,
+            "min": 0.0,
+            "max": 0.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 6,
+            "mean": 0.03,
+            "min": 0.0,
+            "max": 0.1,
+            "missing_hours": 0
+          },
+          {
+            "day": 7,
+            "mean": 0.08,
+            "min": 0.0,
+            "max": 0.1,
+            "missing_hours": 0
+          }
+        ],
+        "overall_mean": 0.05,
+        "total_missing_hours": 0
+      },
+      {
+        "sensor_id": "S3",
+        "sensor_key": "O3",
+        "param": "O3_ppb",
+        "unit": "ppb",
+        "normal_range": [
+          20,
+          60
+        ],
+        "daily_means": [
+          {
+            "day": 1,
+            "mean": 81.54,
+            "min": 79.0,
+            "max": 83.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 2,
+            "mean": 86.62,
+            "min": 82.0,
+            "max": 90.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 3,
+            "mean": 83.38,
+            "min": 80.0,
+            "max": 92.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 4,
+            "mean": 88.5,
+            "min": 85.0,
+            "max": 92.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 5,
+            "mean": 81.62,
+            "min": 77.0,
+            "max": 87.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 6,
+            "mean": 79.08,
+            "min": 73.0,
+            "max": 82.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 7,
+            "mean": 79.42,
+            "min": 72.0,
+            "max": 86.0,
+            "missing_hours": 0
+          }
+        ],
+        "overall_mean": 82.88,
+        "total_missing_hours": 0
+      },
+      {
+        "sensor_id": "S4",
+        "sensor_key": "SO2",
+        "param": "SO2_ppb",
+        "unit": "ppb",
+        "normal_range": [
+          2,
+          15
+        ],
+        "daily_means": [
+          {
+            "day": 1,
+            "mean": 0.0,
+            "min": 0.0,
+            "max": 0.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 2,
+            "mean": 0.0,
+            "min": 0.0,
+            "max": 0.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 3,
+            "mean": 0.02,
+            "min": 0.0,
+            "max": 0.1,
+            "missing_hours": 0
+          },
+          {
+            "day": 4,
+            "mean": 0.1,
+            "min": 0.1,
+            "max": 0.1,
+            "missing_hours": 0
+          },
+          {
+            "day": 5,
+            "mean": 0.01,
+            "min": 0.0,
+            "max": 0.1,
+            "missing_hours": 0
+          },
+          {
+            "day": 6,
+            "mean": 0.03,
+            "min": 0.0,
+            "max": 0.1,
+            "missing_hours": 0
+          },
+          {
+            "day": 7,
+            "mean": 0.07,
+            "min": 0.0,
+            "max": 0.1,
+            "missing_hours": 0
+          }
+        ],
+        "overall_mean": 0.03,
+        "total_missing_hours": 0
+      },
+      {
+        "sensor_id": "S5",
+        "sensor_key": "CO",
+        "param": "CO_ppb",
+        "unit": "ppb",
+        "normal_range": [
+          200,
+          800
+        ],
+        "daily_means": [
+          {
+            "day": 1,
+            "mean": 152.83,
+            "min": 149.0,
+            "max": 162.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 2,
+            "mean": 163.46,
+            "min": 159.0,
+            "max": 168.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 3,
+            "mean": 164.29,
+            "min": 161.0,
+            "max": 167.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 4,
+            "mean": 173.46,
+            "min": 158.0,
+            "max": 184.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 5,
+            "mean": 165.67,
+            "min": 162.0,
+            "max": 171.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 6,
+            "mean": 171.58,
+            "min": 165.0,
+            "max": 176.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 7,
+            "mean": 161.67,
+            "min": 160.0,
+            "max": 165.0,
+            "missing_hours": 0
+          }
+        ],
+        "overall_mean": 164.71,
+        "total_missing_hours": 0
+      }
+    ]
+  },
+  {
+    "scenario_id": 4,
+    "network_id": "AMAZON-BASIN-4",
+    "location": "Tropical Forest Research Station, Manaus, Brazil",
+    "location_key": "manaus",
+    "lat": -3.1,
+    "lon": -60.02,
+    "period_days": 7,
+    "sensors": [
+      {
+        "sensor_id": "S1",
+        "sensor_key": "PM25",
+        "param": "PM25_ugm3",
+        "unit": "\u00b5g/m\u00b3",
+        "normal_range": [
+          5,
+          35
+        ],
+        "daily_means": [
+          {
+            "day": 1,
+            "mean": 4.55,
+            "min": 0.8,
+            "max": 7.8,
+            "missing_hours": 0
+          },
+          {
+            "day": 2,
+            "mean": 5.97,
+            "min": 1.2,
+            "max": 9.7,
+            "missing_hours": 0
+          },
+          {
+            "day": 3,
+            "mean": 11.63,
+            "min": 6.2,
+            "max": 17.6,
+            "missing_hours": 0
+          },
+          {
+            "day": 4,
+            "mean": 8.44,
+            "min": 4.7,
+            "max": 10.2,
+            "missing_hours": 0
+          },
+          {
+            "day": 5,
+            "mean": 7.6,
+            "min": 3.9,
+            "max": 10.6,
+            "missing_hours": 0
+          },
+          {
+            "day": 6,
+            "mean": 5.61,
+            "min": 3.1,
+            "max": 8.4,
+            "missing_hours": 0
+          },
+          {
+            "day": 7,
+            "mean": 8.1,
+            "min": 4.4,
+            "max": 10.7,
+            "missing_hours": 0
+          }
+        ],
+        "overall_mean": 7.41,
+        "total_missing_hours": 0
+      },
+      {
+        "sensor_id": "S2",
+        "sensor_key": "NO2",
+        "param": "NO2_ppb",
+        "unit": "ppb",
+        "normal_range": [
+          10,
+          50
+        ],
+        "daily_means": [
+          {
+            "day": 1,
+            "mean": 3.55,
+            "min": 0.6,
+            "max": 9.5,
+            "missing_hours": 0
+          },
+          {
+            "day": 2,
+            "mean": 4.0,
+            "min": 0.5,
+            "max": 11.2,
+            "missing_hours": 0
+          },
+          {
+            "day": 3,
+            "mean": 3.1,
+            "min": 0.7,
+            "max": 7.6,
+            "missing_hours": 0
+          },
+          {
+            "day": 4,
+            "mean": 3.87,
+            "min": 1.0,
+            "max": 6.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 5,
+            "mean": 3.44,
+            "min": 0.8,
+            "max": 5.9,
+            "missing_hours": 0
+          },
+          {
+            "day": 6,
+            "mean": 3.3,
+            "min": 0.8,
+            "max": 6.8,
+            "missing_hours": 0
+          },
+          {
+            "day": 7,
+            "mean": 3.5,
+            "min": 1.7,
+            "max": 5.6,
+            "missing_hours": 0
+          }
+        ],
+        "overall_mean": 3.54,
+        "total_missing_hours": 0
+      },
+      {
+        "sensor_id": "S3",
+        "sensor_key": "O3",
+        "param": "O3_ppb",
+        "unit": "ppb",
+        "normal_range": [
+          20,
+          60
+        ],
+        "daily_means": [
+          {
+            "day": 1,
+            "mean": 34.92,
+            "min": 13.0,
+            "max": 60.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 2,
+            "mean": 34.88,
+            "min": 16.0,
+            "max": 56.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 3,
+            "mean": 35.42,
+            "min": 25.0,
+            "max": 52.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 4,
+            "mean": 29.04,
+            "min": 16.0,
+            "max": 50.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 5,
+            "mean": 31.96,
+            "min": 20.0,
+            "max": 45.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 6,
+            "mean": 32.88,
+            "min": 18.0,
+            "max": 50.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 7,
+            "mean": 32.17,
+            "min": 18.0,
+            "max": 50.0,
+            "missing_hours": 0
+          }
+        ],
+        "overall_mean": 33.04,
+        "total_missing_hours": 0
+      },
+      {
+        "sensor_id": "S4",
+        "sensor_key": "SO2",
+        "param": "SO2_ppb",
+        "unit": "ppb",
+        "normal_range": [
+          2,
+          15
+        ],
+        "daily_means": [
+          {
+            "day": 1,
+            "mean": 1.12,
+            "min": 0.5,
+            "max": 1.7,
+            "missing_hours": 0
+          },
+          {
+            "day": 2,
+            "mean": 1.16,
+            "min": 0.5,
+            "max": 1.9,
+            "missing_hours": 0
+          },
+          {
+            "day": 3,
+            "mean": 1.12,
+            "min": 0.7,
+            "max": 1.8,
+            "missing_hours": 0
+          },
+          {
+            "day": 4,
+            "mean": 1.9,
+            "min": 1.2,
+            "max": 2.6,
+            "missing_hours": 0
+          },
+          {
+            "day": 5,
+            "mean": 2.09,
+            "min": 0.8,
+            "max": 3.1,
+            "missing_hours": 0
+          },
+          {
+            "day": 6,
+            "mean": 1.59,
+            "min": 1.1,
+            "max": 2.1,
+            "missing_hours": 0
+          },
+          {
+            "day": 7,
+            "mean": 1.39,
+            "min": 0.6,
+            "max": 2.4,
+            "missing_hours": 0
+          }
+        ],
+        "overall_mean": 1.48,
+        "total_missing_hours": 0
+      },
+      {
+        "sensor_id": "S5",
+        "sensor_key": "CO",
+        "param": "CO_ppb",
+        "unit": "ppb",
+        "normal_range": [
+          200,
+          800
+        ],
+        "daily_means": [
+          {
+            "day": 1,
+            "mean": 229.42,
+            "min": 157.0,
+            "max": 506.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 2,
+            "mean": 249.21,
+            "min": 159.0,
+            "max": 595.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 3,
+            "mean": 230.42,
+            "min": 185.0,
+            "max": 370.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 4,
+            "mean": 263.71,
+            "min": 174.0,
+            "max": 428.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 5,
+            "mean": 219.62,
+            "min": 146.0,
+            "max": 427.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 6,
+            "mean": 239.62,
+            "min": 163.0,
+            "max": 417.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 7,
+            "mean": 235.29,
+            "min": 161.0,
+            "max": 476.0,
+            "missing_hours": 0
+          }
+        ],
+        "overall_mean": 238.18,
+        "total_missing_hours": 0
+      }
+    ]
+  },
+  {
+    "scenario_id": 5,
+    "network_id": "NORTH-SEA-OIL-6",
+    "location": "Offshore Production Platform, North Sea, UK Sector",
+    "location_key": "north_sea",
+    "lat": 57.5,
+    "lon": 2.0,
+    "period_days": 7,
+    "sensors": [
+      {
+        "sensor_id": "S1",
+        "sensor_key": "PM25",
+        "param": "PM25_ugm3",
+        "unit": "\u00b5g/m\u00b3",
+        "normal_range": [
+          5,
+          35
+        ],
+        "daily_means": [
+          {
+            "day": 1,
+            "mean": 10.78,
+            "min": 3.0,
+            "max": 22.9,
+            "missing_hours": 0
+          },
+          {
+            "day": 2,
+            "mean": 3.45,
+            "min": 2.8,
+            "max": 4.8,
+            "missing_hours": 0
+          },
+          {
+            "day": 3,
+            "mean": 5.41,
+            "min": 2.3,
+            "max": 6.8,
+            "missing_hours": 0
+          },
+          {
+            "day": 4,
+            "mean": 3.5,
+            "min": 2.7,
+            "max": 3.9,
+            "missing_hours": 0
+          },
+          {
+            "day": 5,
+            "mean": 2.94,
+            "min": 1.7,
+            "max": 3.5,
+            "missing_hours": 0
+          },
+          {
+            "day": 6,
+            "mean": 3.79,
+            "min": 1.7,
+            "max": 5.2,
+            "missing_hours": 0
+          },
+          {
+            "day": 7,
+            "mean": 3.98,
+            "min": 3.1,
+            "max": 4.6,
+            "missing_hours": 0
+          }
+        ],
+        "overall_mean": 4.84,
+        "total_missing_hours": 0
+      },
+      {
+        "sensor_id": "S2",
+        "sensor_key": "NO2",
+        "param": "NO2_ppb",
+        "unit": "ppb",
+        "normal_range": [
+          10,
+          50
+        ],
+        "daily_means": [
+          {
+            "day": 1,
+            "mean": 1.47,
+            "min": 0.3,
+            "max": 2.8,
+            "missing_hours": 0
+          },
+          {
+            "day": 2,
+            "mean": 0.74,
+            "min": 0.3,
+            "max": 1.8,
+            "missing_hours": 0
+          },
+          {
+            "day": 3,
+            "mean": 1.01,
+            "min": 0.4,
+            "max": 1.4,
+            "missing_hours": 0
+          },
+          {
+            "day": 4,
+            "mean": 0.28,
+            "min": 0.2,
+            "max": 0.8,
+            "missing_hours": 0
+          },
+          {
+            "day": 5,
+            "mean": 0.24,
+            "min": 0.1,
+            "max": 0.4,
+            "missing_hours": 0
+          },
+          {
+            "day": 6,
+            "mean": 0.87,
+            "min": 0.3,
+            "max": 1.8,
+            "missing_hours": 0
+          },
+          {
+            "day": 7,
+            "mean": 0.27,
+            "min": 0.2,
+            "max": 0.4,
+            "missing_hours": 0
+          }
+        ],
+        "overall_mean": 0.7,
+        "total_missing_hours": 0
+      },
+      {
+        "sensor_id": "S3",
+        "sensor_key": "O3",
+        "param": "O3_ppb",
+        "unit": "ppb",
+        "normal_range": [
+          20,
+          60
+        ],
+        "daily_means": [
+          {
+            "day": 1,
+            "mean": 88.21,
+            "min": 75.0,
+            "max": 101.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 2,
+            "mean": 97.0,
+            "min": 92.0,
+            "max": 99.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 3,
+            "mean": 91.79,
+            "min": 76.0,
+            "max": 108.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 4,
+            "mean": 93.54,
+            "min": 85.0,
+            "max": 102.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 5,
+            "mean": 96.5,
+            "min": 87.0,
+            "max": 106.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 6,
+            "mean": 91.71,
+            "min": 77.0,
+            "max": 110.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 7,
+            "mean": 94.92,
+            "min": 91.0,
+            "max": 99.0,
+            "missing_hours": 0
+          }
+        ],
+        "overall_mean": 93.38,
+        "total_missing_hours": 0
+      },
+      {
+        "sensor_id": "S4",
+        "sensor_key": "SO2",
+        "param": "SO2_ppb",
+        "unit": "ppb",
+        "normal_range": [
+          2,
+          15
+        ],
+        "daily_means": [
+          {
+            "day": 1,
+            "mean": 0.27,
+            "min": 0.1,
+            "max": 0.4,
+            "missing_hours": 0
+          },
+          {
+            "day": 2,
+            "mean": 0.16,
+            "min": 0.1,
+            "max": 0.2,
+            "missing_hours": 0
+          },
+          {
+            "day": 3,
+            "mean": 0.1,
+            "min": 0.0,
+            "max": 0.2,
+            "missing_hours": 0
+          },
+          {
+            "day": 4,
+            "mean": 0.04,
+            "min": 0.0,
+            "max": 0.1,
+            "missing_hours": 0
+          },
+          {
+            "day": 5,
+            "mean": 0.09,
+            "min": 0.0,
+            "max": 0.1,
+            "missing_hours": 0
+          },
+          {
+            "day": 6,
+            "mean": 0.15,
+            "min": 0.1,
+            "max": 0.3,
+            "missing_hours": 0
+          },
+          {
+            "day": 7,
+            "mean": 0.18,
+            "min": 0.0,
+            "max": 0.6,
+            "missing_hours": 0
+          }
+        ],
+        "overall_mean": 0.14,
+        "total_missing_hours": 0
+      },
+      {
+        "sensor_id": "S5",
+        "sensor_key": "CO",
+        "param": "CO_ppb",
+        "unit": "ppb",
+        "normal_range": [
+          200,
+          800
+        ],
+        "daily_means": [
+          {
+            "day": 1,
+            "mean": 159.17,
+            "min": 138.0,
+            "max": 190.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 2,
+            "mean": 159.29,
+            "min": 144.0,
+            "max": 166.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 3,
+            "mean": 122.0,
+            "min": 111.0,
+            "max": 143.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 4,
+            "mean": 159.17,
+            "min": 143.0,
+            "max": 170.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 5,
+            "mean": 165.17,
+            "min": 157.0,
+            "max": 175.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 6,
+            "mean": 143.42,
+            "min": 128.0,
+            "max": 161.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 7,
+            "mean": 156.17,
+            "min": 143.0,
+            "max": 163.0,
+            "missing_hours": 0
+          }
+        ],
+        "overall_mean": 152.06,
+        "total_missing_hours": 0
+      }
+    ]
+  },
+  {
+    "scenario_id": 6,
+    "network_id": "RUHR-VALLEY-9",
+    "location": "Heavy Industrial Monitor Network, Essen, Germany",
+    "location_key": "essen",
+    "lat": 51.46,
+    "lon": 7.01,
+    "period_days": 7,
+    "sensors": [
+      {
+        "sensor_id": "S1",
+        "sensor_key": "PM25",
+        "param": "PM25_ugm3",
+        "unit": "\u00b5g/m\u00b3",
+        "normal_range": [
+          5,
+          35
+        ],
+        "daily_means": [
+          {
+            "day": 1,
+            "mean": 14.92,
+            "min": 9.9,
+            "max": 18.4,
+            "missing_hours": 0
+          },
+          {
+            "day": 2,
+            "mean": 23.36,
+            "min": 16.2,
+            "max": 36.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 3,
+            "mean": 27.2,
+            "min": 16.8,
+            "max": 41.7,
+            "missing_hours": 0
+          },
+          {
+            "day": 4,
+            "mean": 8.56,
+            "min": 3.9,
+            "max": 16.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 5,
+            "mean": 7.25,
+            "min": 3.1,
+            "max": 12.8,
+            "missing_hours": 0
+          },
+          {
+            "day": 6,
+            "mean": 10.56,
+            "min": 7.0,
+            "max": 16.9,
+            "missing_hours": 0
+          },
+          {
+            "day": 7,
+            "mean": 8.38,
+            "min": 5.4,
+            "max": 14.2,
+            "missing_hours": 0
+          }
+        ],
+        "overall_mean": 14.32,
+        "total_missing_hours": 0
+      },
+      {
+        "sensor_id": "S2",
+        "sensor_key": "NO2",
+        "param": "NO2_ppb",
+        "unit": "ppb",
+        "normal_range": [
+          10,
+          50
+        ],
+        "daily_means": [
+          {
+            "day": 1,
+            "mean": 12.26,
+            "min": 4.4,
+            "max": 22.6,
+            "missing_hours": 0
+          },
+          {
+            "day": 2,
+            "mean": 37.94,
+            "min": 15.2,
+            "max": 78.6,
+            "missing_hours": 0
+          },
+          {
+            "day": 3,
+            "mean": 24.51,
+            "min": 8.5,
+            "max": 61.2,
+            "missing_hours": 0
+          },
+          {
+            "day": 4,
+            "mean": 13.5,
+            "min": 4.6,
+            "max": 28.2,
+            "missing_hours": 0
+          },
+          {
+            "day": 5,
+            "mean": 16.83,
+            "min": 4.8,
+            "max": 31.2,
+            "missing_hours": 0
+          },
+          {
+            "day": 6,
+            "mean": 22.86,
+            "min": 8.8,
+            "max": 41.3,
+            "missing_hours": 0
+          },
+          {
+            "day": 7,
+            "mean": 15.03,
+            "min": 6.0,
+            "max": 31.9,
+            "missing_hours": 0
+          }
+        ],
+        "overall_mean": 20.42,
+        "total_missing_hours": 0
+      },
+      {
+        "sensor_id": "S3",
+        "sensor_key": "O3",
+        "param": "O3_ppb",
+        "unit": "ppb",
+        "normal_range": [
+          20,
+          60
+        ],
+        "daily_means": [
+          {
+            "day": 1,
+            "mean": 59.33,
+            "min": 32.0,
+            "max": 92.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 2,
+            "mean": 38.83,
+            "min": 11.0,
+            "max": 78.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 3,
+            "mean": 63.67,
+            "min": 11.0,
+            "max": 95.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 4,
+            "mean": 75.88,
+            "min": 62.0,
+            "max": 87.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 5,
+            "mean": 73.46,
+            "min": 52.0,
+            "max": 96.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 6,
+            "mean": 62.17,
+            "min": 25.0,
+            "max": 87.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 7,
+            "mean": 67.96,
+            "min": 46.0,
+            "max": 91.0,
+            "missing_hours": 0
+          }
+        ],
+        "overall_mean": 63.04,
+        "total_missing_hours": 0
+      },
+      {
+        "sensor_id": "S4",
+        "sensor_key": "SO2",
+        "param": "SO2_ppb",
+        "unit": "ppb",
+        "normal_range": [
+          2,
+          15
+        ],
+        "daily_means": [
+          {
+            "day": 1,
+            "mean": 3.6,
+            "min": 2.8,
+            "max": 4.5,
+            "missing_hours": 0
+          },
+          {
+            "day": 2,
+            "mean": 14.3,
+            "min": 3.1,
+            "max": 25.7,
+            "missing_hours": 0
+          },
+          {
+            "day": 3,
+            "mean": 5.71,
+            "min": 3.1,
+            "max": 9.2,
+            "missing_hours": 0
+          },
+          {
+            "day": 4,
+            "mean": 4.36,
+            "min": 2.0,
+            "max": 8.2,
+            "missing_hours": 0
+          },
+          {
+            "day": 5,
+            "mean": 6.1,
+            "min": 2.3,
+            "max": 10.7,
+            "missing_hours": 0
+          },
+          {
+            "day": 6,
+            "mean": 8.76,
+            "min": 3.2,
+            "max": 15.3,
+            "missing_hours": 0
+          },
+          {
+            "day": 7,
+            "mean": 4.46,
+            "min": 1.7,
+            "max": 10.5,
+            "missing_hours": 0
+          }
+        ],
+        "overall_mean": 6.76,
+        "total_missing_hours": 0
+      },
+      {
+        "sensor_id": "S5",
+        "sensor_key": "CO",
+        "param": "CO_ppb",
+        "unit": "ppb",
+        "normal_range": [
+          200,
+          800
+        ],
+        "daily_means": [
+          {
+            "day": 1,
+            "mean": 222.5,
+            "min": 185.0,
+            "max": 254.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 2,
+            "mean": 433.71,
+            "min": 229.0,
+            "max": 783.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 3,
+            "mean": 285.12,
+            "min": 197.0,
+            "max": 539.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 4,
+            "mean": 227.46,
+            "min": 183.0,
+            "max": 288.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 5,
+            "mean": 245.0,
+            "min": 182.0,
+            "max": 332.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 6,
+            "mean": 339.62,
+            "min": 204.0,
+            "max": 597.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 7,
+            "mean": 228.54,
+            "min": 176.0,
+            "max": 342.0,
+            "missing_hours": 0
+          }
+        ],
+        "overall_mean": 283.14,
+        "total_missing_hours": 0
+      }
+    ]
+  },
+  {
+    "scenario_id": 7,
+    "network_id": "PEARL-RIVER-11",
+    "location": "Industrial Zone Air Quality Network, Guangzhou, China",
+    "location_key": "guangzhou",
+    "lat": 23.13,
+    "lon": 113.26,
+    "period_days": 7,
+    "sensors": [
+      {
+        "sensor_id": "S1",
+        "sensor_key": "PM25",
+        "param": "PM25_ugm3",
+        "unit": "\u00b5g/m\u00b3",
+        "normal_range": [
+          5,
+          35
+        ],
+        "daily_means": [
+          {
+            "day": 1,
+            "mean": 51.0,
+            "min": 41.1,
+            "max": 74.3,
+            "missing_hours": 0
+          },
+          {
+            "day": 2,
+            "mean": 56.33,
+            "min": 44.8,
+            "max": 88.5,
+            "missing_hours": 0
+          },
+          {
+            "day": 3,
+            "mean": 67.99,
+            "min": 42.1,
+            "max": 105.7,
+            "missing_hours": 0
+          },
+          {
+            "day": 4,
+            "mean": 61.68,
+            "min": 32.0,
+            "max": 128.1,
+            "missing_hours": 0
+          },
+          {
+            "day": 5,
+            "mean": 35.43,
+            "min": 22.2,
+            "max": 52.5,
+            "missing_hours": 0
+          },
+          {
+            "day": 6,
+            "mean": 56.3,
+            "min": 42.8,
+            "max": 95.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 7,
+            "mean": 49.14,
+            "min": 31.9,
+            "max": 84.5,
+            "missing_hours": 0
+          }
+        ],
+        "overall_mean": 53.98,
+        "total_missing_hours": 0
+      },
+      {
+        "sensor_id": "S2",
+        "sensor_key": "NO2",
+        "param": "NO2_ppb",
+        "unit": "ppb",
+        "normal_range": [
+          10,
+          50
+        ],
+        "daily_means": [
+          {
+            "day": 1,
+            "mean": 67.62,
+            "min": 32.2,
+            "max": 94.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 2,
+            "mean": 68.84,
+            "min": 31.7,
+            "max": 114.5,
+            "missing_hours": 0
+          },
+          {
+            "day": 3,
+            "mean": 69.34,
+            "min": 25.5,
+            "max": 105.8,
+            "missing_hours": 0
+          },
+          {
+            "day": 4,
+            "mean": 67.22,
+            "min": 17.2,
+            "max": 153.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 5,
+            "mean": 52.52,
+            "min": 14.4,
+            "max": 83.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 6,
+            "mean": 72.23,
+            "min": 34.0,
+            "max": 103.9,
+            "missing_hours": 0
+          },
+          {
+            "day": 7,
+            "mean": 75.51,
+            "min": 47.8,
+            "max": 92.1,
+            "missing_hours": 0
+          }
+        ],
+        "overall_mean": 67.61,
+        "total_missing_hours": 0
+      },
+      {
+        "sensor_id": "S3",
+        "sensor_key": "O3",
+        "param": "O3_ppb",
+        "unit": "ppb",
+        "normal_range": [
+          20,
+          60
+        ],
+        "daily_means": [
+          {
+            "day": 1,
+            "mean": 35.5,
+            "min": 4.0,
+            "max": 88.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 2,
+            "mean": 34.62,
+            "min": 5.0,
+            "max": 89.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 3,
+            "mean": 30.33,
+            "min": 0.0,
+            "max": 98.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 4,
+            "mean": 52.96,
+            "min": 2.0,
+            "max": 167.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 5,
+            "mean": 38.79,
+            "min": 0.0,
+            "max": 97.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 6,
+            "mean": 29.21,
+            "min": 0.0,
+            "max": 89.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 7,
+            "mean": 14.71,
+            "min": 1.0,
+            "max": 44.0,
+            "missing_hours": 0
+          }
+        ],
+        "overall_mean": 33.73,
+        "total_missing_hours": 0
+      },
+      {
+        "sensor_id": "S4",
+        "sensor_key": "SO2",
+        "param": "SO2_ppb",
+        "unit": "ppb",
+        "normal_range": [
+          2,
+          15
+        ],
+        "daily_means": [
+          {
+            "day": 1,
+            "mean": 46.28,
+            "min": 30.4,
+            "max": 66.7,
+            "missing_hours": 0
+          },
+          {
+            "day": 2,
+            "mean": 48.4,
+            "min": 31.1,
+            "max": 65.3,
+            "missing_hours": 0
+          },
+          {
+            "day": 3,
+            "mean": 47.26,
+            "min": 22.6,
+            "max": 68.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 4,
+            "mean": 45.49,
+            "min": 29.9,
+            "max": 65.6,
+            "missing_hours": 0
+          },
+          {
+            "day": 5,
+            "mean": 36.94,
+            "min": 12.2,
+            "max": 60.3,
+            "missing_hours": 0
+          },
+          {
+            "day": 6,
+            "mean": 52.25,
+            "min": 38.7,
+            "max": 62.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 7,
+            "mean": 49.91,
+            "min": 37.1,
+            "max": 67.3,
+            "missing_hours": 0
+          }
+        ],
+        "overall_mean": 46.65,
+        "total_missing_hours": 0
+      },
+      {
+        "sensor_id": "S5",
+        "sensor_key": "CO",
+        "param": "CO_ppb",
+        "unit": "ppb",
+        "normal_range": [
+          200,
+          800
+        ],
+        "daily_means": [
+          {
+            "day": 1,
+            "mean": 551.5,
+            "min": 410.0,
+            "max": 780.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 2,
+            "mean": 525.96,
+            "min": 396.0,
+            "max": 813.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 3,
+            "mean": 576.33,
+            "min": 369.0,
+            "max": 910.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 4,
+            "mean": 532.5,
+            "min": 412.0,
+            "max": 939.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 5,
+            "mean": 420.38,
+            "min": 313.0,
+            "max": 533.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 6,
+            "mean": 452.08,
+            "min": 332.0,
+            "max": 579.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 7,
+            "mean": 551.83,
+            "min": 378.0,
+            "max": 947.0,
+            "missing_hours": 0
+          }
+        ],
+        "overall_mean": 515.8,
+        "total_missing_hours": 0
+      }
+    ]
+  },
+  {
+    "scenario_id": 8,
+    "network_id": "GREAT-PLAINS-14",
+    "location": "Agricultural Region Air Monitor, Wichita, Kansas USA",
+    "location_key": "wichita",
+    "lat": 37.69,
+    "lon": -97.34,
+    "period_days": 7,
+    "sensors": [
+      {
+        "sensor_id": "S1",
+        "sensor_key": "PM25",
+        "param": "PM25_ugm3",
+        "unit": "\u00b5g/m\u00b3",
+        "normal_range": [
+          5,
+          35
+        ],
+        "daily_means": [
+          {
+            "day": 1,
+            "mean": 4.21,
+            "min": 2.8,
+            "max": 6.7,
+            "missing_hours": 0
+          },
+          {
+            "day": 2,
+            "mean": 1.58,
+            "min": 0.0,
+            "max": 5.5,
+            "missing_hours": 0
+          },
+          {
+            "day": 3,
+            "mean": 4.32,
+            "min": 2.0,
+            "max": 7.5,
+            "missing_hours": 0
+          },
+          {
+            "day": 4,
+            "mean": 6.69,
+            "min": 1.3,
+            "max": 12.6,
+            "missing_hours": 0
+          },
+          {
+            "day": 5,
+            "mean": 3.43,
+            "min": 1.3,
+            "max": 4.5,
+            "missing_hours": 0
+          },
+          {
+            "day": 6,
+            "mean": 5.1,
+            "min": 2.7,
+            "max": 7.7,
+            "missing_hours": 0
+          },
+          {
+            "day": 7,
+            "mean": 2.2,
+            "min": 1.4,
+            "max": 3.1,
+            "missing_hours": 0
+          }
+        ],
+        "overall_mean": 3.93,
+        "total_missing_hours": 0
+      },
+      {
+        "sensor_id": "S2",
+        "sensor_key": "NO2",
+        "param": "NO2_ppb",
+        "unit": "ppb",
+        "normal_range": [
+          10,
+          50
+        ],
+        "daily_means": [
+          {
+            "day": 1,
+            "mean": 4.91,
+            "min": 1.2,
+            "max": 8.2,
+            "missing_hours": 0
+          },
+          {
+            "day": 2,
+            "mean": 2.64,
+            "min": 1.6,
+            "max": 3.2,
+            "missing_hours": 0
+          },
+          {
+            "day": 3,
+            "mean": 3.65,
+            "min": 0.9,
+            "max": 6.1,
+            "missing_hours": 0
+          },
+          {
+            "day": 4,
+            "mean": 4.67,
+            "min": 1.5,
+            "max": 7.2,
+            "missing_hours": 0
+          },
+          {
+            "day": 5,
+            "mean": 3.27,
+            "min": 1.0,
+            "max": 5.7,
+            "missing_hours": 0
+          },
+          {
+            "day": 6,
+            "mean": 2.38,
+            "min": 1.1,
+            "max": 4.3,
+            "missing_hours": 0
+          },
+          {
+            "day": 7,
+            "mean": 2.8,
+            "min": 0.9,
+            "max": 5.1,
+            "missing_hours": 0
+          }
+        ],
+        "overall_mean": 3.47,
+        "total_missing_hours": 0
+      },
+      {
+        "sensor_id": "S3",
+        "sensor_key": "O3",
+        "param": "O3_ppb",
+        "unit": "ppb",
+        "normal_range": [
+          20,
+          60
+        ],
+        "daily_means": [
+          {
+            "day": 1,
+            "mean": 78.54,
+            "min": 57.0,
+            "max": 97.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 2,
+            "mean": 79.04,
+            "min": 66.0,
+            "max": 93.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 3,
+            "mean": 81.08,
+            "min": 55.0,
+            "max": 115.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 4,
+            "mean": 91.33,
+            "min": 66.0,
+            "max": 115.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 5,
+            "mean": 88.75,
+            "min": 76.0,
+            "max": 104.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 6,
+            "mean": 82.79,
+            "min": 64.0,
+            "max": 100.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 7,
+            "mean": 86.92,
+            "min": 62.0,
+            "max": 113.0,
+            "missing_hours": 0
+          }
+        ],
+        "overall_mean": 84.06,
+        "total_missing_hours": 0
+      },
+      {
+        "sensor_id": "S4",
+        "sensor_key": "SO2",
+        "param": "SO2_ppb",
+        "unit": "ppb",
+        "normal_range": [
+          2,
+          15
+        ],
+        "daily_means": [
+          {
+            "day": 1,
+            "mean": 1.05,
+            "min": 0.4,
+            "max": 1.4,
+            "missing_hours": 0
+          },
+          {
+            "day": 2,
+            "mean": 0.74,
+            "min": 0.4,
+            "max": 2.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 3,
+            "mean": 1.78,
+            "min": 1.3,
+            "max": 2.6,
+            "missing_hours": 0
+          },
+          {
+            "day": 4,
+            "mean": 1.35,
+            "min": 0.9,
+            "max": 1.9,
+            "missing_hours": 0
+          },
+          {
+            "day": 5,
+            "mean": 0.67,
+            "min": 0.4,
+            "max": 0.9,
+            "missing_hours": 0
+          },
+          {
+            "day": 6,
+            "mean": 0.64,
+            "min": 0.4,
+            "max": 1.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 7,
+            "mean": 0.85,
+            "min": 0.7,
+            "max": 1.0,
+            "missing_hours": 0
+          }
+        ],
+        "overall_mean": 1.01,
+        "total_missing_hours": 0
+      },
+      {
+        "sensor_id": "S5",
+        "sensor_key": "CO",
+        "param": "CO_ppb",
+        "unit": "ppb",
+        "normal_range": [
+          200,
+          800
+        ],
+        "daily_means": [
+          {
+            "day": 1,
+            "mean": 188.54,
+            "min": 151.0,
+            "max": 255.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 2,
+            "mean": 168.96,
+            "min": 158.0,
+            "max": 225.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 3,
+            "mean": 194.88,
+            "min": 174.0,
+            "max": 237.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 4,
+            "mean": 209.75,
+            "min": 164.0,
+            "max": 254.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 5,
+            "mean": 171.71,
+            "min": 151.0,
+            "max": 204.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 6,
+            "mean": 180.79,
+            "min": 149.0,
+            "max": 212.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 7,
+            "mean": 171.21,
+            "min": 159.0,
+            "max": 188.0,
+            "missing_hours": 0
+          }
+        ],
+        "overall_mean": 183.69,
+        "total_missing_hours": 0
+      }
+    ]
+  },
+  {
+    "scenario_id": 9,
+    "network_id": "THAMES-ESTUARY-17",
+    "location": "Port Industrial Zone Monitor, Tilbury, Thames Estuary UK",
+    "location_key": "tilbury",
+    "lat": 51.46,
+    "lon": 0.36,
+    "period_days": 7,
+    "sensors": [
+      {
+        "sensor_id": "S1",
+        "sensor_key": "PM25",
+        "param": "PM25_ugm3",
+        "unit": "\u00b5g/m\u00b3",
+        "normal_range": [
+          5,
+          35
+        ],
+        "daily_means": [
+          {
+            "day": 1,
+            "mean": 15.35,
+            "min": 9.2,
+            "max": 25.4,
+            "missing_hours": 0
+          },
+          {
+            "day": 2,
+            "mean": 29.97,
+            "min": 24.2,
+            "max": 36.8,
+            "missing_hours": 0
+          },
+          {
+            "day": 3,
+            "mean": 14.95,
+            "min": 4.4,
+            "max": 37.1,
+            "missing_hours": 0
+          },
+          {
+            "day": 4,
+            "mean": 3.45,
+            "min": 1.8,
+            "max": 5.1,
+            "missing_hours": 0
+          },
+          {
+            "day": 5,
+            "mean": 6.18,
+            "min": 2.6,
+            "max": 14.2,
+            "missing_hours": 0
+          },
+          {
+            "day": 6,
+            "mean": 8.66,
+            "min": 3.5,
+            "max": 15.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 7,
+            "mean": 5.65,
+            "min": 3.1,
+            "max": 10.6,
+            "missing_hours": 0
+          }
+        ],
+        "overall_mean": 12.03,
+        "total_missing_hours": 0
+      },
+      {
+        "sensor_id": "S2",
+        "sensor_key": "NO2",
+        "param": "NO2_ppb",
+        "unit": "ppb",
+        "normal_range": [
+          10,
+          50
+        ],
+        "daily_means": [
+          {
+            "day": 1,
+            "mean": 27.3,
+            "min": 10.3,
+            "max": 52.9,
+            "missing_hours": 0
+          },
+          {
+            "day": 2,
+            "mean": 35.04,
+            "min": 17.2,
+            "max": 62.6,
+            "missing_hours": 0
+          },
+          {
+            "day": 3,
+            "mean": 10.33,
+            "min": 4.8,
+            "max": 22.2,
+            "missing_hours": 0
+          },
+          {
+            "day": 4,
+            "mean": 7.48,
+            "min": 3.8,
+            "max": 14.5,
+            "missing_hours": 0
+          },
+          {
+            "day": 5,
+            "mean": 20.07,
+            "min": 4.8,
+            "max": 73.5,
+            "missing_hours": 0
+          },
+          {
+            "day": 6,
+            "mean": 22.75,
+            "min": 9.6,
+            "max": 72.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 7,
+            "mean": 10.85,
+            "min": 4.2,
+            "max": 17.8,
+            "missing_hours": 0
+          }
+        ],
+        "overall_mean": 19.12,
+        "total_missing_hours": 0
+      },
+      {
+        "sensor_id": "S3",
+        "sensor_key": "O3",
+        "param": "O3_ppb",
+        "unit": "ppb",
+        "normal_range": [
+          20,
+          60
+        ],
+        "daily_means": [
+          {
+            "day": 1,
+            "mean": 40.38,
+            "min": 14.0,
+            "max": 72.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 2,
+            "mean": 34.08,
+            "min": 2.0,
+            "max": 73.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 3,
+            "mean": 65.67,
+            "min": 46.0,
+            "max": 83.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 4,
+            "mean": 84.58,
+            "min": 71.0,
+            "max": 95.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 5,
+            "mean": 65.21,
+            "min": 3.0,
+            "max": 97.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 6,
+            "mean": 52.12,
+            "min": 5.0,
+            "max": 75.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 7,
+            "mean": 75.46,
+            "min": 60.0,
+            "max": 91.0,
+            "missing_hours": 0
+          }
+        ],
+        "overall_mean": 59.64,
+        "total_missing_hours": 0
+      },
+      {
+        "sensor_id": "S4",
+        "sensor_key": "SO2",
+        "param": "SO2_ppb",
+        "unit": "ppb",
+        "normal_range": [
+          2,
+          15
+        ],
+        "daily_means": [
+          {
+            "day": 1,
+            "mean": 1.56,
+            "min": 0.9,
+            "max": 2.6,
+            "missing_hours": 0
+          },
+          {
+            "day": 2,
+            "mean": 3.02,
+            "min": 1.9,
+            "max": 4.2,
+            "missing_hours": 0
+          },
+          {
+            "day": 3,
+            "mean": 1.02,
+            "min": 0.4,
+            "max": 2.2,
+            "missing_hours": 0
+          },
+          {
+            "day": 4,
+            "mean": 0.77,
+            "min": 0.4,
+            "max": 1.4,
+            "missing_hours": 0
+          },
+          {
+            "day": 5,
+            "mean": 1.72,
+            "min": 0.8,
+            "max": 4.9,
+            "missing_hours": 0
+          },
+          {
+            "day": 6,
+            "mean": 1.69,
+            "min": 0.6,
+            "max": 4.3,
+            "missing_hours": 0
+          },
+          {
+            "day": 7,
+            "mean": 1.4,
+            "min": 0.6,
+            "max": 2.1,
+            "missing_hours": 0
+          }
+        ],
+        "overall_mean": 1.6,
+        "total_missing_hours": 0
+      },
+      {
+        "sensor_id": "S5",
+        "sensor_key": "CO",
+        "param": "CO_ppb",
+        "unit": "ppb",
+        "normal_range": [
+          200,
+          800
+        ],
+        "daily_means": [
+          {
+            "day": 1,
+            "mean": 205.92,
+            "min": 174.0,
+            "max": 291.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 2,
+            "mean": 270.46,
+            "min": 215.0,
+            "max": 317.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 3,
+            "mean": 161.92,
+            "min": 128.0,
+            "max": 222.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 4,
+            "mean": 160.0,
+            "min": 130.0,
+            "max": 190.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 5,
+            "mean": 198.33,
+            "min": 171.0,
+            "max": 309.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 6,
+            "mean": 193.0,
+            "min": 161.0,
+            "max": 283.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 7,
+            "mean": 175.08,
+            "min": 158.0,
+            "max": 200.0,
+            "missing_hours": 0
+          }
+        ],
+        "overall_mean": 194.96,
+        "total_missing_hours": 0
+      }
+    ]
+  }
+]

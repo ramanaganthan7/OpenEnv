@@ -153,7 +153,16 @@ climatewatch-env/                   ← root
 ├── openenv.yaml                    ← MANDATORY: environment metadata
 ├── Dockerfile                      ← MANDATORY: container definition
 ├── requirements.txt                ← Python dependencies
+├── pyproject.toml                  ← uv + taskipy dev config
 ├── README.md                       ← Full documentation + HF Spaces header
+├── DEPLOYMENT_GUIDE.md             ← Step-by-step HF deployment guide
+├── TESTING.md                      ← All curl commands for live verification
+├── architecture.svg                ← System architecture diagram (embedded in README)
+│
+├── scripts/
+│   ├── fetch_real_data.py          ← Fetches real data from Open-Meteo CAMS/ECMWF API
+│   ├── kill_port.py                ← Kills port 7860 before server start
+│   └── check_live.py              ← Tests all endpoints against live HF Space
 │
 ├── app/
 │   ├── __init__.py
@@ -169,13 +178,43 @@ climatewatch-env/                   ← root
 │   │   └── task3_cascade.py        ← Task 3 scenario loader + grader
 │   │
 │   └── data/
-│       ├── task1_scenarios.json    ← 20 pre-generated Task 1 scenarios
-│       ├── task2_scenarios.json    ← 10 pre-generated Task 2 scenarios
-│       └── task3_scenarios.json    ← 5 pre-generated Task 3 scenarios
+│       ├── real_task1.json         ← 20 REAL scenarios (Open-Meteo CAMS/ECMWF)
+│       │                              24hr PM2.5/NO2/O3/SO2/CO/CH4 readings
+│       │                              20 global industrial monitoring locations
+│       ├── real_task2.json         ← 10 REAL network scenarios
+│       │                              7-day multi-sensor daily means
+│       │                              10 industrial network locations
+│       └── real_task3.json         ← 5 REAL cascade network scenarios
+│                                      30-day sensor status timelines
+│                                      5 industrial complexes (Kuwait, TX, Beijing...)
 │
 └── tests/
-    ├── test_graders.py             ← Verify graders return different scores
-    └── test_endpoints.py           ← Verify all endpoints work
+    ├── __init__.py
+    ├── test_graders.py             ← 22 tests: graders return different scores
+    └── test_endpoints.py           ← 41 tests: all endpoints work correctly
+```
+
+## REAL DATA ARCHITECTURE
+
+```
+Open-Meteo Air Quality API (free, no key, CAMS/ECMWF backed)
+  https://air-quality-api.open-meteo.com/v1/air-quality
+  ?latitude=29.76&longitude=-95.37   <- Houston TX (BP refinery corridor)
+  &hourly=pm2_5,nitrogen_dioxide,ozone,sulphur_dioxide,carbon_monoxide,methane
+  &past_days=30
+
+Returns actual measured values:
+  NO2: [14.2, 16.8, 22.4, 18.7, 12.3, ...]  <- real ppb readings
+  PM2.5: [11.3, 10.6, 9.5, 9.1, 9.0, ...]   <- real ug/m3 readings
+
+Pre-fetched by: scripts/fetch_real_data.py (run once, committed to repo)
+Stored in: app/data/real_task1.json, real_task2.json, real_task3.json
+
+At episode time:
+  1. Load real baseline from JSON
+  2. Inject fault at specific hours/days (deterministic by seed)
+  3. Ground truth = only the injected hours/sensors
+  4. Grader compares agent flags against known injections
 ```
 
 ---

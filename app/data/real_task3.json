@@ -1,0 +1,8307 @@
+[
+  {
+    "scenario_id": 0,
+    "network_id": "REFINERY-NORTH",
+    "location": "Crude Oil Refinery, North Sector, Kuwait",
+    "location_key": "ahmadi_kuwait",
+    "lat": 29.08,
+    "lon": 48.08,
+    "period_days": 30,
+    "sensors": [
+      {
+        "sensor_id": "S1",
+        "sensor_key": "CH4",
+        "param": "CH4_ppb",
+        "unit": "ppb",
+        "normal_range": [
+          1800,
+          2000
+        ],
+        "daily_means": [
+          {
+            "day": 1,
+            "mean": 2183.92,
+            "missing_hours": 0
+          },
+          {
+            "day": 2,
+            "mean": 1676.42,
+            "missing_hours": 0
+          },
+          {
+            "day": 3,
+            "mean": 1638.42,
+            "missing_hours": 0
+          },
+          {
+            "day": 4,
+            "mean": 1694.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 5,
+            "mean": 1709.12,
+            "missing_hours": 0
+          },
+          {
+            "day": 6,
+            "mean": 1748.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 7,
+            "mean": 1938.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 8,
+            "mean": 2018.62,
+            "missing_hours": 0
+          },
+          {
+            "day": 9,
+            "mean": 1917.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 10,
+            "mean": 1762.83,
+            "missing_hours": 0
+          },
+          {
+            "day": 11,
+            "mean": 1668.62,
+            "missing_hours": 0
+          },
+          {
+            "day": 12,
+            "mean": 1911.58,
+            "missing_hours": 0
+          },
+          {
+            "day": 13,
+            "mean": 2087.79,
+            "missing_hours": 0
+          },
+          {
+            "day": 14,
+            "mean": 1757.67,
+            "missing_hours": 0
+          },
+          {
+            "day": 15,
+            "mean": 1940.42,
+            "missing_hours": 0
+          },
+          {
+            "day": 16,
+            "mean": 2395.17,
+            "missing_hours": 0
+          },
+          {
+            "day": 17,
+            "mean": 1930.42,
+            "missing_hours": 0
+          },
+          {
+            "day": 18,
+            "mean": 1875.62,
+            "missing_hours": 0
+          },
+          {
+            "day": 19,
+            "mean": 1753.75,
+            "missing_hours": 0
+          },
+          {
+            "day": 20,
+            "mean": 1840.58,
+            "missing_hours": 0
+          },
+          {
+            "day": 21,
+            "mean": 2029.25,
+            "missing_hours": 0
+          },
+          {
+            "day": 22,
+            "mean": 1961.25,
+            "missing_hours": 0
+          },
+          {
+            "day": 23,
+            "mean": 1939.42,
+            "missing_hours": 0
+          },
+          {
+            "day": 24,
+            "mean": 1691.92,
+            "missing_hours": 0
+          },
+          {
+            "day": 25,
+            "mean": 1834.58,
+            "missing_hours": 0
+          },
+          {
+            "day": 26,
+            "mean": 1758.54,
+            "missing_hours": 0
+          },
+          {
+            "day": 27,
+            "mean": 1695.96,
+            "missing_hours": 0
+          },
+          {
+            "day": 28,
+            "mean": 1571.12,
+            "missing_hours": 0
+          },
+          {
+            "day": 29,
+            "mean": 1699.12,
+            "missing_hours": 0
+          },
+          {
+            "day": 30,
+            "mean": 1828.29,
+            "missing_hours": 0
+          }
+        ],
+        "overall_mean": 1848.58,
+        "total_missing_hours": 0,
+        "offline_days": 0
+      },
+      {
+        "sensor_id": "S2",
+        "sensor_key": "CO",
+        "param": "CO_ppb",
+        "unit": "ppb",
+        "normal_range": [
+          200,
+          800
+        ],
+        "daily_means": [
+          {
+            "day": 1,
+            "mean": 245.58,
+            "missing_hours": 0
+          },
+          {
+            "day": 2,
+            "mean": 219.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 3,
+            "mean": 221.83,
+            "missing_hours": 0
+          },
+          {
+            "day": 4,
+            "mean": 239.29,
+            "missing_hours": 0
+          },
+          {
+            "day": 5,
+            "mean": 248.79,
+            "missing_hours": 0
+          },
+          {
+            "day": 6,
+            "mean": 293.96,
+            "missing_hours": 0
+          },
+          {
+            "day": 7,
+            "mean": 258.54,
+            "missing_hours": 0
+          },
+          {
+            "day": 8,
+            "mean": 322.08,
+            "missing_hours": 0
+          },
+          {
+            "day": 9,
+            "mean": 258.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 10,
+            "mean": 229.83,
+            "missing_hours": 0
+          },
+          {
+            "day": 11,
+            "mean": 236.42,
+            "missing_hours": 0
+          },
+          {
+            "day": 12,
+            "mean": 306.5,
+            "missing_hours": 0
+          },
+          {
+            "day": 13,
+            "mean": 293.83,
+            "missing_hours": 0
+          },
+          {
+            "day": 14,
+            "mean": 197.12,
+            "missing_hours": 0
+          },
+          {
+            "day": 15,
+            "mean": 258.67,
+            "missing_hours": 0
+          },
+          {
+            "day": 16,
+            "mean": 380.17,
+            "missing_hours": 0
+          },
+          {
+            "day": 17,
+            "mean": 220.17,
+            "missing_hours": 0
+          },
+          {
+            "day": 18,
+            "mean": 290.83,
+            "missing_hours": 0
+          },
+          {
+            "day": 19,
+            "mean": 258.38,
+            "missing_hours": 0
+          },
+          {
+            "day": 20,
+            "mean": 248.67,
+            "missing_hours": 0
+          },
+          {
+            "day": 21,
+            "mean": 230.08,
+            "missing_hours": 0
+          },
+          {
+            "day": 22,
+            "mean": 351.38,
+            "missing_hours": 0
+          },
+          {
+            "day": 23,
+            "mean": 242.25,
+            "missing_hours": 0
+          },
+          {
+            "day": 24,
+            "mean": 203.33,
+            "missing_hours": 0
+          },
+          {
+            "day": 25,
+            "mean": 230.38,
+            "missing_hours": 0
+          },
+          {
+            "day": 26,
+            "mean": 198.71,
+            "missing_hours": 0
+          },
+          {
+            "day": 27,
+            "mean": 173.17,
+            "missing_hours": 0
+          },
+          {
+            "day": 28,
+            "mean": 155.83,
+            "missing_hours": 0
+          },
+          {
+            "day": 29,
+            "mean": 179.75,
+            "missing_hours": 0
+          },
+          {
+            "day": 30,
+            "mean": 276.04,
+            "missing_hours": 0
+          }
+        ],
+        "overall_mean": 248.95,
+        "total_missing_hours": 0,
+        "offline_days": 0
+      },
+      {
+        "sensor_id": "S3",
+        "sensor_key": "NO2",
+        "param": "NO2_ppb",
+        "unit": "ppb",
+        "normal_range": [
+          10,
+          50
+        ],
+        "daily_means": [
+          {
+            "day": 1,
+            "mean": 49.16,
+            "missing_hours": 0
+          },
+          {
+            "day": 2,
+            "mean": 23.24,
+            "missing_hours": 0
+          },
+          {
+            "day": 3,
+            "mean": 21.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 4,
+            "mean": 19.78,
+            "missing_hours": 0
+          },
+          {
+            "day": 5,
+            "mean": 23.08,
+            "missing_hours": 0
+          },
+          {
+            "day": 6,
+            "mean": 29.16,
+            "missing_hours": 0
+          },
+          {
+            "day": 7,
+            "mean": 55.47,
+            "missing_hours": 0
+          },
+          {
+            "day": 8,
+            "mean": 64.59,
+            "missing_hours": 0
+          },
+          {
+            "day": 9,
+            "mean": 64.55,
+            "missing_hours": 0
+          },
+          {
+            "day": 10,
+            "mean": 39.55,
+            "missing_hours": 0
+          },
+          {
+            "day": 11,
+            "mean": 27.64,
+            "missing_hours": 0
+          },
+          {
+            "day": 12,
+            "mean": 46.05,
+            "missing_hours": 0
+          },
+          {
+            "day": 13,
+            "mean": 53.91,
+            "missing_hours": 0
+          },
+          {
+            "day": 14,
+            "mean": 38.85,
+            "missing_hours": 0
+          },
+          {
+            "day": 15,
+            "mean": 56.14,
+            "missing_hours": 0
+          },
+          {
+            "day": 16,
+            "mean": 66.49,
+            "missing_hours": 0
+          },
+          {
+            "day": 17,
+            "mean": 40.26,
+            "missing_hours": 0
+          },
+          {
+            "day": 18,
+            "mean": 49.58,
+            "missing_hours": 0
+          },
+          {
+            "day": 19,
+            "mean": 35.47,
+            "missing_hours": 0
+          },
+          {
+            "day": 20,
+            "mean": 35.59,
+            "missing_hours": 0
+          },
+          {
+            "day": 21,
+            "mean": 33.65,
+            "missing_hours": 0
+          },
+          {
+            "day": 22,
+            "mean": 46.42,
+            "missing_hours": 0
+          },
+          {
+            "day": 23,
+            "mean": 43.84,
+            "missing_hours": 0
+          },
+          {
+            "day": 24,
+            "mean": 28.5,
+            "missing_hours": 0
+          },
+          {
+            "day": 25,
+            "mean": 36.49,
+            "missing_hours": 0
+          },
+          {
+            "day": 26,
+            "mean": 32.55,
+            "missing_hours": 0
+          },
+          {
+            "day": 27,
+            "mean": 33.16,
+            "missing_hours": 0
+          },
+          {
+            "day": 28,
+            "mean": 19.11,
+            "missing_hours": 0
+          },
+          {
+            "day": 29,
+            "mean": 34.94,
+            "missing_hours": 0
+          },
+          {
+            "day": 30,
+            "mean": 37.03,
+            "missing_hours": 0
+          }
+        ],
+        "overall_mean": 39.51,
+        "total_missing_hours": 0,
+        "offline_days": 0
+      },
+      {
+        "sensor_id": "S4",
+        "sensor_key": "CH4",
+        "param": "CH4_ppb",
+        "unit": "ppb",
+        "normal_range": [
+          1800,
+          2000
+        ],
+        "daily_means": [
+          {
+            "day": 1,
+            "mean": 2183.92,
+            "missing_hours": 0
+          },
+          {
+            "day": 2,
+            "mean": 1676.42,
+            "missing_hours": 0
+          },
+          {
+            "day": 3,
+            "mean": 1638.42,
+            "missing_hours": 0
+          },
+          {
+            "day": 4,
+            "mean": 1694.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 5,
+            "mean": 1709.12,
+            "missing_hours": 0
+          },
+          {
+            "day": 6,
+            "mean": 1748.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 7,
+            "mean": 1938.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 8,
+            "mean": 2018.62,
+            "missing_hours": 0
+          },
+          {
+            "day": 9,
+            "mean": 1917.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 10,
+            "mean": 1762.83,
+            "missing_hours": 0
+          },
+          {
+            "day": 11,
+            "mean": 1668.62,
+            "missing_hours": 0
+          },
+          {
+            "day": 12,
+            "mean": 1911.58,
+            "missing_hours": 0
+          },
+          {
+            "day": 13,
+            "mean": 2087.79,
+            "missing_hours": 0
+          },
+          {
+            "day": 14,
+            "mean": 1757.67,
+            "missing_hours": 0
+          },
+          {
+            "day": 15,
+            "mean": 1940.42,
+            "missing_hours": 0
+          },
+          {
+            "day": 16,
+            "mean": 2395.17,
+            "missing_hours": 0
+          },
+          {
+            "day": 17,
+            "mean": 1930.42,
+            "missing_hours": 0
+          },
+          {
+            "day": 18,
+            "mean": 1875.62,
+            "missing_hours": 0
+          },
+          {
+            "day": 19,
+            "mean": 1753.75,
+            "missing_hours": 0
+          },
+          {
+            "day": 20,
+            "mean": 1840.58,
+            "missing_hours": 0
+          },
+          {
+            "day": 21,
+            "mean": 2029.25,
+            "missing_hours": 0
+          },
+          {
+            "day": 22,
+            "mean": 1961.25,
+            "missing_hours": 0
+          },
+          {
+            "day": 23,
+            "mean": 1939.42,
+            "missing_hours": 0
+          },
+          {
+            "day": 24,
+            "mean": 1691.92,
+            "missing_hours": 0
+          },
+          {
+            "day": 25,
+            "mean": 1834.58,
+            "missing_hours": 0
+          },
+          {
+            "day": 26,
+            "mean": 1758.54,
+            "missing_hours": 0
+          },
+          {
+            "day": 27,
+            "mean": 1695.96,
+            "missing_hours": 0
+          },
+          {
+            "day": 28,
+            "mean": 1571.12,
+            "missing_hours": 0
+          },
+          {
+            "day": 29,
+            "mean": 1699.12,
+            "missing_hours": 0
+          },
+          {
+            "day": 30,
+            "mean": 1828.29,
+            "missing_hours": 0
+          }
+        ],
+        "overall_mean": 1848.58,
+        "total_missing_hours": 0,
+        "offline_days": 0
+      },
+      {
+        "sensor_id": "S5",
+        "sensor_key": "CH4",
+        "param": "CH4_ppb",
+        "unit": "ppb",
+        "normal_range": [
+          1800,
+          2000
+        ],
+        "daily_means": [
+          {
+            "day": 1,
+            "mean": 2183.92,
+            "missing_hours": 0
+          },
+          {
+            "day": 2,
+            "mean": 1676.42,
+            "missing_hours": 0
+          },
+          {
+            "day": 3,
+            "mean": 1638.42,
+            "missing_hours": 0
+          },
+          {
+            "day": 4,
+            "mean": 1694.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 5,
+            "mean": 1709.12,
+            "missing_hours": 0
+          },
+          {
+            "day": 6,
+            "mean": 1748.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 7,
+            "mean": 1938.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 8,
+            "mean": 2018.62,
+            "missing_hours": 0
+          },
+          {
+            "day": 9,
+            "mean": 1917.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 10,
+            "mean": 1762.83,
+            "missing_hours": 0
+          },
+          {
+            "day": 11,
+            "mean": 1668.62,
+            "missing_hours": 0
+          },
+          {
+            "day": 12,
+            "mean": 1911.58,
+            "missing_hours": 0
+          },
+          {
+            "day": 13,
+            "mean": 2087.79,
+            "missing_hours": 0
+          },
+          {
+            "day": 14,
+            "mean": 1757.67,
+            "missing_hours": 0
+          },
+          {
+            "day": 15,
+            "mean": 1940.42,
+            "missing_hours": 0
+          },
+          {
+            "day": 16,
+            "mean": 2395.17,
+            "missing_hours": 0
+          },
+          {
+            "day": 17,
+            "mean": 1930.42,
+            "missing_hours": 0
+          },
+          {
+            "day": 18,
+            "mean": 1875.62,
+            "missing_hours": 0
+          },
+          {
+            "day": 19,
+            "mean": 1753.75,
+            "missing_hours": 0
+          },
+          {
+            "day": 20,
+            "mean": 1840.58,
+            "missing_hours": 0
+          },
+          {
+            "day": 21,
+            "mean": 2029.25,
+            "missing_hours": 0
+          },
+          {
+            "day": 22,
+            "mean": 1961.25,
+            "missing_hours": 0
+          },
+          {
+            "day": 23,
+            "mean": 1939.42,
+            "missing_hours": 0
+          },
+          {
+            "day": 24,
+            "mean": 1691.92,
+            "missing_hours": 0
+          },
+          {
+            "day": 25,
+            "mean": 1834.58,
+            "missing_hours": 0
+          },
+          {
+            "day": 26,
+            "mean": 1758.54,
+            "missing_hours": 0
+          },
+          {
+            "day": 27,
+            "mean": 1695.96,
+            "missing_hours": 0
+          },
+          {
+            "day": 28,
+            "mean": 1571.12,
+            "missing_hours": 0
+          },
+          {
+            "day": 29,
+            "mean": 1699.12,
+            "missing_hours": 0
+          },
+          {
+            "day": 30,
+            "mean": 1828.29,
+            "missing_hours": 0
+          }
+        ],
+        "overall_mean": 1848.58,
+        "total_missing_hours": 0,
+        "offline_days": 0
+      },
+      {
+        "sensor_id": "S6",
+        "sensor_key": "NO2",
+        "param": "NO2_ppb",
+        "unit": "ppb",
+        "normal_range": [
+          10,
+          50
+        ],
+        "daily_means": [
+          {
+            "day": 1,
+            "mean": 49.16,
+            "missing_hours": 0
+          },
+          {
+            "day": 2,
+            "mean": 23.24,
+            "missing_hours": 0
+          },
+          {
+            "day": 3,
+            "mean": 21.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 4,
+            "mean": 19.78,
+            "missing_hours": 0
+          },
+          {
+            "day": 5,
+            "mean": 23.08,
+            "missing_hours": 0
+          },
+          {
+            "day": 6,
+            "mean": 29.16,
+            "missing_hours": 0
+          },
+          {
+            "day": 7,
+            "mean": 55.47,
+            "missing_hours": 0
+          },
+          {
+            "day": 8,
+            "mean": 64.59,
+            "missing_hours": 0
+          },
+          {
+            "day": 9,
+            "mean": 64.55,
+            "missing_hours": 0
+          },
+          {
+            "day": 10,
+            "mean": 39.55,
+            "missing_hours": 0
+          },
+          {
+            "day": 11,
+            "mean": 27.64,
+            "missing_hours": 0
+          },
+          {
+            "day": 12,
+            "mean": 46.05,
+            "missing_hours": 0
+          },
+          {
+            "day": 13,
+            "mean": 53.91,
+            "missing_hours": 0
+          },
+          {
+            "day": 14,
+            "mean": 38.85,
+            "missing_hours": 0
+          },
+          {
+            "day": 15,
+            "mean": 56.14,
+            "missing_hours": 0
+          },
+          {
+            "day": 16,
+            "mean": 66.49,
+            "missing_hours": 0
+          },
+          {
+            "day": 17,
+            "mean": 40.26,
+            "missing_hours": 0
+          },
+          {
+            "day": 18,
+            "mean": 49.58,
+            "missing_hours": 0
+          },
+          {
+            "day": 19,
+            "mean": 35.47,
+            "missing_hours": 0
+          },
+          {
+            "day": 20,
+            "mean": 35.59,
+            "missing_hours": 0
+          },
+          {
+            "day": 21,
+            "mean": 33.65,
+            "missing_hours": 0
+          },
+          {
+            "day": 22,
+            "mean": 46.42,
+            "missing_hours": 0
+          },
+          {
+            "day": 23,
+            "mean": 43.84,
+            "missing_hours": 0
+          },
+          {
+            "day": 24,
+            "mean": 28.5,
+            "missing_hours": 0
+          },
+          {
+            "day": 25,
+            "mean": 36.49,
+            "missing_hours": 0
+          },
+          {
+            "day": 26,
+            "mean": 32.55,
+            "missing_hours": 0
+          },
+          {
+            "day": 27,
+            "mean": 33.16,
+            "missing_hours": 0
+          },
+          {
+            "day": 28,
+            "mean": 19.11,
+            "missing_hours": 0
+          },
+          {
+            "day": 29,
+            "mean": 34.94,
+            "missing_hours": 0
+          },
+          {
+            "day": 30,
+            "mean": 37.03,
+            "missing_hours": 0
+          }
+        ],
+        "overall_mean": 39.51,
+        "total_missing_hours": 0,
+        "offline_days": 0
+      },
+      {
+        "sensor_id": "S7",
+        "sensor_key": "O3",
+        "param": "O3_ppb",
+        "unit": "ppb",
+        "normal_range": [
+          20,
+          60
+        ],
+        "daily_means": [
+          {
+            "day": 1,
+            "mean": 64.29,
+            "missing_hours": 0
+          },
+          {
+            "day": 2,
+            "mean": 82.67,
+            "missing_hours": 0
+          },
+          {
+            "day": 3,
+            "mean": 82.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 4,
+            "mean": 85.04,
+            "missing_hours": 0
+          },
+          {
+            "day": 5,
+            "mean": 86.38,
+            "missing_hours": 0
+          },
+          {
+            "day": 6,
+            "mean": 82.71,
+            "missing_hours": 0
+          },
+          {
+            "day": 7,
+            "mean": 48.71,
+            "missing_hours": 0
+          },
+          {
+            "day": 8,
+            "mean": 40.29,
+            "missing_hours": 0
+          },
+          {
+            "day": 9,
+            "mean": 45.08,
+            "missing_hours": 0
+          },
+          {
+            "day": 10,
+            "mean": 84.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 11,
+            "mean": 79.46,
+            "missing_hours": 0
+          },
+          {
+            "day": 12,
+            "mean": 71.46,
+            "missing_hours": 0
+          },
+          {
+            "day": 13,
+            "mean": 58.62,
+            "missing_hours": 0
+          },
+          {
+            "day": 14,
+            "mean": 51.25,
+            "missing_hours": 0
+          },
+          {
+            "day": 15,
+            "mean": 37.58,
+            "missing_hours": 0
+          },
+          {
+            "day": 16,
+            "mean": 28.67,
+            "missing_hours": 0
+          },
+          {
+            "day": 17,
+            "mean": 65.79,
+            "missing_hours": 0
+          },
+          {
+            "day": 18,
+            "mean": 55.92,
+            "missing_hours": 0
+          },
+          {
+            "day": 19,
+            "mean": 68.38,
+            "missing_hours": 0
+          },
+          {
+            "day": 20,
+            "mean": 71.08,
+            "missing_hours": 0
+          },
+          {
+            "day": 21,
+            "mean": 69.12,
+            "missing_hours": 0
+          },
+          {
+            "day": 22,
+            "mean": 39.75,
+            "missing_hours": 0
+          },
+          {
+            "day": 23,
+            "mean": 59.21,
+            "missing_hours": 0
+          },
+          {
+            "day": 24,
+            "mean": 86.62,
+            "missing_hours": 0
+          },
+          {
+            "day": 25,
+            "mean": 67.25,
+            "missing_hours": 0
+          },
+          {
+            "day": 26,
+            "mean": 56.04,
+            "missing_hours": 0
+          },
+          {
+            "day": 27,
+            "mean": 60.62,
+            "missing_hours": 0
+          },
+          {
+            "day": 28,
+            "mean": 61.92,
+            "missing_hours": 0
+          },
+          {
+            "day": 29,
+            "mean": 54.79,
+            "missing_hours": 0
+          },
+          {
+            "day": 30,
+            "mean": 49.17,
+            "missing_hours": 0
+          }
+        ],
+        "overall_mean": 63.13,
+        "total_missing_hours": 0,
+        "offline_days": 0
+      },
+      {
+        "sensor_id": "S8",
+        "sensor_key": "NO2",
+        "param": "NO2_ppb",
+        "unit": "ppb",
+        "normal_range": [
+          10,
+          50
+        ],
+        "daily_means": [
+          {
+            "day": 1,
+            "mean": 49.16,
+            "missing_hours": 0
+          },
+          {
+            "day": 2,
+            "mean": 23.24,
+            "missing_hours": 0
+          },
+          {
+            "day": 3,
+            "mean": 21.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 4,
+            "mean": 19.78,
+            "missing_hours": 0
+          },
+          {
+            "day": 5,
+            "mean": 23.08,
+            "missing_hours": 0
+          },
+          {
+            "day": 6,
+            "mean": 29.16,
+            "missing_hours": 0
+          },
+          {
+            "day": 7,
+            "mean": 55.47,
+            "missing_hours": 0
+          },
+          {
+            "day": 8,
+            "mean": 64.59,
+            "missing_hours": 0
+          },
+          {
+            "day": 9,
+            "mean": 64.55,
+            "missing_hours": 0
+          },
+          {
+            "day": 10,
+            "mean": 39.55,
+            "missing_hours": 0
+          },
+          {
+            "day": 11,
+            "mean": 27.64,
+            "missing_hours": 0
+          },
+          {
+            "day": 12,
+            "mean": 46.05,
+            "missing_hours": 0
+          },
+          {
+            "day": 13,
+            "mean": 53.91,
+            "missing_hours": 0
+          },
+          {
+            "day": 14,
+            "mean": 38.85,
+            "missing_hours": 0
+          },
+          {
+            "day": 15,
+            "mean": 56.14,
+            "missing_hours": 0
+          },
+          {
+            "day": 16,
+            "mean": 66.49,
+            "missing_hours": 0
+          },
+          {
+            "day": 17,
+            "mean": 40.26,
+            "missing_hours": 0
+          },
+          {
+            "day": 18,
+            "mean": 49.58,
+            "missing_hours": 0
+          },
+          {
+            "day": 19,
+            "mean": 35.47,
+            "missing_hours": 0
+          },
+          {
+            "day": 20,
+            "mean": 35.59,
+            "missing_hours": 0
+          },
+          {
+            "day": 21,
+            "mean": 33.65,
+            "missing_hours": 0
+          },
+          {
+            "day": 22,
+            "mean": 46.42,
+            "missing_hours": 0
+          },
+          {
+            "day": 23,
+            "mean": 43.84,
+            "missing_hours": 0
+          },
+          {
+            "day": 24,
+            "mean": 28.5,
+            "missing_hours": 0
+          },
+          {
+            "day": 25,
+            "mean": 36.49,
+            "missing_hours": 0
+          },
+          {
+            "day": 26,
+            "mean": 32.55,
+            "missing_hours": 0
+          },
+          {
+            "day": 27,
+            "mean": 33.16,
+            "missing_hours": 0
+          },
+          {
+            "day": 28,
+            "mean": 19.11,
+            "missing_hours": 0
+          },
+          {
+            "day": 29,
+            "mean": 34.94,
+            "missing_hours": 0
+          },
+          {
+            "day": 30,
+            "mean": 37.03,
+            "missing_hours": 0
+          }
+        ],
+        "overall_mean": 39.51,
+        "total_missing_hours": 0,
+        "offline_days": 0
+      },
+      {
+        "sensor_id": "S9",
+        "sensor_key": "O3",
+        "param": "O3_ppb",
+        "unit": "ppb",
+        "normal_range": [
+          20,
+          60
+        ],
+        "daily_means": [
+          {
+            "day": 1,
+            "mean": 64.29,
+            "missing_hours": 0
+          },
+          {
+            "day": 2,
+            "mean": 82.67,
+            "missing_hours": 0
+          },
+          {
+            "day": 3,
+            "mean": 82.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 4,
+            "mean": 85.04,
+            "missing_hours": 0
+          },
+          {
+            "day": 5,
+            "mean": 86.38,
+            "missing_hours": 0
+          },
+          {
+            "day": 6,
+            "mean": 82.71,
+            "missing_hours": 0
+          },
+          {
+            "day": 7,
+            "mean": 48.71,
+            "missing_hours": 0
+          },
+          {
+            "day": 8,
+            "mean": 40.29,
+            "missing_hours": 0
+          },
+          {
+            "day": 9,
+            "mean": 45.08,
+            "missing_hours": 0
+          },
+          {
+            "day": 10,
+            "mean": 84.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 11,
+            "mean": 79.46,
+            "missing_hours": 0
+          },
+          {
+            "day": 12,
+            "mean": 71.46,
+            "missing_hours": 0
+          },
+          {
+            "day": 13,
+            "mean": 58.62,
+            "missing_hours": 0
+          },
+          {
+            "day": 14,
+            "mean": 51.25,
+            "missing_hours": 0
+          },
+          {
+            "day": 15,
+            "mean": 37.58,
+            "missing_hours": 0
+          },
+          {
+            "day": 16,
+            "mean": 28.67,
+            "missing_hours": 0
+          },
+          {
+            "day": 17,
+            "mean": 65.79,
+            "missing_hours": 0
+          },
+          {
+            "day": 18,
+            "mean": 55.92,
+            "missing_hours": 0
+          },
+          {
+            "day": 19,
+            "mean": 68.38,
+            "missing_hours": 0
+          },
+          {
+            "day": 20,
+            "mean": 71.08,
+            "missing_hours": 0
+          },
+          {
+            "day": 21,
+            "mean": 69.12,
+            "missing_hours": 0
+          },
+          {
+            "day": 22,
+            "mean": 39.75,
+            "missing_hours": 0
+          },
+          {
+            "day": 23,
+            "mean": 59.21,
+            "missing_hours": 0
+          },
+          {
+            "day": 24,
+            "mean": 86.62,
+            "missing_hours": 0
+          },
+          {
+            "day": 25,
+            "mean": 67.25,
+            "missing_hours": 0
+          },
+          {
+            "day": 26,
+            "mean": 56.04,
+            "missing_hours": 0
+          },
+          {
+            "day": 27,
+            "mean": 60.62,
+            "missing_hours": 0
+          },
+          {
+            "day": 28,
+            "mean": 61.92,
+            "missing_hours": 0
+          },
+          {
+            "day": 29,
+            "mean": 54.79,
+            "missing_hours": 0
+          },
+          {
+            "day": 30,
+            "mean": 49.17,
+            "missing_hours": 0
+          }
+        ],
+        "overall_mean": 63.13,
+        "total_missing_hours": 0,
+        "offline_days": 0
+      },
+      {
+        "sensor_id": "S10",
+        "sensor_key": "O3",
+        "param": "O3_ppb",
+        "unit": "ppb",
+        "normal_range": [
+          20,
+          60
+        ],
+        "daily_means": [
+          {
+            "day": 1,
+            "mean": 64.29,
+            "missing_hours": 0
+          },
+          {
+            "day": 2,
+            "mean": 82.67,
+            "missing_hours": 0
+          },
+          {
+            "day": 3,
+            "mean": 82.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 4,
+            "mean": 85.04,
+            "missing_hours": 0
+          },
+          {
+            "day": 5,
+            "mean": 86.38,
+            "missing_hours": 0
+          },
+          {
+            "day": 6,
+            "mean": 82.71,
+            "missing_hours": 0
+          },
+          {
+            "day": 7,
+            "mean": 48.71,
+            "missing_hours": 0
+          },
+          {
+            "day": 8,
+            "mean": 40.29,
+            "missing_hours": 0
+          },
+          {
+            "day": 9,
+            "mean": 45.08,
+            "missing_hours": 0
+          },
+          {
+            "day": 10,
+            "mean": 84.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 11,
+            "mean": 79.46,
+            "missing_hours": 0
+          },
+          {
+            "day": 12,
+            "mean": 71.46,
+            "missing_hours": 0
+          },
+          {
+            "day": 13,
+            "mean": 58.62,
+            "missing_hours": 0
+          },
+          {
+            "day": 14,
+            "mean": 51.25,
+            "missing_hours": 0
+          },
+          {
+            "day": 15,
+            "mean": 37.58,
+            "missing_hours": 0
+          },
+          {
+            "day": 16,
+            "mean": 28.67,
+            "missing_hours": 0
+          },
+          {
+            "day": 17,
+            "mean": 65.79,
+            "missing_hours": 0
+          },
+          {
+            "day": 18,
+            "mean": 55.92,
+            "missing_hours": 0
+          },
+          {
+            "day": 19,
+            "mean": 68.38,
+            "missing_hours": 0
+          },
+          {
+            "day": 20,
+            "mean": 71.08,
+            "missing_hours": 0
+          },
+          {
+            "day": 21,
+            "mean": 69.12,
+            "missing_hours": 0
+          },
+          {
+            "day": 22,
+            "mean": 39.75,
+            "missing_hours": 0
+          },
+          {
+            "day": 23,
+            "mean": 59.21,
+            "missing_hours": 0
+          },
+          {
+            "day": 24,
+            "mean": 86.62,
+            "missing_hours": 0
+          },
+          {
+            "day": 25,
+            "mean": 67.25,
+            "missing_hours": 0
+          },
+          {
+            "day": 26,
+            "mean": 56.04,
+            "missing_hours": 0
+          },
+          {
+            "day": 27,
+            "mean": 60.62,
+            "missing_hours": 0
+          },
+          {
+            "day": 28,
+            "mean": 61.92,
+            "missing_hours": 0
+          },
+          {
+            "day": 29,
+            "mean": 54.79,
+            "missing_hours": 0
+          },
+          {
+            "day": 30,
+            "mean": 49.17,
+            "missing_hours": 0
+          }
+        ],
+        "overall_mean": 63.13,
+        "total_missing_hours": 0,
+        "offline_days": 0
+      }
+    ]
+  },
+  {
+    "scenario_id": 1,
+    "network_id": "PIPELINE-CENTRAL",
+    "location": "Gas Pipeline Monitoring Hub, Permian Basin, Texas",
+    "location_key": "houston_tx",
+    "lat": 29.76,
+    "lon": -95.37,
+    "period_days": 30,
+    "sensors": [
+      {
+        "sensor_id": "S1",
+        "sensor_key": "CH4",
+        "param": "CH4_ppb",
+        "unit": "ppb",
+        "normal_range": [
+          1800,
+          2000
+        ],
+        "daily_means": [
+          {
+            "day": 1,
+            "mean": 1525.83,
+            "missing_hours": 0
+          },
+          {
+            "day": 2,
+            "mean": 1599.54,
+            "missing_hours": 0
+          },
+          {
+            "day": 3,
+            "mean": 1479.71,
+            "missing_hours": 0
+          },
+          {
+            "day": 4,
+            "mean": 1441.62,
+            "missing_hours": 0
+          },
+          {
+            "day": 5,
+            "mean": 1401.54,
+            "missing_hours": 0
+          },
+          {
+            "day": 6,
+            "mean": 1392.21,
+            "missing_hours": 0
+          },
+          {
+            "day": 7,
+            "mean": 1384.12,
+            "missing_hours": 0
+          },
+          {
+            "day": 8,
+            "mean": 1374.75,
+            "missing_hours": 0
+          },
+          {
+            "day": 9,
+            "mean": 1372.5,
+            "missing_hours": 0
+          },
+          {
+            "day": 10,
+            "mean": 1511.08,
+            "missing_hours": 0
+          },
+          {
+            "day": 11,
+            "mean": 1462.96,
+            "missing_hours": 0
+          },
+          {
+            "day": 12,
+            "mean": 1384.21,
+            "missing_hours": 0
+          },
+          {
+            "day": 13,
+            "mean": 1379.83,
+            "missing_hours": 0
+          },
+          {
+            "day": 14,
+            "mean": 1407.33,
+            "missing_hours": 0
+          },
+          {
+            "day": 15,
+            "mean": 1465.83,
+            "missing_hours": 0
+          },
+          {
+            "day": 16,
+            "mean": 1439.46,
+            "missing_hours": 0
+          },
+          {
+            "day": 17,
+            "mean": 1406.75,
+            "missing_hours": 0
+          },
+          {
+            "day": 18,
+            "mean": 1411.42,
+            "missing_hours": 0
+          },
+          {
+            "day": 19,
+            "mean": 1432.92,
+            "missing_hours": 0
+          },
+          {
+            "day": 20,
+            "mean": 1431.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 21,
+            "mean": 1421.71,
+            "missing_hours": 0
+          },
+          {
+            "day": 22,
+            "mean": 1409.29,
+            "missing_hours": 0
+          },
+          {
+            "day": 23,
+            "mean": 1394.88,
+            "missing_hours": 0
+          },
+          {
+            "day": 24,
+            "mean": 1392.08,
+            "missing_hours": 0
+          },
+          {
+            "day": 25,
+            "mean": 1410.62,
+            "missing_hours": 0
+          },
+          {
+            "day": 26,
+            "mean": 1412.75,
+            "missing_hours": 0
+          },
+          {
+            "day": 27,
+            "mean": 1405.5,
+            "missing_hours": 0
+          },
+          {
+            "day": 28,
+            "mean": 1392.88,
+            "missing_hours": 0
+          },
+          {
+            "day": 29,
+            "mean": 1390.33,
+            "missing_hours": 0
+          },
+          {
+            "day": 30,
+            "mean": 1426.17,
+            "missing_hours": 0
+          }
+        ],
+        "overall_mean": 1425.36,
+        "total_missing_hours": 0,
+        "offline_days": 0
+      },
+      {
+        "sensor_id": "S2",
+        "sensor_key": "CO",
+        "param": "CO_ppb",
+        "unit": "ppb",
+        "normal_range": [
+          200,
+          800
+        ],
+        "daily_means": [
+          {
+            "day": 1,
+            "mean": 277.21,
+            "missing_hours": 0
+          },
+          {
+            "day": 2,
+            "mean": 335.79,
+            "missing_hours": 0
+          },
+          {
+            "day": 3,
+            "mean": 240.33,
+            "missing_hours": 0
+          },
+          {
+            "day": 4,
+            "mean": 197.42,
+            "missing_hours": 0
+          },
+          {
+            "day": 5,
+            "mean": 172.33,
+            "missing_hours": 0
+          },
+          {
+            "day": 6,
+            "mean": 152.17,
+            "missing_hours": 0
+          },
+          {
+            "day": 7,
+            "mean": 146.42,
+            "missing_hours": 0
+          },
+          {
+            "day": 8,
+            "mean": 129.5,
+            "missing_hours": 0
+          },
+          {
+            "day": 9,
+            "mean": 142.92,
+            "missing_hours": 0
+          },
+          {
+            "day": 10,
+            "mean": 206.46,
+            "missing_hours": 0
+          },
+          {
+            "day": 11,
+            "mean": 247.5,
+            "missing_hours": 0
+          },
+          {
+            "day": 12,
+            "mean": 149.67,
+            "missing_hours": 0
+          },
+          {
+            "day": 13,
+            "mean": 156.12,
+            "missing_hours": 0
+          },
+          {
+            "day": 14,
+            "mean": 181.08,
+            "missing_hours": 0
+          },
+          {
+            "day": 15,
+            "mean": 374.08,
+            "missing_hours": 0
+          },
+          {
+            "day": 16,
+            "mean": 198.5,
+            "missing_hours": 0
+          },
+          {
+            "day": 17,
+            "mean": 169.83,
+            "missing_hours": 0
+          },
+          {
+            "day": 18,
+            "mean": 172.04,
+            "missing_hours": 0
+          },
+          {
+            "day": 19,
+            "mean": 192.96,
+            "missing_hours": 0
+          },
+          {
+            "day": 20,
+            "mean": 205.5,
+            "missing_hours": 0
+          },
+          {
+            "day": 21,
+            "mean": 176.25,
+            "missing_hours": 0
+          },
+          {
+            "day": 22,
+            "mean": 170.46,
+            "missing_hours": 0
+          },
+          {
+            "day": 23,
+            "mean": 165.42,
+            "missing_hours": 0
+          },
+          {
+            "day": 24,
+            "mean": 161.12,
+            "missing_hours": 0
+          },
+          {
+            "day": 25,
+            "mean": 180.79,
+            "missing_hours": 0
+          },
+          {
+            "day": 26,
+            "mean": 180.12,
+            "missing_hours": 0
+          },
+          {
+            "day": 27,
+            "mean": 169.88,
+            "missing_hours": 0
+          },
+          {
+            "day": 28,
+            "mean": 162.92,
+            "missing_hours": 0
+          },
+          {
+            "day": 29,
+            "mean": 160.5,
+            "missing_hours": 0
+          },
+          {
+            "day": 30,
+            "mean": 189.42,
+            "missing_hours": 0
+          }
+        ],
+        "overall_mean": 192.16,
+        "total_missing_hours": 0,
+        "offline_days": 0
+      },
+      {
+        "sensor_id": "S3",
+        "sensor_key": "NO2",
+        "param": "NO2_ppb",
+        "unit": "ppb",
+        "normal_range": [
+          10,
+          50
+        ],
+        "daily_means": [
+          {
+            "day": 1,
+            "mean": 31.86,
+            "missing_hours": 0
+          },
+          {
+            "day": 2,
+            "mean": 34.43,
+            "missing_hours": 0
+          },
+          {
+            "day": 3,
+            "mean": 14.97,
+            "missing_hours": 0
+          },
+          {
+            "day": 4,
+            "mean": 12.67,
+            "missing_hours": 0
+          },
+          {
+            "day": 5,
+            "mean": 10.79,
+            "missing_hours": 0
+          },
+          {
+            "day": 6,
+            "mean": 12.1,
+            "missing_hours": 0
+          },
+          {
+            "day": 7,
+            "mean": 9.08,
+            "missing_hours": 0
+          },
+          {
+            "day": 8,
+            "mean": 9.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 9,
+            "mean": 7.77,
+            "missing_hours": 0
+          },
+          {
+            "day": 10,
+            "mean": 22.72,
+            "missing_hours": 0
+          },
+          {
+            "day": 11,
+            "mean": 23.65,
+            "missing_hours": 0
+          },
+          {
+            "day": 12,
+            "mean": 7.73,
+            "missing_hours": 0
+          },
+          {
+            "day": 13,
+            "mean": 6.84,
+            "missing_hours": 0
+          },
+          {
+            "day": 14,
+            "mean": 7.13,
+            "missing_hours": 0
+          },
+          {
+            "day": 15,
+            "mean": 42.71,
+            "missing_hours": 0
+          },
+          {
+            "day": 16,
+            "mean": 10.59,
+            "missing_hours": 0
+          },
+          {
+            "day": 17,
+            "mean": 7.17,
+            "missing_hours": 0
+          },
+          {
+            "day": 18,
+            "mean": 5.11,
+            "missing_hours": 0
+          },
+          {
+            "day": 19,
+            "mean": 9.33,
+            "missing_hours": 0
+          },
+          {
+            "day": 20,
+            "mean": 12.21,
+            "missing_hours": 0
+          },
+          {
+            "day": 21,
+            "mean": 11.42,
+            "missing_hours": 0
+          },
+          {
+            "day": 22,
+            "mean": 9.65,
+            "missing_hours": 0
+          },
+          {
+            "day": 23,
+            "mean": 7.62,
+            "missing_hours": 0
+          },
+          {
+            "day": 24,
+            "mean": 6.29,
+            "missing_hours": 0
+          },
+          {
+            "day": 25,
+            "mean": 11.93,
+            "missing_hours": 0
+          },
+          {
+            "day": 26,
+            "mean": 12.86,
+            "missing_hours": 0
+          },
+          {
+            "day": 27,
+            "mean": 11.88,
+            "missing_hours": 0
+          },
+          {
+            "day": 28,
+            "mean": 8.07,
+            "missing_hours": 0
+          },
+          {
+            "day": 29,
+            "mean": 6.99,
+            "missing_hours": 0
+          },
+          {
+            "day": 30,
+            "mean": 12.42,
+            "missing_hours": 0
+          }
+        ],
+        "overall_mean": 13.23,
+        "total_missing_hours": 0,
+        "offline_days": 0
+      },
+      {
+        "sensor_id": "S4",
+        "sensor_key": "CH4",
+        "param": "CH4_ppb",
+        "unit": "ppb",
+        "normal_range": [
+          1800,
+          2000
+        ],
+        "daily_means": [
+          {
+            "day": 1,
+            "mean": 1525.83,
+            "missing_hours": 0
+          },
+          {
+            "day": 2,
+            "mean": 1599.54,
+            "missing_hours": 0
+          },
+          {
+            "day": 3,
+            "mean": 1479.71,
+            "missing_hours": 0
+          },
+          {
+            "day": 4,
+            "mean": 1441.62,
+            "missing_hours": 0
+          },
+          {
+            "day": 5,
+            "mean": 1401.54,
+            "missing_hours": 0
+          },
+          {
+            "day": 6,
+            "mean": 1392.21,
+            "missing_hours": 0
+          },
+          {
+            "day": 7,
+            "mean": 1384.12,
+            "missing_hours": 0
+          },
+          {
+            "day": 8,
+            "mean": 1374.75,
+            "missing_hours": 0
+          },
+          {
+            "day": 9,
+            "mean": 1372.5,
+            "missing_hours": 0
+          },
+          {
+            "day": 10,
+            "mean": 1511.08,
+            "missing_hours": 0
+          },
+          {
+            "day": 11,
+            "mean": 1462.96,
+            "missing_hours": 0
+          },
+          {
+            "day": 12,
+            "mean": 1384.21,
+            "missing_hours": 0
+          },
+          {
+            "day": 13,
+            "mean": 1379.83,
+            "missing_hours": 0
+          },
+          {
+            "day": 14,
+            "mean": 1407.33,
+            "missing_hours": 0
+          },
+          {
+            "day": 15,
+            "mean": 1465.83,
+            "missing_hours": 0
+          },
+          {
+            "day": 16,
+            "mean": 1439.46,
+            "missing_hours": 0
+          },
+          {
+            "day": 17,
+            "mean": 1406.75,
+            "missing_hours": 0
+          },
+          {
+            "day": 18,
+            "mean": 1411.42,
+            "missing_hours": 0
+          },
+          {
+            "day": 19,
+            "mean": 1432.92,
+            "missing_hours": 0
+          },
+          {
+            "day": 20,
+            "mean": 1431.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 21,
+            "mean": 1421.71,
+            "missing_hours": 0
+          },
+          {
+            "day": 22,
+            "mean": 1409.29,
+            "missing_hours": 0
+          },
+          {
+            "day": 23,
+            "mean": 1394.88,
+            "missing_hours": 0
+          },
+          {
+            "day": 24,
+            "mean": 1392.08,
+            "missing_hours": 0
+          },
+          {
+            "day": 25,
+            "mean": 1410.62,
+            "missing_hours": 0
+          },
+          {
+            "day": 26,
+            "mean": 1412.75,
+            "missing_hours": 0
+          },
+          {
+            "day": 27,
+            "mean": 1405.5,
+            "missing_hours": 0
+          },
+          {
+            "day": 28,
+            "mean": 1392.88,
+            "missing_hours": 0
+          },
+          {
+            "day": 29,
+            "mean": 1390.33,
+            "missing_hours": 0
+          },
+          {
+            "day": 30,
+            "mean": 1426.17,
+            "missing_hours": 0
+          }
+        ],
+        "overall_mean": 1425.36,
+        "total_missing_hours": 0,
+        "offline_days": 0
+      },
+      {
+        "sensor_id": "S5",
+        "sensor_key": "CH4",
+        "param": "CH4_ppb",
+        "unit": "ppb",
+        "normal_range": [
+          1800,
+          2000
+        ],
+        "daily_means": [
+          {
+            "day": 1,
+            "mean": 1525.83,
+            "missing_hours": 0
+          },
+          {
+            "day": 2,
+            "mean": 1599.54,
+            "missing_hours": 0
+          },
+          {
+            "day": 3,
+            "mean": 1479.71,
+            "missing_hours": 0
+          },
+          {
+            "day": 4,
+            "mean": 1441.62,
+            "missing_hours": 0
+          },
+          {
+            "day": 5,
+            "mean": 1401.54,
+            "missing_hours": 0
+          },
+          {
+            "day": 6,
+            "mean": 1392.21,
+            "missing_hours": 0
+          },
+          {
+            "day": 7,
+            "mean": 1384.12,
+            "missing_hours": 0
+          },
+          {
+            "day": 8,
+            "mean": 1374.75,
+            "missing_hours": 0
+          },
+          {
+            "day": 9,
+            "mean": 1372.5,
+            "missing_hours": 0
+          },
+          {
+            "day": 10,
+            "mean": 1511.08,
+            "missing_hours": 0
+          },
+          {
+            "day": 11,
+            "mean": 1462.96,
+            "missing_hours": 0
+          },
+          {
+            "day": 12,
+            "mean": 1384.21,
+            "missing_hours": 0
+          },
+          {
+            "day": 13,
+            "mean": 1379.83,
+            "missing_hours": 0
+          },
+          {
+            "day": 14,
+            "mean": 1407.33,
+            "missing_hours": 0
+          },
+          {
+            "day": 15,
+            "mean": 1465.83,
+            "missing_hours": 0
+          },
+          {
+            "day": 16,
+            "mean": 1439.46,
+            "missing_hours": 0
+          },
+          {
+            "day": 17,
+            "mean": 1406.75,
+            "missing_hours": 0
+          },
+          {
+            "day": 18,
+            "mean": 1411.42,
+            "missing_hours": 0
+          },
+          {
+            "day": 19,
+            "mean": 1432.92,
+            "missing_hours": 0
+          },
+          {
+            "day": 20,
+            "mean": 1431.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 21,
+            "mean": 1421.71,
+            "missing_hours": 0
+          },
+          {
+            "day": 22,
+            "mean": 1409.29,
+            "missing_hours": 0
+          },
+          {
+            "day": 23,
+            "mean": 1394.88,
+            "missing_hours": 0
+          },
+          {
+            "day": 24,
+            "mean": 1392.08,
+            "missing_hours": 0
+          },
+          {
+            "day": 25,
+            "mean": 1410.62,
+            "missing_hours": 0
+          },
+          {
+            "day": 26,
+            "mean": 1412.75,
+            "missing_hours": 0
+          },
+          {
+            "day": 27,
+            "mean": 1405.5,
+            "missing_hours": 0
+          },
+          {
+            "day": 28,
+            "mean": 1392.88,
+            "missing_hours": 0
+          },
+          {
+            "day": 29,
+            "mean": 1390.33,
+            "missing_hours": 0
+          },
+          {
+            "day": 30,
+            "mean": 1426.17,
+            "missing_hours": 0
+          }
+        ],
+        "overall_mean": 1425.36,
+        "total_missing_hours": 0,
+        "offline_days": 0
+      },
+      {
+        "sensor_id": "S6",
+        "sensor_key": "NO2",
+        "param": "NO2_ppb",
+        "unit": "ppb",
+        "normal_range": [
+          10,
+          50
+        ],
+        "daily_means": [
+          {
+            "day": 1,
+            "mean": 31.86,
+            "missing_hours": 0
+          },
+          {
+            "day": 2,
+            "mean": 34.43,
+            "missing_hours": 0
+          },
+          {
+            "day": 3,
+            "mean": 14.97,
+            "missing_hours": 0
+          },
+          {
+            "day": 4,
+            "mean": 12.67,
+            "missing_hours": 0
+          },
+          {
+            "day": 5,
+            "mean": 10.79,
+            "missing_hours": 0
+          },
+          {
+            "day": 6,
+            "mean": 12.1,
+            "missing_hours": 0
+          },
+          {
+            "day": 7,
+            "mean": 9.08,
+            "missing_hours": 0
+          },
+          {
+            "day": 8,
+            "mean": 9.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 9,
+            "mean": 7.77,
+            "missing_hours": 0
+          },
+          {
+            "day": 10,
+            "mean": 22.72,
+            "missing_hours": 0
+          },
+          {
+            "day": 11,
+            "mean": 23.65,
+            "missing_hours": 0
+          },
+          {
+            "day": 12,
+            "mean": 7.73,
+            "missing_hours": 0
+          },
+          {
+            "day": 13,
+            "mean": 6.84,
+            "missing_hours": 0
+          },
+          {
+            "day": 14,
+            "mean": 7.13,
+            "missing_hours": 0
+          },
+          {
+            "day": 15,
+            "mean": 42.71,
+            "missing_hours": 0
+          },
+          {
+            "day": 16,
+            "mean": 10.59,
+            "missing_hours": 0
+          },
+          {
+            "day": 17,
+            "mean": 7.17,
+            "missing_hours": 0
+          },
+          {
+            "day": 18,
+            "mean": 5.11,
+            "missing_hours": 0
+          },
+          {
+            "day": 19,
+            "mean": 9.33,
+            "missing_hours": 0
+          },
+          {
+            "day": 20,
+            "mean": 12.21,
+            "missing_hours": 0
+          },
+          {
+            "day": 21,
+            "mean": 11.42,
+            "missing_hours": 0
+          },
+          {
+            "day": 22,
+            "mean": 9.65,
+            "missing_hours": 0
+          },
+          {
+            "day": 23,
+            "mean": 7.62,
+            "missing_hours": 0
+          },
+          {
+            "day": 24,
+            "mean": 6.29,
+            "missing_hours": 0
+          },
+          {
+            "day": 25,
+            "mean": 11.93,
+            "missing_hours": 0
+          },
+          {
+            "day": 26,
+            "mean": 12.86,
+            "missing_hours": 0
+          },
+          {
+            "day": 27,
+            "mean": 11.88,
+            "missing_hours": 0
+          },
+          {
+            "day": 28,
+            "mean": 8.07,
+            "missing_hours": 0
+          },
+          {
+            "day": 29,
+            "mean": 6.99,
+            "missing_hours": 0
+          },
+          {
+            "day": 30,
+            "mean": 12.42,
+            "missing_hours": 0
+          }
+        ],
+        "overall_mean": 13.23,
+        "total_missing_hours": 0,
+        "offline_days": 0
+      },
+      {
+        "sensor_id": "S7",
+        "sensor_key": "O3",
+        "param": "O3_ppb",
+        "unit": "ppb",
+        "normal_range": [
+          20,
+          60
+        ],
+        "daily_means": [
+          {
+            "day": 1,
+            "mean": 56.04,
+            "missing_hours": 0
+          },
+          {
+            "day": 2,
+            "mean": 58.62,
+            "missing_hours": 0
+          },
+          {
+            "day": 3,
+            "mean": 82.42,
+            "missing_hours": 0
+          },
+          {
+            "day": 4,
+            "mean": 85.71,
+            "missing_hours": 0
+          },
+          {
+            "day": 5,
+            "mean": 74.79,
+            "missing_hours": 0
+          },
+          {
+            "day": 6,
+            "mean": 53.88,
+            "missing_hours": 0
+          },
+          {
+            "day": 7,
+            "mean": 65.46,
+            "missing_hours": 0
+          },
+          {
+            "day": 8,
+            "mean": 60.46,
+            "missing_hours": 0
+          },
+          {
+            "day": 9,
+            "mean": 62.46,
+            "missing_hours": 0
+          },
+          {
+            "day": 10,
+            "mean": 46.96,
+            "missing_hours": 0
+          },
+          {
+            "day": 11,
+            "mean": 41.29,
+            "missing_hours": 0
+          },
+          {
+            "day": 12,
+            "mean": 58.12,
+            "missing_hours": 0
+          },
+          {
+            "day": 13,
+            "mean": 60.83,
+            "missing_hours": 0
+          },
+          {
+            "day": 14,
+            "mean": 85.67,
+            "missing_hours": 0
+          },
+          {
+            "day": 15,
+            "mean": 68.79,
+            "missing_hours": 0
+          },
+          {
+            "day": 16,
+            "mean": 100.08,
+            "missing_hours": 0
+          },
+          {
+            "day": 17,
+            "mean": 93.54,
+            "missing_hours": 0
+          },
+          {
+            "day": 18,
+            "mean": 95.88,
+            "missing_hours": 0
+          },
+          {
+            "day": 19,
+            "mean": 88.12,
+            "missing_hours": 0
+          },
+          {
+            "day": 20,
+            "mean": 94.17,
+            "missing_hours": 0
+          },
+          {
+            "day": 21,
+            "mean": 92.25,
+            "missing_hours": 0
+          },
+          {
+            "day": 22,
+            "mean": 84.62,
+            "missing_hours": 0
+          },
+          {
+            "day": 23,
+            "mean": 82.29,
+            "missing_hours": 0
+          },
+          {
+            "day": 24,
+            "mean": 85.33,
+            "missing_hours": 0
+          },
+          {
+            "day": 25,
+            "mean": 80.62,
+            "missing_hours": 0
+          },
+          {
+            "day": 26,
+            "mean": 74.75,
+            "missing_hours": 0
+          },
+          {
+            "day": 27,
+            "mean": 76.58,
+            "missing_hours": 0
+          },
+          {
+            "day": 28,
+            "mean": 79.42,
+            "missing_hours": 0
+          },
+          {
+            "day": 29,
+            "mean": 84.67,
+            "missing_hours": 0
+          },
+          {
+            "day": 30,
+            "mean": 87.33,
+            "missing_hours": 0
+          }
+        ],
+        "overall_mean": 75.37,
+        "total_missing_hours": 0,
+        "offline_days": 0
+      },
+      {
+        "sensor_id": "S8",
+        "sensor_key": "NO2",
+        "param": "NO2_ppb",
+        "unit": "ppb",
+        "normal_range": [
+          10,
+          50
+        ],
+        "daily_means": [
+          {
+            "day": 1,
+            "mean": 31.86,
+            "missing_hours": 0
+          },
+          {
+            "day": 2,
+            "mean": 34.43,
+            "missing_hours": 0
+          },
+          {
+            "day": 3,
+            "mean": 14.97,
+            "missing_hours": 0
+          },
+          {
+            "day": 4,
+            "mean": 12.67,
+            "missing_hours": 0
+          },
+          {
+            "day": 5,
+            "mean": 10.79,
+            "missing_hours": 0
+          },
+          {
+            "day": 6,
+            "mean": 12.1,
+            "missing_hours": 0
+          },
+          {
+            "day": 7,
+            "mean": 9.08,
+            "missing_hours": 0
+          },
+          {
+            "day": 8,
+            "mean": 9.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 9,
+            "mean": 7.77,
+            "missing_hours": 0
+          },
+          {
+            "day": 10,
+            "mean": 22.72,
+            "missing_hours": 0
+          },
+          {
+            "day": 11,
+            "mean": 23.65,
+            "missing_hours": 0
+          },
+          {
+            "day": 12,
+            "mean": 7.73,
+            "missing_hours": 0
+          },
+          {
+            "day": 13,
+            "mean": 6.84,
+            "missing_hours": 0
+          },
+          {
+            "day": 14,
+            "mean": 7.13,
+            "missing_hours": 0
+          },
+          {
+            "day": 15,
+            "mean": 42.71,
+            "missing_hours": 0
+          },
+          {
+            "day": 16,
+            "mean": 10.59,
+            "missing_hours": 0
+          },
+          {
+            "day": 17,
+            "mean": 7.17,
+            "missing_hours": 0
+          },
+          {
+            "day": 18,
+            "mean": 5.11,
+            "missing_hours": 0
+          },
+          {
+            "day": 19,
+            "mean": 9.33,
+            "missing_hours": 0
+          },
+          {
+            "day": 20,
+            "mean": 12.21,
+            "missing_hours": 0
+          },
+          {
+            "day": 21,
+            "mean": 11.42,
+            "missing_hours": 0
+          },
+          {
+            "day": 22,
+            "mean": 9.65,
+            "missing_hours": 0
+          },
+          {
+            "day": 23,
+            "mean": 7.62,
+            "missing_hours": 0
+          },
+          {
+            "day": 24,
+            "mean": 6.29,
+            "missing_hours": 0
+          },
+          {
+            "day": 25,
+            "mean": 11.93,
+            "missing_hours": 0
+          },
+          {
+            "day": 26,
+            "mean": 12.86,
+            "missing_hours": 0
+          },
+          {
+            "day": 27,
+            "mean": 11.88,
+            "missing_hours": 0
+          },
+          {
+            "day": 28,
+            "mean": 8.07,
+            "missing_hours": 0
+          },
+          {
+            "day": 29,
+            "mean": 6.99,
+            "missing_hours": 0
+          },
+          {
+            "day": 30,
+            "mean": 12.42,
+            "missing_hours": 0
+          }
+        ],
+        "overall_mean": 13.23,
+        "total_missing_hours": 0,
+        "offline_days": 0
+      },
+      {
+        "sensor_id": "S9",
+        "sensor_key": "O3",
+        "param": "O3_ppb",
+        "unit": "ppb",
+        "normal_range": [
+          20,
+          60
+        ],
+        "daily_means": [
+          {
+            "day": 1,
+            "mean": 56.04,
+            "missing_hours": 0
+          },
+          {
+            "day": 2,
+            "mean": 58.62,
+            "missing_hours": 0
+          },
+          {
+            "day": 3,
+            "mean": 82.42,
+            "missing_hours": 0
+          },
+          {
+            "day": 4,
+            "mean": 85.71,
+            "missing_hours": 0
+          },
+          {
+            "day": 5,
+            "mean": 74.79,
+            "missing_hours": 0
+          },
+          {
+            "day": 6,
+            "mean": 53.88,
+            "missing_hours": 0
+          },
+          {
+            "day": 7,
+            "mean": 65.46,
+            "missing_hours": 0
+          },
+          {
+            "day": 8,
+            "mean": 60.46,
+            "missing_hours": 0
+          },
+          {
+            "day": 9,
+            "mean": 62.46,
+            "missing_hours": 0
+          },
+          {
+            "day": 10,
+            "mean": 46.96,
+            "missing_hours": 0
+          },
+          {
+            "day": 11,
+            "mean": 41.29,
+            "missing_hours": 0
+          },
+          {
+            "day": 12,
+            "mean": 58.12,
+            "missing_hours": 0
+          },
+          {
+            "day": 13,
+            "mean": 60.83,
+            "missing_hours": 0
+          },
+          {
+            "day": 14,
+            "mean": 85.67,
+            "missing_hours": 0
+          },
+          {
+            "day": 15,
+            "mean": 68.79,
+            "missing_hours": 0
+          },
+          {
+            "day": 16,
+            "mean": 100.08,
+            "missing_hours": 0
+          },
+          {
+            "day": 17,
+            "mean": 93.54,
+            "missing_hours": 0
+          },
+          {
+            "day": 18,
+            "mean": 95.88,
+            "missing_hours": 0
+          },
+          {
+            "day": 19,
+            "mean": 88.12,
+            "missing_hours": 0
+          },
+          {
+            "day": 20,
+            "mean": 94.17,
+            "missing_hours": 0
+          },
+          {
+            "day": 21,
+            "mean": 92.25,
+            "missing_hours": 0
+          },
+          {
+            "day": 22,
+            "mean": 84.62,
+            "missing_hours": 0
+          },
+          {
+            "day": 23,
+            "mean": 82.29,
+            "missing_hours": 0
+          },
+          {
+            "day": 24,
+            "mean": 85.33,
+            "missing_hours": 0
+          },
+          {
+            "day": 25,
+            "mean": 80.62,
+            "missing_hours": 0
+          },
+          {
+            "day": 26,
+            "mean": 74.75,
+            "missing_hours": 0
+          },
+          {
+            "day": 27,
+            "mean": 76.58,
+            "missing_hours": 0
+          },
+          {
+            "day": 28,
+            "mean": 79.42,
+            "missing_hours": 0
+          },
+          {
+            "day": 29,
+            "mean": 84.67,
+            "missing_hours": 0
+          },
+          {
+            "day": 30,
+            "mean": 87.33,
+            "missing_hours": 0
+          }
+        ],
+        "overall_mean": 75.37,
+        "total_missing_hours": 0,
+        "offline_days": 0
+      },
+      {
+        "sensor_id": "S10",
+        "sensor_key": "O3",
+        "param": "O3_ppb",
+        "unit": "ppb",
+        "normal_range": [
+          20,
+          60
+        ],
+        "daily_means": [
+          {
+            "day": 1,
+            "mean": 56.04,
+            "missing_hours": 0
+          },
+          {
+            "day": 2,
+            "mean": 58.62,
+            "missing_hours": 0
+          },
+          {
+            "day": 3,
+            "mean": 82.42,
+            "missing_hours": 0
+          },
+          {
+            "day": 4,
+            "mean": 85.71,
+            "missing_hours": 0
+          },
+          {
+            "day": 5,
+            "mean": 74.79,
+            "missing_hours": 0
+          },
+          {
+            "day": 6,
+            "mean": 53.88,
+            "missing_hours": 0
+          },
+          {
+            "day": 7,
+            "mean": 65.46,
+            "missing_hours": 0
+          },
+          {
+            "day": 8,
+            "mean": 60.46,
+            "missing_hours": 0
+          },
+          {
+            "day": 9,
+            "mean": 62.46,
+            "missing_hours": 0
+          },
+          {
+            "day": 10,
+            "mean": 46.96,
+            "missing_hours": 0
+          },
+          {
+            "day": 11,
+            "mean": 41.29,
+            "missing_hours": 0
+          },
+          {
+            "day": 12,
+            "mean": 58.12,
+            "missing_hours": 0
+          },
+          {
+            "day": 13,
+            "mean": 60.83,
+            "missing_hours": 0
+          },
+          {
+            "day": 14,
+            "mean": 85.67,
+            "missing_hours": 0
+          },
+          {
+            "day": 15,
+            "mean": 68.79,
+            "missing_hours": 0
+          },
+          {
+            "day": 16,
+            "mean": 100.08,
+            "missing_hours": 0
+          },
+          {
+            "day": 17,
+            "mean": 93.54,
+            "missing_hours": 0
+          },
+          {
+            "day": 18,
+            "mean": 95.88,
+            "missing_hours": 0
+          },
+          {
+            "day": 19,
+            "mean": 88.12,
+            "missing_hours": 0
+          },
+          {
+            "day": 20,
+            "mean": 94.17,
+            "missing_hours": 0
+          },
+          {
+            "day": 21,
+            "mean": 92.25,
+            "missing_hours": 0
+          },
+          {
+            "day": 22,
+            "mean": 84.62,
+            "missing_hours": 0
+          },
+          {
+            "day": 23,
+            "mean": 82.29,
+            "missing_hours": 0
+          },
+          {
+            "day": 24,
+            "mean": 85.33,
+            "missing_hours": 0
+          },
+          {
+            "day": 25,
+            "mean": 80.62,
+            "missing_hours": 0
+          },
+          {
+            "day": 26,
+            "mean": 74.75,
+            "missing_hours": 0
+          },
+          {
+            "day": 27,
+            "mean": 76.58,
+            "missing_hours": 0
+          },
+          {
+            "day": 28,
+            "mean": 79.42,
+            "missing_hours": 0
+          },
+          {
+            "day": 29,
+            "mean": 84.67,
+            "missing_hours": 0
+          },
+          {
+            "day": 30,
+            "mean": 87.33,
+            "missing_hours": 0
+          }
+        ],
+        "overall_mean": 75.37,
+        "total_missing_hours": 0,
+        "offline_days": 0
+      }
+    ]
+  },
+  {
+    "scenario_id": 2,
+    "network_id": "URBAN-NETWORK-ALPHA",
+    "location": "Metropolitan Air Quality Network, Beijing, China",
+    "location_key": "beijing",
+    "lat": 39.9,
+    "lon": 116.39,
+    "period_days": 30,
+    "sensors": [
+      {
+        "sensor_id": "S1",
+        "sensor_key": "CH4",
+        "param": "CH4_ppb",
+        "unit": "ppb",
+        "normal_range": [
+          1800,
+          2000
+        ],
+        "daily_means": [
+          {
+            "day": 1,
+            "mean": 1923.21,
+            "missing_hours": 0
+          },
+          {
+            "day": 2,
+            "mean": 2480.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 3,
+            "mean": 2023.17,
+            "missing_hours": 0
+          },
+          {
+            "day": 4,
+            "mean": 1869.54,
+            "missing_hours": 0
+          },
+          {
+            "day": 5,
+            "mean": 1931.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 6,
+            "mean": 1850.83,
+            "missing_hours": 0
+          },
+          {
+            "day": 7,
+            "mean": 2270.75,
+            "missing_hours": 0
+          },
+          {
+            "day": 8,
+            "mean": 1854.58,
+            "missing_hours": 0
+          },
+          {
+            "day": 9,
+            "mean": 1956.21,
+            "missing_hours": 0
+          },
+          {
+            "day": 10,
+            "mean": 2047.5,
+            "missing_hours": 0
+          },
+          {
+            "day": 11,
+            "mean": 1806.42,
+            "missing_hours": 0
+          },
+          {
+            "day": 12,
+            "mean": 2128.79,
+            "missing_hours": 0
+          },
+          {
+            "day": 13,
+            "mean": 2039.75,
+            "missing_hours": 0
+          },
+          {
+            "day": 14,
+            "mean": 1911.17,
+            "missing_hours": 0
+          },
+          {
+            "day": 15,
+            "mean": 2259.38,
+            "missing_hours": 0
+          },
+          {
+            "day": 16,
+            "mean": 1788.54,
+            "missing_hours": 0
+          },
+          {
+            "day": 17,
+            "mean": 2135.67,
+            "missing_hours": 0
+          },
+          {
+            "day": 18,
+            "mean": 1914.92,
+            "missing_hours": 0
+          },
+          {
+            "day": 19,
+            "mean": 1844.17,
+            "missing_hours": 0
+          },
+          {
+            "day": 20,
+            "mean": 1742.83,
+            "missing_hours": 0
+          },
+          {
+            "day": 21,
+            "mean": 2061.67,
+            "missing_hours": 0
+          },
+          {
+            "day": 22,
+            "mean": 1806.67,
+            "missing_hours": 0
+          },
+          {
+            "day": 23,
+            "mean": 2293.42,
+            "missing_hours": 0
+          },
+          {
+            "day": 24,
+            "mean": 1996.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 25,
+            "mean": 1830.83,
+            "missing_hours": 0
+          },
+          {
+            "day": 26,
+            "mean": 2101.92,
+            "missing_hours": 0
+          },
+          {
+            "day": 27,
+            "mean": 2119.5,
+            "missing_hours": 0
+          },
+          {
+            "day": 28,
+            "mean": 1785.17,
+            "missing_hours": 0
+          },
+          {
+            "day": 29,
+            "mean": 1807.96,
+            "missing_hours": 0
+          },
+          {
+            "day": 30,
+            "mean": 1952.58,
+            "missing_hours": 0
+          }
+        ],
+        "overall_mean": 1984.47,
+        "total_missing_hours": 0,
+        "offline_days": 0
+      },
+      {
+        "sensor_id": "S2",
+        "sensor_key": "CO",
+        "param": "CO_ppb",
+        "unit": "ppb",
+        "normal_range": [
+          200,
+          800
+        ],
+        "daily_means": [
+          {
+            "day": 1,
+            "mean": 1505.33,
+            "missing_hours": 0
+          },
+          {
+            "day": 2,
+            "mean": 1982.67,
+            "missing_hours": 0
+          },
+          {
+            "day": 3,
+            "mean": 1372.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 4,
+            "mean": 1232.46,
+            "missing_hours": 0
+          },
+          {
+            "day": 5,
+            "mean": 1089.54,
+            "missing_hours": 0
+          },
+          {
+            "day": 6,
+            "mean": 887.88,
+            "missing_hours": 0
+          },
+          {
+            "day": 7,
+            "mean": 1907.42,
+            "missing_hours": 0
+          },
+          {
+            "day": 8,
+            "mean": 1017.96,
+            "missing_hours": 0
+          },
+          {
+            "day": 9,
+            "mean": 1156.42,
+            "missing_hours": 0
+          },
+          {
+            "day": 10,
+            "mean": 1020.92,
+            "missing_hours": 0
+          },
+          {
+            "day": 11,
+            "mean": 884.08,
+            "missing_hours": 0
+          },
+          {
+            "day": 12,
+            "mean": 1731.04,
+            "missing_hours": 0
+          },
+          {
+            "day": 13,
+            "mean": 1092.46,
+            "missing_hours": 0
+          },
+          {
+            "day": 14,
+            "mean": 1112.54,
+            "missing_hours": 0
+          },
+          {
+            "day": 15,
+            "mean": 1788.88,
+            "missing_hours": 0
+          },
+          {
+            "day": 16,
+            "mean": 807.75,
+            "missing_hours": 0
+          },
+          {
+            "day": 17,
+            "mean": 1319.04,
+            "missing_hours": 0
+          },
+          {
+            "day": 18,
+            "mean": 973.54,
+            "missing_hours": 0
+          },
+          {
+            "day": 19,
+            "mean": 980.04,
+            "missing_hours": 0
+          },
+          {
+            "day": 20,
+            "mean": 712.83,
+            "missing_hours": 0
+          },
+          {
+            "day": 21,
+            "mean": 1297.54,
+            "missing_hours": 0
+          },
+          {
+            "day": 22,
+            "mean": 676.17,
+            "missing_hours": 0
+          },
+          {
+            "day": 23,
+            "mean": 1462.25,
+            "missing_hours": 0
+          },
+          {
+            "day": 24,
+            "mean": 939.83,
+            "missing_hours": 0
+          },
+          {
+            "day": 25,
+            "mean": 920.33,
+            "missing_hours": 0
+          },
+          {
+            "day": 26,
+            "mean": 1220.46,
+            "missing_hours": 0
+          },
+          {
+            "day": 27,
+            "mean": 1416.25,
+            "missing_hours": 0
+          },
+          {
+            "day": 28,
+            "mean": 715.88,
+            "missing_hours": 0
+          },
+          {
+            "day": 29,
+            "mean": 687.38,
+            "missing_hours": 0
+          },
+          {
+            "day": 30,
+            "mean": 1002.96,
+            "missing_hours": 0
+          }
+        ],
+        "overall_mean": 1163.79,
+        "total_missing_hours": 0,
+        "offline_days": 0
+      },
+      {
+        "sensor_id": "S3",
+        "sensor_key": "NO2",
+        "param": "NO2_ppb",
+        "unit": "ppb",
+        "normal_range": [
+          10,
+          50
+        ],
+        "daily_means": [
+          {
+            "day": 1,
+            "mean": 57.91,
+            "missing_hours": 0
+          },
+          {
+            "day": 2,
+            "mean": 55.31,
+            "missing_hours": 0
+          },
+          {
+            "day": 3,
+            "mean": 59.74,
+            "missing_hours": 0
+          },
+          {
+            "day": 4,
+            "mean": 62.46,
+            "missing_hours": 0
+          },
+          {
+            "day": 5,
+            "mean": 50.49,
+            "missing_hours": 0
+          },
+          {
+            "day": 6,
+            "mean": 52.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 7,
+            "mean": 55.9,
+            "missing_hours": 0
+          },
+          {
+            "day": 8,
+            "mean": 53.37,
+            "missing_hours": 0
+          },
+          {
+            "day": 9,
+            "mean": 62.3,
+            "missing_hours": 0
+          },
+          {
+            "day": 10,
+            "mean": 43.75,
+            "missing_hours": 0
+          },
+          {
+            "day": 11,
+            "mean": 51.31,
+            "missing_hours": 0
+          },
+          {
+            "day": 12,
+            "mean": 69.61,
+            "missing_hours": 0
+          },
+          {
+            "day": 13,
+            "mean": 55.43,
+            "missing_hours": 0
+          },
+          {
+            "day": 14,
+            "mean": 60.09,
+            "missing_hours": 0
+          },
+          {
+            "day": 15,
+            "mean": 67.81,
+            "missing_hours": 0
+          },
+          {
+            "day": 16,
+            "mean": 48.4,
+            "missing_hours": 0
+          },
+          {
+            "day": 17,
+            "mean": 58.8,
+            "missing_hours": 0
+          },
+          {
+            "day": 18,
+            "mean": 56.15,
+            "missing_hours": 0
+          },
+          {
+            "day": 19,
+            "mean": 56.13,
+            "missing_hours": 0
+          },
+          {
+            "day": 20,
+            "mean": 43.83,
+            "missing_hours": 0
+          },
+          {
+            "day": 21,
+            "mean": 54.68,
+            "missing_hours": 0
+          },
+          {
+            "day": 22,
+            "mean": 53.11,
+            "missing_hours": 0
+          },
+          {
+            "day": 23,
+            "mean": 77.13,
+            "missing_hours": 0
+          },
+          {
+            "day": 24,
+            "mean": 48.3,
+            "missing_hours": 0
+          },
+          {
+            "day": 25,
+            "mean": 58.58,
+            "missing_hours": 0
+          },
+          {
+            "day": 26,
+            "mean": 68.43,
+            "missing_hours": 0
+          },
+          {
+            "day": 27,
+            "mean": 78.07,
+            "missing_hours": 0
+          },
+          {
+            "day": 28,
+            "mean": 51.15,
+            "missing_hours": 0
+          },
+          {
+            "day": 29,
+            "mean": 49.74,
+            "missing_hours": 0
+          },
+          {
+            "day": 30,
+            "mean": 75.53,
+            "missing_hours": 0
+          }
+        ],
+        "overall_mean": 57.85,
+        "total_missing_hours": 0,
+        "offline_days": 0
+      },
+      {
+        "sensor_id": "S4",
+        "sensor_key": "CH4",
+        "param": "CH4_ppb",
+        "unit": "ppb",
+        "normal_range": [
+          1800,
+          2000
+        ],
+        "daily_means": [
+          {
+            "day": 1,
+            "mean": 1923.21,
+            "missing_hours": 0
+          },
+          {
+            "day": 2,
+            "mean": 2480.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 3,
+            "mean": 2023.17,
+            "missing_hours": 0
+          },
+          {
+            "day": 4,
+            "mean": 1869.54,
+            "missing_hours": 0
+          },
+          {
+            "day": 5,
+            "mean": 1931.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 6,
+            "mean": 1850.83,
+            "missing_hours": 0
+          },
+          {
+            "day": 7,
+            "mean": 2270.75,
+            "missing_hours": 0
+          },
+          {
+            "day": 8,
+            "mean": 1854.58,
+            "missing_hours": 0
+          },
+          {
+            "day": 9,
+            "mean": 1956.21,
+            "missing_hours": 0
+          },
+          {
+            "day": 10,
+            "mean": 2047.5,
+            "missing_hours": 0
+          },
+          {
+            "day": 11,
+            "mean": 1806.42,
+            "missing_hours": 0
+          },
+          {
+            "day": 12,
+            "mean": 2128.79,
+            "missing_hours": 0
+          },
+          {
+            "day": 13,
+            "mean": 2039.75,
+            "missing_hours": 0
+          },
+          {
+            "day": 14,
+            "mean": 1911.17,
+            "missing_hours": 0
+          },
+          {
+            "day": 15,
+            "mean": 2259.38,
+            "missing_hours": 0
+          },
+          {
+            "day": 16,
+            "mean": 1788.54,
+            "missing_hours": 0
+          },
+          {
+            "day": 17,
+            "mean": 2135.67,
+            "missing_hours": 0
+          },
+          {
+            "day": 18,
+            "mean": 1914.92,
+            "missing_hours": 0
+          },
+          {
+            "day": 19,
+            "mean": 1844.17,
+            "missing_hours": 0
+          },
+          {
+            "day": 20,
+            "mean": 1742.83,
+            "missing_hours": 0
+          },
+          {
+            "day": 21,
+            "mean": 2061.67,
+            "missing_hours": 0
+          },
+          {
+            "day": 22,
+            "mean": 1806.67,
+            "missing_hours": 0
+          },
+          {
+            "day": 23,
+            "mean": 2293.42,
+            "missing_hours": 0
+          },
+          {
+            "day": 24,
+            "mean": 1996.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 25,
+            "mean": 1830.83,
+            "missing_hours": 0
+          },
+          {
+            "day": 26,
+            "mean": 2101.92,
+            "missing_hours": 0
+          },
+          {
+            "day": 27,
+            "mean": 2119.5,
+            "missing_hours": 0
+          },
+          {
+            "day": 28,
+            "mean": 1785.17,
+            "missing_hours": 0
+          },
+          {
+            "day": 29,
+            "mean": 1807.96,
+            "missing_hours": 0
+          },
+          {
+            "day": 30,
+            "mean": 1952.58,
+            "missing_hours": 0
+          }
+        ],
+        "overall_mean": 1984.47,
+        "total_missing_hours": 0,
+        "offline_days": 0
+      },
+      {
+        "sensor_id": "S5",
+        "sensor_key": "CH4",
+        "param": "CH4_ppb",
+        "unit": "ppb",
+        "normal_range": [
+          1800,
+          2000
+        ],
+        "daily_means": [
+          {
+            "day": 1,
+            "mean": 1923.21,
+            "missing_hours": 0
+          },
+          {
+            "day": 2,
+            "mean": 2480.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 3,
+            "mean": 2023.17,
+            "missing_hours": 0
+          },
+          {
+            "day": 4,
+            "mean": 1869.54,
+            "missing_hours": 0
+          },
+          {
+            "day": 5,
+            "mean": 1931.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 6,
+            "mean": 1850.83,
+            "missing_hours": 0
+          },
+          {
+            "day": 7,
+            "mean": 2270.75,
+            "missing_hours": 0
+          },
+          {
+            "day": 8,
+            "mean": 1854.58,
+            "missing_hours": 0
+          },
+          {
+            "day": 9,
+            "mean": 1956.21,
+            "missing_hours": 0
+          },
+          {
+            "day": 10,
+            "mean": 2047.5,
+            "missing_hours": 0
+          },
+          {
+            "day": 11,
+            "mean": 1806.42,
+            "missing_hours": 0
+          },
+          {
+            "day": 12,
+            "mean": 2128.79,
+            "missing_hours": 0
+          },
+          {
+            "day": 13,
+            "mean": 2039.75,
+            "missing_hours": 0
+          },
+          {
+            "day": 14,
+            "mean": 1911.17,
+            "missing_hours": 0
+          },
+          {
+            "day": 15,
+            "mean": 2259.38,
+            "missing_hours": 0
+          },
+          {
+            "day": 16,
+            "mean": 1788.54,
+            "missing_hours": 0
+          },
+          {
+            "day": 17,
+            "mean": 2135.67,
+            "missing_hours": 0
+          },
+          {
+            "day": 18,
+            "mean": 1914.92,
+            "missing_hours": 0
+          },
+          {
+            "day": 19,
+            "mean": 1844.17,
+            "missing_hours": 0
+          },
+          {
+            "day": 20,
+            "mean": 1742.83,
+            "missing_hours": 0
+          },
+          {
+            "day": 21,
+            "mean": 2061.67,
+            "missing_hours": 0
+          },
+          {
+            "day": 22,
+            "mean": 1806.67,
+            "missing_hours": 0
+          },
+          {
+            "day": 23,
+            "mean": 2293.42,
+            "missing_hours": 0
+          },
+          {
+            "day": 24,
+            "mean": 1996.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 25,
+            "mean": 1830.83,
+            "missing_hours": 0
+          },
+          {
+            "day": 26,
+            "mean": 2101.92,
+            "missing_hours": 0
+          },
+          {
+            "day": 27,
+            "mean": 2119.5,
+            "missing_hours": 0
+          },
+          {
+            "day": 28,
+            "mean": 1785.17,
+            "missing_hours": 0
+          },
+          {
+            "day": 29,
+            "mean": 1807.96,
+            "missing_hours": 0
+          },
+          {
+            "day": 30,
+            "mean": 1952.58,
+            "missing_hours": 0
+          }
+        ],
+        "overall_mean": 1984.47,
+        "total_missing_hours": 0,
+        "offline_days": 0
+      },
+      {
+        "sensor_id": "S6",
+        "sensor_key": "NO2",
+        "param": "NO2_ppb",
+        "unit": "ppb",
+        "normal_range": [
+          10,
+          50
+        ],
+        "daily_means": [
+          {
+            "day": 1,
+            "mean": 57.91,
+            "missing_hours": 0
+          },
+          {
+            "day": 2,
+            "mean": 55.31,
+            "missing_hours": 0
+          },
+          {
+            "day": 3,
+            "mean": 59.74,
+            "missing_hours": 0
+          },
+          {
+            "day": 4,
+            "mean": 62.46,
+            "missing_hours": 0
+          },
+          {
+            "day": 5,
+            "mean": 50.49,
+            "missing_hours": 0
+          },
+          {
+            "day": 6,
+            "mean": 52.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 7,
+            "mean": 55.9,
+            "missing_hours": 0
+          },
+          {
+            "day": 8,
+            "mean": 53.37,
+            "missing_hours": 0
+          },
+          {
+            "day": 9,
+            "mean": 62.3,
+            "missing_hours": 0
+          },
+          {
+            "day": 10,
+            "mean": 43.75,
+            "missing_hours": 0
+          },
+          {
+            "day": 11,
+            "mean": 51.31,
+            "missing_hours": 0
+          },
+          {
+            "day": 12,
+            "mean": 69.61,
+            "missing_hours": 0
+          },
+          {
+            "day": 13,
+            "mean": 55.43,
+            "missing_hours": 0
+          },
+          {
+            "day": 14,
+            "mean": 60.09,
+            "missing_hours": 0
+          },
+          {
+            "day": 15,
+            "mean": 67.81,
+            "missing_hours": 0
+          },
+          {
+            "day": 16,
+            "mean": 48.4,
+            "missing_hours": 0
+          },
+          {
+            "day": 17,
+            "mean": 58.8,
+            "missing_hours": 0
+          },
+          {
+            "day": 18,
+            "mean": 56.15,
+            "missing_hours": 0
+          },
+          {
+            "day": 19,
+            "mean": 56.13,
+            "missing_hours": 0
+          },
+          {
+            "day": 20,
+            "mean": 43.83,
+            "missing_hours": 0
+          },
+          {
+            "day": 21,
+            "mean": 54.68,
+            "missing_hours": 0
+          },
+          {
+            "day": 22,
+            "mean": 53.11,
+            "missing_hours": 0
+          },
+          {
+            "day": 23,
+            "mean": 77.13,
+            "missing_hours": 0
+          },
+          {
+            "day": 24,
+            "mean": 48.3,
+            "missing_hours": 0
+          },
+          {
+            "day": 25,
+            "mean": 58.58,
+            "missing_hours": 0
+          },
+          {
+            "day": 26,
+            "mean": 68.43,
+            "missing_hours": 0
+          },
+          {
+            "day": 27,
+            "mean": 78.07,
+            "missing_hours": 0
+          },
+          {
+            "day": 28,
+            "mean": 51.15,
+            "missing_hours": 0
+          },
+          {
+            "day": 29,
+            "mean": 49.74,
+            "missing_hours": 0
+          },
+          {
+            "day": 30,
+            "mean": 75.53,
+            "missing_hours": 0
+          }
+        ],
+        "overall_mean": 57.85,
+        "total_missing_hours": 0,
+        "offline_days": 0
+      },
+      {
+        "sensor_id": "S7",
+        "sensor_key": "O3",
+        "param": "O3_ppb",
+        "unit": "ppb",
+        "normal_range": [
+          20,
+          60
+        ],
+        "daily_means": [
+          {
+            "day": 1,
+            "mean": 17.46,
+            "missing_hours": 0
+          },
+          {
+            "day": 2,
+            "mean": 10.71,
+            "missing_hours": 0
+          },
+          {
+            "day": 3,
+            "mean": 13.75,
+            "missing_hours": 0
+          },
+          {
+            "day": 4,
+            "mean": 9.67,
+            "missing_hours": 0
+          },
+          {
+            "day": 5,
+            "mean": 35.38,
+            "missing_hours": 0
+          },
+          {
+            "day": 6,
+            "mean": 19.38,
+            "missing_hours": 0
+          },
+          {
+            "day": 7,
+            "mean": 20.25,
+            "missing_hours": 0
+          },
+          {
+            "day": 8,
+            "mean": 32.54,
+            "missing_hours": 0
+          },
+          {
+            "day": 9,
+            "mean": 21.12,
+            "missing_hours": 0
+          },
+          {
+            "day": 10,
+            "mean": 40.46,
+            "missing_hours": 0
+          },
+          {
+            "day": 11,
+            "mean": 33.12,
+            "missing_hours": 0
+          },
+          {
+            "day": 12,
+            "mean": 18.58,
+            "missing_hours": 0
+          },
+          {
+            "day": 13,
+            "mean": 34.17,
+            "missing_hours": 0
+          },
+          {
+            "day": 14,
+            "mean": 27.08,
+            "missing_hours": 0
+          },
+          {
+            "day": 15,
+            "mean": 15.54,
+            "missing_hours": 0
+          },
+          {
+            "day": 16,
+            "mean": 22.67,
+            "missing_hours": 0
+          },
+          {
+            "day": 17,
+            "mean": 24.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 18,
+            "mean": 27.17,
+            "missing_hours": 0
+          },
+          {
+            "day": 19,
+            "mean": 34.17,
+            "missing_hours": 0
+          },
+          {
+            "day": 20,
+            "mean": 43.38,
+            "missing_hours": 0
+          },
+          {
+            "day": 21,
+            "mean": 30.42,
+            "missing_hours": 0
+          },
+          {
+            "day": 22,
+            "mean": 29.96,
+            "missing_hours": 0
+          },
+          {
+            "day": 23,
+            "mean": 18.46,
+            "missing_hours": 0
+          },
+          {
+            "day": 24,
+            "mean": 35.33,
+            "missing_hours": 0
+          },
+          {
+            "day": 25,
+            "mean": 33.88,
+            "missing_hours": 0
+          },
+          {
+            "day": 26,
+            "mean": 39.88,
+            "missing_hours": 0
+          },
+          {
+            "day": 27,
+            "mean": 34.25,
+            "missing_hours": 0
+          },
+          {
+            "day": 28,
+            "mean": 63.58,
+            "missing_hours": 0
+          },
+          {
+            "day": 29,
+            "mean": 38.38,
+            "missing_hours": 0
+          },
+          {
+            "day": 30,
+            "mean": 22.58,
+            "missing_hours": 0
+          }
+        ],
+        "overall_mean": 28.24,
+        "total_missing_hours": 0,
+        "offline_days": 0
+      },
+      {
+        "sensor_id": "S8",
+        "sensor_key": "NO2",
+        "param": "NO2_ppb",
+        "unit": "ppb",
+        "normal_range": [
+          10,
+          50
+        ],
+        "daily_means": [
+          {
+            "day": 1,
+            "mean": 57.91,
+            "missing_hours": 0
+          },
+          {
+            "day": 2,
+            "mean": 55.31,
+            "missing_hours": 0
+          },
+          {
+            "day": 3,
+            "mean": 59.74,
+            "missing_hours": 0
+          },
+          {
+            "day": 4,
+            "mean": 62.46,
+            "missing_hours": 0
+          },
+          {
+            "day": 5,
+            "mean": 50.49,
+            "missing_hours": 0
+          },
+          {
+            "day": 6,
+            "mean": 52.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 7,
+            "mean": 55.9,
+            "missing_hours": 0
+          },
+          {
+            "day": 8,
+            "mean": 53.37,
+            "missing_hours": 0
+          },
+          {
+            "day": 9,
+            "mean": 62.3,
+            "missing_hours": 0
+          },
+          {
+            "day": 10,
+            "mean": 43.75,
+            "missing_hours": 0
+          },
+          {
+            "day": 11,
+            "mean": 51.31,
+            "missing_hours": 0
+          },
+          {
+            "day": 12,
+            "mean": 69.61,
+            "missing_hours": 0
+          },
+          {
+            "day": 13,
+            "mean": 55.43,
+            "missing_hours": 0
+          },
+          {
+            "day": 14,
+            "mean": 60.09,
+            "missing_hours": 0
+          },
+          {
+            "day": 15,
+            "mean": 67.81,
+            "missing_hours": 0
+          },
+          {
+            "day": 16,
+            "mean": 48.4,
+            "missing_hours": 0
+          },
+          {
+            "day": 17,
+            "mean": 58.8,
+            "missing_hours": 0
+          },
+          {
+            "day": 18,
+            "mean": 56.15,
+            "missing_hours": 0
+          },
+          {
+            "day": 19,
+            "mean": 56.13,
+            "missing_hours": 0
+          },
+          {
+            "day": 20,
+            "mean": 43.83,
+            "missing_hours": 0
+          },
+          {
+            "day": 21,
+            "mean": 54.68,
+            "missing_hours": 0
+          },
+          {
+            "day": 22,
+            "mean": 53.11,
+            "missing_hours": 0
+          },
+          {
+            "day": 23,
+            "mean": 77.13,
+            "missing_hours": 0
+          },
+          {
+            "day": 24,
+            "mean": 48.3,
+            "missing_hours": 0
+          },
+          {
+            "day": 25,
+            "mean": 58.58,
+            "missing_hours": 0
+          },
+          {
+            "day": 26,
+            "mean": 68.43,
+            "missing_hours": 0
+          },
+          {
+            "day": 27,
+            "mean": 78.07,
+            "missing_hours": 0
+          },
+          {
+            "day": 28,
+            "mean": 51.15,
+            "missing_hours": 0
+          },
+          {
+            "day": 29,
+            "mean": 49.74,
+            "missing_hours": 0
+          },
+          {
+            "day": 30,
+            "mean": 75.53,
+            "missing_hours": 0
+          }
+        ],
+        "overall_mean": 57.85,
+        "total_missing_hours": 0,
+        "offline_days": 0
+      },
+      {
+        "sensor_id": "S9",
+        "sensor_key": "O3",
+        "param": "O3_ppb",
+        "unit": "ppb",
+        "normal_range": [
+          20,
+          60
+        ],
+        "daily_means": [
+          {
+            "day": 1,
+            "mean": 17.46,
+            "missing_hours": 0
+          },
+          {
+            "day": 2,
+            "mean": 10.71,
+            "missing_hours": 0
+          },
+          {
+            "day": 3,
+            "mean": 13.75,
+            "missing_hours": 0
+          },
+          {
+            "day": 4,
+            "mean": 9.67,
+            "missing_hours": 0
+          },
+          {
+            "day": 5,
+            "mean": 35.38,
+            "missing_hours": 0
+          },
+          {
+            "day": 6,
+            "mean": 19.38,
+            "missing_hours": 0
+          },
+          {
+            "day": 7,
+            "mean": 20.25,
+            "missing_hours": 0
+          },
+          {
+            "day": 8,
+            "mean": 32.54,
+            "missing_hours": 0
+          },
+          {
+            "day": 9,
+            "mean": 21.12,
+            "missing_hours": 0
+          },
+          {
+            "day": 10,
+            "mean": 40.46,
+            "missing_hours": 0
+          },
+          {
+            "day": 11,
+            "mean": 33.12,
+            "missing_hours": 0
+          },
+          {
+            "day": 12,
+            "mean": 18.58,
+            "missing_hours": 0
+          },
+          {
+            "day": 13,
+            "mean": 34.17,
+            "missing_hours": 0
+          },
+          {
+            "day": 14,
+            "mean": 27.08,
+            "missing_hours": 0
+          },
+          {
+            "day": 15,
+            "mean": 15.54,
+            "missing_hours": 0
+          },
+          {
+            "day": 16,
+            "mean": 22.67,
+            "missing_hours": 0
+          },
+          {
+            "day": 17,
+            "mean": 24.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 18,
+            "mean": 27.17,
+            "missing_hours": 0
+          },
+          {
+            "day": 19,
+            "mean": 34.17,
+            "missing_hours": 0
+          },
+          {
+            "day": 20,
+            "mean": 43.38,
+            "missing_hours": 0
+          },
+          {
+            "day": 21,
+            "mean": 30.42,
+            "missing_hours": 0
+          },
+          {
+            "day": 22,
+            "mean": 29.96,
+            "missing_hours": 0
+          },
+          {
+            "day": 23,
+            "mean": 18.46,
+            "missing_hours": 0
+          },
+          {
+            "day": 24,
+            "mean": 35.33,
+            "missing_hours": 0
+          },
+          {
+            "day": 25,
+            "mean": 33.88,
+            "missing_hours": 0
+          },
+          {
+            "day": 26,
+            "mean": 39.88,
+            "missing_hours": 0
+          },
+          {
+            "day": 27,
+            "mean": 34.25,
+            "missing_hours": 0
+          },
+          {
+            "day": 28,
+            "mean": 63.58,
+            "missing_hours": 0
+          },
+          {
+            "day": 29,
+            "mean": 38.38,
+            "missing_hours": 0
+          },
+          {
+            "day": 30,
+            "mean": 22.58,
+            "missing_hours": 0
+          }
+        ],
+        "overall_mean": 28.24,
+        "total_missing_hours": 0,
+        "offline_days": 0
+      },
+      {
+        "sensor_id": "S10",
+        "sensor_key": "O3",
+        "param": "O3_ppb",
+        "unit": "ppb",
+        "normal_range": [
+          20,
+          60
+        ],
+        "daily_means": [
+          {
+            "day": 1,
+            "mean": 17.46,
+            "missing_hours": 0
+          },
+          {
+            "day": 2,
+            "mean": 10.71,
+            "missing_hours": 0
+          },
+          {
+            "day": 3,
+            "mean": 13.75,
+            "missing_hours": 0
+          },
+          {
+            "day": 4,
+            "mean": 9.67,
+            "missing_hours": 0
+          },
+          {
+            "day": 5,
+            "mean": 35.38,
+            "missing_hours": 0
+          },
+          {
+            "day": 6,
+            "mean": 19.38,
+            "missing_hours": 0
+          },
+          {
+            "day": 7,
+            "mean": 20.25,
+            "missing_hours": 0
+          },
+          {
+            "day": 8,
+            "mean": 32.54,
+            "missing_hours": 0
+          },
+          {
+            "day": 9,
+            "mean": 21.12,
+            "missing_hours": 0
+          },
+          {
+            "day": 10,
+            "mean": 40.46,
+            "missing_hours": 0
+          },
+          {
+            "day": 11,
+            "mean": 33.12,
+            "missing_hours": 0
+          },
+          {
+            "day": 12,
+            "mean": 18.58,
+            "missing_hours": 0
+          },
+          {
+            "day": 13,
+            "mean": 34.17,
+            "missing_hours": 0
+          },
+          {
+            "day": 14,
+            "mean": 27.08,
+            "missing_hours": 0
+          },
+          {
+            "day": 15,
+            "mean": 15.54,
+            "missing_hours": 0
+          },
+          {
+            "day": 16,
+            "mean": 22.67,
+            "missing_hours": 0
+          },
+          {
+            "day": 17,
+            "mean": 24.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 18,
+            "mean": 27.17,
+            "missing_hours": 0
+          },
+          {
+            "day": 19,
+            "mean": 34.17,
+            "missing_hours": 0
+          },
+          {
+            "day": 20,
+            "mean": 43.38,
+            "missing_hours": 0
+          },
+          {
+            "day": 21,
+            "mean": 30.42,
+            "missing_hours": 0
+          },
+          {
+            "day": 22,
+            "mean": 29.96,
+            "missing_hours": 0
+          },
+          {
+            "day": 23,
+            "mean": 18.46,
+            "missing_hours": 0
+          },
+          {
+            "day": 24,
+            "mean": 35.33,
+            "missing_hours": 0
+          },
+          {
+            "day": 25,
+            "mean": 33.88,
+            "missing_hours": 0
+          },
+          {
+            "day": 26,
+            "mean": 39.88,
+            "missing_hours": 0
+          },
+          {
+            "day": 27,
+            "mean": 34.25,
+            "missing_hours": 0
+          },
+          {
+            "day": 28,
+            "mean": 63.58,
+            "missing_hours": 0
+          },
+          {
+            "day": 29,
+            "mean": 38.38,
+            "missing_hours": 0
+          },
+          {
+            "day": 30,
+            "mean": 22.58,
+            "missing_hours": 0
+          }
+        ],
+        "overall_mean": 28.24,
+        "total_missing_hours": 0,
+        "offline_days": 0
+      }
+    ]
+  },
+  {
+    "scenario_id": 3,
+    "network_id": "COASTAL-MONITOR-BETA",
+    "location": "Coastal Industrial Zone, Chennai, India",
+    "location_key": "chennai",
+    "lat": 13.08,
+    "lon": 80.27,
+    "period_days": 30,
+    "sensors": [
+      {
+        "sensor_id": "S1",
+        "sensor_key": "CH4",
+        "param": "CH4_ppb",
+        "unit": "ppb",
+        "normal_range": [
+          1800,
+          2000
+        ],
+        "daily_means": [
+          {
+            "day": 1,
+            "mean": 1462.17,
+            "missing_hours": 0
+          },
+          {
+            "day": 2,
+            "mean": 1459.88,
+            "missing_hours": 0
+          },
+          {
+            "day": 3,
+            "mean": 1461.58,
+            "missing_hours": 0
+          },
+          {
+            "day": 4,
+            "mean": 1444.08,
+            "missing_hours": 0
+          },
+          {
+            "day": 5,
+            "mean": 1438.04,
+            "missing_hours": 0
+          },
+          {
+            "day": 6,
+            "mean": 1436.88,
+            "missing_hours": 0
+          },
+          {
+            "day": 7,
+            "mean": 1426.92,
+            "missing_hours": 0
+          },
+          {
+            "day": 8,
+            "mean": 1421.29,
+            "missing_hours": 0
+          },
+          {
+            "day": 9,
+            "mean": 1398.58,
+            "missing_hours": 0
+          },
+          {
+            "day": 10,
+            "mean": 1384.54,
+            "missing_hours": 0
+          },
+          {
+            "day": 11,
+            "mean": 1392.5,
+            "missing_hours": 0
+          },
+          {
+            "day": 12,
+            "mean": 1381.29,
+            "missing_hours": 0
+          },
+          {
+            "day": 13,
+            "mean": 1411.88,
+            "missing_hours": 0
+          },
+          {
+            "day": 14,
+            "mean": 1433.08,
+            "missing_hours": 0
+          },
+          {
+            "day": 15,
+            "mean": 1400.21,
+            "missing_hours": 0
+          },
+          {
+            "day": 16,
+            "mean": 1393.38,
+            "missing_hours": 0
+          },
+          {
+            "day": 17,
+            "mean": 1392.29,
+            "missing_hours": 0
+          },
+          {
+            "day": 18,
+            "mean": 1398.5,
+            "missing_hours": 0
+          },
+          {
+            "day": 19,
+            "mean": 1388.92,
+            "missing_hours": 0
+          },
+          {
+            "day": 20,
+            "mean": 1399.38,
+            "missing_hours": 0
+          },
+          {
+            "day": 21,
+            "mean": 1400.79,
+            "missing_hours": 0
+          },
+          {
+            "day": 22,
+            "mean": 1408.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 23,
+            "mean": 1400.08,
+            "missing_hours": 0
+          },
+          {
+            "day": 24,
+            "mean": 1391.67,
+            "missing_hours": 0
+          },
+          {
+            "day": 25,
+            "mean": 1384.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 26,
+            "mean": 1383.5,
+            "missing_hours": 0
+          },
+          {
+            "day": 27,
+            "mean": 1390.08,
+            "missing_hours": 0
+          },
+          {
+            "day": 28,
+            "mean": 1404.21,
+            "missing_hours": 0
+          },
+          {
+            "day": 29,
+            "mean": 1403.5,
+            "missing_hours": 0
+          },
+          {
+            "day": 30,
+            "mean": 1391.92,
+            "missing_hours": 0
+          }
+        ],
+        "overall_mean": 1409.44,
+        "total_missing_hours": 0,
+        "offline_days": 0
+      },
+      {
+        "sensor_id": "S2",
+        "sensor_key": "CO",
+        "param": "CO_ppb",
+        "unit": "ppb",
+        "normal_range": [
+          200,
+          800
+        ],
+        "daily_means": [
+          {
+            "day": 1,
+            "mean": 353.79,
+            "missing_hours": 0
+          },
+          {
+            "day": 2,
+            "mean": 344.54,
+            "missing_hours": 0
+          },
+          {
+            "day": 3,
+            "mean": 359.67,
+            "missing_hours": 0
+          },
+          {
+            "day": 4,
+            "mean": 341.29,
+            "missing_hours": 0
+          },
+          {
+            "day": 5,
+            "mean": 339.08,
+            "missing_hours": 0
+          },
+          {
+            "day": 6,
+            "mean": 317.12,
+            "missing_hours": 0
+          },
+          {
+            "day": 7,
+            "mean": 320.79,
+            "missing_hours": 0
+          },
+          {
+            "day": 8,
+            "mean": 302.42,
+            "missing_hours": 0
+          },
+          {
+            "day": 9,
+            "mean": 257.92,
+            "missing_hours": 0
+          },
+          {
+            "day": 10,
+            "mean": 224.38,
+            "missing_hours": 0
+          },
+          {
+            "day": 11,
+            "mean": 242.17,
+            "missing_hours": 0
+          },
+          {
+            "day": 12,
+            "mean": 221.58,
+            "missing_hours": 0
+          },
+          {
+            "day": 13,
+            "mean": 279.08,
+            "missing_hours": 0
+          },
+          {
+            "day": 14,
+            "mean": 322.62,
+            "missing_hours": 0
+          },
+          {
+            "day": 15,
+            "mean": 257.38,
+            "missing_hours": 0
+          },
+          {
+            "day": 16,
+            "mean": 253.62,
+            "missing_hours": 0
+          },
+          {
+            "day": 17,
+            "mean": 232.75,
+            "missing_hours": 0
+          },
+          {
+            "day": 18,
+            "mean": 240.67,
+            "missing_hours": 0
+          },
+          {
+            "day": 19,
+            "mean": 209.42,
+            "missing_hours": 0
+          },
+          {
+            "day": 20,
+            "mean": 238.17,
+            "missing_hours": 0
+          },
+          {
+            "day": 21,
+            "mean": 265.79,
+            "missing_hours": 0
+          },
+          {
+            "day": 22,
+            "mean": 268.46,
+            "missing_hours": 0
+          },
+          {
+            "day": 23,
+            "mean": 255.58,
+            "missing_hours": 0
+          },
+          {
+            "day": 24,
+            "mean": 209.79,
+            "missing_hours": 0
+          },
+          {
+            "day": 25,
+            "mean": 210.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 26,
+            "mean": 212.71,
+            "missing_hours": 0
+          },
+          {
+            "day": 27,
+            "mean": 240.96,
+            "missing_hours": 0
+          },
+          {
+            "day": 28,
+            "mean": 279.21,
+            "missing_hours": 0
+          },
+          {
+            "day": 29,
+            "mean": 269.04,
+            "missing_hours": 0
+          },
+          {
+            "day": 30,
+            "mean": 239.67,
+            "missing_hours": 0
+          }
+        ],
+        "overall_mean": 270.32,
+        "total_missing_hours": 0,
+        "offline_days": 0
+      },
+      {
+        "sensor_id": "S3",
+        "sensor_key": "NO2",
+        "param": "NO2_ppb",
+        "unit": "ppb",
+        "normal_range": [
+          10,
+          50
+        ],
+        "daily_means": [
+          {
+            "day": 1,
+            "mean": 9.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 2,
+            "mean": 7.74,
+            "missing_hours": 0
+          },
+          {
+            "day": 3,
+            "mean": 8.41,
+            "missing_hours": 0
+          },
+          {
+            "day": 4,
+            "mean": 11.75,
+            "missing_hours": 0
+          },
+          {
+            "day": 5,
+            "mean": 10.91,
+            "missing_hours": 0
+          },
+          {
+            "day": 6,
+            "mean": 11.8,
+            "missing_hours": 0
+          },
+          {
+            "day": 7,
+            "mean": 10.36,
+            "missing_hours": 0
+          },
+          {
+            "day": 8,
+            "mean": 9.46,
+            "missing_hours": 0
+          },
+          {
+            "day": 9,
+            "mean": 6.39,
+            "missing_hours": 0
+          },
+          {
+            "day": 10,
+            "mean": 5.77,
+            "missing_hours": 0
+          },
+          {
+            "day": 11,
+            "mean": 7.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 12,
+            "mean": 8.4,
+            "missing_hours": 0
+          },
+          {
+            "day": 13,
+            "mean": 7.55,
+            "missing_hours": 0
+          },
+          {
+            "day": 14,
+            "mean": 8.66,
+            "missing_hours": 0
+          },
+          {
+            "day": 15,
+            "mean": 7.03,
+            "missing_hours": 0
+          },
+          {
+            "day": 16,
+            "mean": 6.18,
+            "missing_hours": 0
+          },
+          {
+            "day": 17,
+            "mean": 6.48,
+            "missing_hours": 0
+          },
+          {
+            "day": 18,
+            "mean": 5.36,
+            "missing_hours": 0
+          },
+          {
+            "day": 19,
+            "mean": 5.58,
+            "missing_hours": 0
+          },
+          {
+            "day": 20,
+            "mean": 8.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 21,
+            "mean": 6.17,
+            "missing_hours": 0
+          },
+          {
+            "day": 22,
+            "mean": 7.1,
+            "missing_hours": 0
+          },
+          {
+            "day": 23,
+            "mean": 6.62,
+            "missing_hours": 0
+          },
+          {
+            "day": 24,
+            "mean": 5.68,
+            "missing_hours": 0
+          },
+          {
+            "day": 25,
+            "mean": 5.54,
+            "missing_hours": 0
+          },
+          {
+            "day": 26,
+            "mean": 5.42,
+            "missing_hours": 0
+          },
+          {
+            "day": 27,
+            "mean": 6.52,
+            "missing_hours": 0
+          },
+          {
+            "day": 28,
+            "mean": 7.41,
+            "missing_hours": 0
+          },
+          {
+            "day": 29,
+            "mean": 7.45,
+            "missing_hours": 0
+          },
+          {
+            "day": 30,
+            "mean": 6.61,
+            "missing_hours": 0
+          }
+        ],
+        "overall_mean": 7.54,
+        "total_missing_hours": 0,
+        "offline_days": 0
+      },
+      {
+        "sensor_id": "S4",
+        "sensor_key": "CH4",
+        "param": "CH4_ppb",
+        "unit": "ppb",
+        "normal_range": [
+          1800,
+          2000
+        ],
+        "daily_means": [
+          {
+            "day": 1,
+            "mean": 1462.17,
+            "missing_hours": 0
+          },
+          {
+            "day": 2,
+            "mean": 1459.88,
+            "missing_hours": 0
+          },
+          {
+            "day": 3,
+            "mean": 1461.58,
+            "missing_hours": 0
+          },
+          {
+            "day": 4,
+            "mean": 1444.08,
+            "missing_hours": 0
+          },
+          {
+            "day": 5,
+            "mean": 1438.04,
+            "missing_hours": 0
+          },
+          {
+            "day": 6,
+            "mean": 1436.88,
+            "missing_hours": 0
+          },
+          {
+            "day": 7,
+            "mean": 1426.92,
+            "missing_hours": 0
+          },
+          {
+            "day": 8,
+            "mean": 1421.29,
+            "missing_hours": 0
+          },
+          {
+            "day": 9,
+            "mean": 1398.58,
+            "missing_hours": 0
+          },
+          {
+            "day": 10,
+            "mean": 1384.54,
+            "missing_hours": 0
+          },
+          {
+            "day": 11,
+            "mean": 1392.5,
+            "missing_hours": 0
+          },
+          {
+            "day": 12,
+            "mean": 1381.29,
+            "missing_hours": 0
+          },
+          {
+            "day": 13,
+            "mean": 1411.88,
+            "missing_hours": 0
+          },
+          {
+            "day": 14,
+            "mean": 1433.08,
+            "missing_hours": 0
+          },
+          {
+            "day": 15,
+            "mean": 1400.21,
+            "missing_hours": 0
+          },
+          {
+            "day": 16,
+            "mean": 1393.38,
+            "missing_hours": 0
+          },
+          {
+            "day": 17,
+            "mean": 1392.29,
+            "missing_hours": 0
+          },
+          {
+            "day": 18,
+            "mean": 1398.5,
+            "missing_hours": 0
+          },
+          {
+            "day": 19,
+            "mean": 1388.92,
+            "missing_hours": 0
+          },
+          {
+            "day": 20,
+            "mean": 1399.38,
+            "missing_hours": 0
+          },
+          {
+            "day": 21,
+            "mean": 1400.79,
+            "missing_hours": 0
+          },
+          {
+            "day": 22,
+            "mean": 1408.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 23,
+            "mean": 1400.08,
+            "missing_hours": 0
+          },
+          {
+            "day": 24,
+            "mean": 1391.67,
+            "missing_hours": 0
+          },
+          {
+            "day": 25,
+            "mean": 1384.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 26,
+            "mean": 1383.5,
+            "missing_hours": 0
+          },
+          {
+            "day": 27,
+            "mean": 1390.08,
+            "missing_hours": 0
+          },
+          {
+            "day": 28,
+            "mean": 1404.21,
+            "missing_hours": 0
+          },
+          {
+            "day": 29,
+            "mean": 1403.5,
+            "missing_hours": 0
+          },
+          {
+            "day": 30,
+            "mean": 1391.92,
+            "missing_hours": 0
+          }
+        ],
+        "overall_mean": 1409.44,
+        "total_missing_hours": 0,
+        "offline_days": 0
+      },
+      {
+        "sensor_id": "S5",
+        "sensor_key": "CH4",
+        "param": "CH4_ppb",
+        "unit": "ppb",
+        "normal_range": [
+          1800,
+          2000
+        ],
+        "daily_means": [
+          {
+            "day": 1,
+            "mean": 1462.17,
+            "missing_hours": 0
+          },
+          {
+            "day": 2,
+            "mean": 1459.88,
+            "missing_hours": 0
+          },
+          {
+            "day": 3,
+            "mean": 1461.58,
+            "missing_hours": 0
+          },
+          {
+            "day": 4,
+            "mean": 1444.08,
+            "missing_hours": 0
+          },
+          {
+            "day": 5,
+            "mean": 1438.04,
+            "missing_hours": 0
+          },
+          {
+            "day": 6,
+            "mean": 1436.88,
+            "missing_hours": 0
+          },
+          {
+            "day": 7,
+            "mean": 1426.92,
+            "missing_hours": 0
+          },
+          {
+            "day": 8,
+            "mean": 1421.29,
+            "missing_hours": 0
+          },
+          {
+            "day": 9,
+            "mean": 1398.58,
+            "missing_hours": 0
+          },
+          {
+            "day": 10,
+            "mean": 1384.54,
+            "missing_hours": 0
+          },
+          {
+            "day": 11,
+            "mean": 1392.5,
+            "missing_hours": 0
+          },
+          {
+            "day": 12,
+            "mean": 1381.29,
+            "missing_hours": 0
+          },
+          {
+            "day": 13,
+            "mean": 1411.88,
+            "missing_hours": 0
+          },
+          {
+            "day": 14,
+            "mean": 1433.08,
+            "missing_hours": 0
+          },
+          {
+            "day": 15,
+            "mean": 1400.21,
+            "missing_hours": 0
+          },
+          {
+            "day": 16,
+            "mean": 1393.38,
+            "missing_hours": 0
+          },
+          {
+            "day": 17,
+            "mean": 1392.29,
+            "missing_hours": 0
+          },
+          {
+            "day": 18,
+            "mean": 1398.5,
+            "missing_hours": 0
+          },
+          {
+            "day": 19,
+            "mean": 1388.92,
+            "missing_hours": 0
+          },
+          {
+            "day": 20,
+            "mean": 1399.38,
+            "missing_hours": 0
+          },
+          {
+            "day": 21,
+            "mean": 1400.79,
+            "missing_hours": 0
+          },
+          {
+            "day": 22,
+            "mean": 1408.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 23,
+            "mean": 1400.08,
+            "missing_hours": 0
+          },
+          {
+            "day": 24,
+            "mean": 1391.67,
+            "missing_hours": 0
+          },
+          {
+            "day": 25,
+            "mean": 1384.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 26,
+            "mean": 1383.5,
+            "missing_hours": 0
+          },
+          {
+            "day": 27,
+            "mean": 1390.08,
+            "missing_hours": 0
+          },
+          {
+            "day": 28,
+            "mean": 1404.21,
+            "missing_hours": 0
+          },
+          {
+            "day": 29,
+            "mean": 1403.5,
+            "missing_hours": 0
+          },
+          {
+            "day": 30,
+            "mean": 1391.92,
+            "missing_hours": 0
+          }
+        ],
+        "overall_mean": 1409.44,
+        "total_missing_hours": 0,
+        "offline_days": 0
+      },
+      {
+        "sensor_id": "S6",
+        "sensor_key": "NO2",
+        "param": "NO2_ppb",
+        "unit": "ppb",
+        "normal_range": [
+          10,
+          50
+        ],
+        "daily_means": [
+          {
+            "day": 1,
+            "mean": 9.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 2,
+            "mean": 7.74,
+            "missing_hours": 0
+          },
+          {
+            "day": 3,
+            "mean": 8.41,
+            "missing_hours": 0
+          },
+          {
+            "day": 4,
+            "mean": 11.75,
+            "missing_hours": 0
+          },
+          {
+            "day": 5,
+            "mean": 10.91,
+            "missing_hours": 0
+          },
+          {
+            "day": 6,
+            "mean": 11.8,
+            "missing_hours": 0
+          },
+          {
+            "day": 7,
+            "mean": 10.36,
+            "missing_hours": 0
+          },
+          {
+            "day": 8,
+            "mean": 9.46,
+            "missing_hours": 0
+          },
+          {
+            "day": 9,
+            "mean": 6.39,
+            "missing_hours": 0
+          },
+          {
+            "day": 10,
+            "mean": 5.77,
+            "missing_hours": 0
+          },
+          {
+            "day": 11,
+            "mean": 7.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 12,
+            "mean": 8.4,
+            "missing_hours": 0
+          },
+          {
+            "day": 13,
+            "mean": 7.55,
+            "missing_hours": 0
+          },
+          {
+            "day": 14,
+            "mean": 8.66,
+            "missing_hours": 0
+          },
+          {
+            "day": 15,
+            "mean": 7.03,
+            "missing_hours": 0
+          },
+          {
+            "day": 16,
+            "mean": 6.18,
+            "missing_hours": 0
+          },
+          {
+            "day": 17,
+            "mean": 6.48,
+            "missing_hours": 0
+          },
+          {
+            "day": 18,
+            "mean": 5.36,
+            "missing_hours": 0
+          },
+          {
+            "day": 19,
+            "mean": 5.58,
+            "missing_hours": 0
+          },
+          {
+            "day": 20,
+            "mean": 8.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 21,
+            "mean": 6.17,
+            "missing_hours": 0
+          },
+          {
+            "day": 22,
+            "mean": 7.1,
+            "missing_hours": 0
+          },
+          {
+            "day": 23,
+            "mean": 6.62,
+            "missing_hours": 0
+          },
+          {
+            "day": 24,
+            "mean": 5.68,
+            "missing_hours": 0
+          },
+          {
+            "day": 25,
+            "mean": 5.54,
+            "missing_hours": 0
+          },
+          {
+            "day": 26,
+            "mean": 5.42,
+            "missing_hours": 0
+          },
+          {
+            "day": 27,
+            "mean": 6.52,
+            "missing_hours": 0
+          },
+          {
+            "day": 28,
+            "mean": 7.41,
+            "missing_hours": 0
+          },
+          {
+            "day": 29,
+            "mean": 7.45,
+            "missing_hours": 0
+          },
+          {
+            "day": 30,
+            "mean": 6.61,
+            "missing_hours": 0
+          }
+        ],
+        "overall_mean": 7.54,
+        "total_missing_hours": 0,
+        "offline_days": 0
+      },
+      {
+        "sensor_id": "S7",
+        "sensor_key": "O3",
+        "param": "O3_ppb",
+        "unit": "ppb",
+        "normal_range": [
+          20,
+          60
+        ],
+        "daily_means": [
+          {
+            "day": 1,
+            "mean": 100.38,
+            "missing_hours": 0
+          },
+          {
+            "day": 2,
+            "mean": 98.42,
+            "missing_hours": 0
+          },
+          {
+            "day": 3,
+            "mean": 98.5,
+            "missing_hours": 0
+          },
+          {
+            "day": 4,
+            "mean": 107.04,
+            "missing_hours": 0
+          },
+          {
+            "day": 5,
+            "mean": 107.54,
+            "missing_hours": 0
+          },
+          {
+            "day": 6,
+            "mean": 84.71,
+            "missing_hours": 0
+          },
+          {
+            "day": 7,
+            "mean": 81.83,
+            "missing_hours": 0
+          },
+          {
+            "day": 8,
+            "mean": 90.83,
+            "missing_hours": 0
+          },
+          {
+            "day": 9,
+            "mean": 83.62,
+            "missing_hours": 0
+          },
+          {
+            "day": 10,
+            "mean": 73.25,
+            "missing_hours": 0
+          },
+          {
+            "day": 11,
+            "mean": 85.29,
+            "missing_hours": 0
+          },
+          {
+            "day": 12,
+            "mean": 67.04,
+            "missing_hours": 0
+          },
+          {
+            "day": 13,
+            "mean": 70.17,
+            "missing_hours": 0
+          },
+          {
+            "day": 14,
+            "mean": 68.79,
+            "missing_hours": 0
+          },
+          {
+            "day": 15,
+            "mean": 63.54,
+            "missing_hours": 0
+          },
+          {
+            "day": 16,
+            "mean": 65.46,
+            "missing_hours": 0
+          },
+          {
+            "day": 17,
+            "mean": 61.5,
+            "missing_hours": 0
+          },
+          {
+            "day": 18,
+            "mean": 71.83,
+            "missing_hours": 0
+          },
+          {
+            "day": 19,
+            "mean": 65.38,
+            "missing_hours": 0
+          },
+          {
+            "day": 20,
+            "mean": 55.46,
+            "missing_hours": 0
+          },
+          {
+            "day": 21,
+            "mean": 75.75,
+            "missing_hours": 0
+          },
+          {
+            "day": 22,
+            "mean": 69.67,
+            "missing_hours": 0
+          },
+          {
+            "day": 23,
+            "mean": 56.62,
+            "missing_hours": 0
+          },
+          {
+            "day": 24,
+            "mean": 61.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 25,
+            "mean": 64.04,
+            "missing_hours": 0
+          },
+          {
+            "day": 26,
+            "mean": 72.46,
+            "missing_hours": 0
+          },
+          {
+            "day": 27,
+            "mean": 82.75,
+            "missing_hours": 0
+          },
+          {
+            "day": 28,
+            "mean": 82.96,
+            "missing_hours": 0
+          },
+          {
+            "day": 29,
+            "mean": 79.96,
+            "missing_hours": 0
+          },
+          {
+            "day": 30,
+            "mean": 85.83,
+            "missing_hours": 0
+          }
+        ],
+        "overall_mean": 77.72,
+        "total_missing_hours": 0,
+        "offline_days": 0
+      },
+      {
+        "sensor_id": "S8",
+        "sensor_key": "NO2",
+        "param": "NO2_ppb",
+        "unit": "ppb",
+        "normal_range": [
+          10,
+          50
+        ],
+        "daily_means": [
+          {
+            "day": 1,
+            "mean": 9.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 2,
+            "mean": 7.74,
+            "missing_hours": 0
+          },
+          {
+            "day": 3,
+            "mean": 8.41,
+            "missing_hours": 0
+          },
+          {
+            "day": 4,
+            "mean": 11.75,
+            "missing_hours": 0
+          },
+          {
+            "day": 5,
+            "mean": 10.91,
+            "missing_hours": 0
+          },
+          {
+            "day": 6,
+            "mean": 11.8,
+            "missing_hours": 0
+          },
+          {
+            "day": 7,
+            "mean": 10.36,
+            "missing_hours": 0
+          },
+          {
+            "day": 8,
+            "mean": 9.46,
+            "missing_hours": 0
+          },
+          {
+            "day": 9,
+            "mean": 6.39,
+            "missing_hours": 0
+          },
+          {
+            "day": 10,
+            "mean": 5.77,
+            "missing_hours": 0
+          },
+          {
+            "day": 11,
+            "mean": 7.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 12,
+            "mean": 8.4,
+            "missing_hours": 0
+          },
+          {
+            "day": 13,
+            "mean": 7.55,
+            "missing_hours": 0
+          },
+          {
+            "day": 14,
+            "mean": 8.66,
+            "missing_hours": 0
+          },
+          {
+            "day": 15,
+            "mean": 7.03,
+            "missing_hours": 0
+          },
+          {
+            "day": 16,
+            "mean": 6.18,
+            "missing_hours": 0
+          },
+          {
+            "day": 17,
+            "mean": 6.48,
+            "missing_hours": 0
+          },
+          {
+            "day": 18,
+            "mean": 5.36,
+            "missing_hours": 0
+          },
+          {
+            "day": 19,
+            "mean": 5.58,
+            "missing_hours": 0
+          },
+          {
+            "day": 20,
+            "mean": 8.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 21,
+            "mean": 6.17,
+            "missing_hours": 0
+          },
+          {
+            "day": 22,
+            "mean": 7.1,
+            "missing_hours": 0
+          },
+          {
+            "day": 23,
+            "mean": 6.62,
+            "missing_hours": 0
+          },
+          {
+            "day": 24,
+            "mean": 5.68,
+            "missing_hours": 0
+          },
+          {
+            "day": 25,
+            "mean": 5.54,
+            "missing_hours": 0
+          },
+          {
+            "day": 26,
+            "mean": 5.42,
+            "missing_hours": 0
+          },
+          {
+            "day": 27,
+            "mean": 6.52,
+            "missing_hours": 0
+          },
+          {
+            "day": 28,
+            "mean": 7.41,
+            "missing_hours": 0
+          },
+          {
+            "day": 29,
+            "mean": 7.45,
+            "missing_hours": 0
+          },
+          {
+            "day": 30,
+            "mean": 6.61,
+            "missing_hours": 0
+          }
+        ],
+        "overall_mean": 7.54,
+        "total_missing_hours": 0,
+        "offline_days": 0
+      },
+      {
+        "sensor_id": "S9",
+        "sensor_key": "O3",
+        "param": "O3_ppb",
+        "unit": "ppb",
+        "normal_range": [
+          20,
+          60
+        ],
+        "daily_means": [
+          {
+            "day": 1,
+            "mean": 100.38,
+            "missing_hours": 0
+          },
+          {
+            "day": 2,
+            "mean": 98.42,
+            "missing_hours": 0
+          },
+          {
+            "day": 3,
+            "mean": 98.5,
+            "missing_hours": 0
+          },
+          {
+            "day": 4,
+            "mean": 107.04,
+            "missing_hours": 0
+          },
+          {
+            "day": 5,
+            "mean": 107.54,
+            "missing_hours": 0
+          },
+          {
+            "day": 6,
+            "mean": 84.71,
+            "missing_hours": 0
+          },
+          {
+            "day": 7,
+            "mean": 81.83,
+            "missing_hours": 0
+          },
+          {
+            "day": 8,
+            "mean": 90.83,
+            "missing_hours": 0
+          },
+          {
+            "day": 9,
+            "mean": 83.62,
+            "missing_hours": 0
+          },
+          {
+            "day": 10,
+            "mean": 73.25,
+            "missing_hours": 0
+          },
+          {
+            "day": 11,
+            "mean": 85.29,
+            "missing_hours": 0
+          },
+          {
+            "day": 12,
+            "mean": 67.04,
+            "missing_hours": 0
+          },
+          {
+            "day": 13,
+            "mean": 70.17,
+            "missing_hours": 0
+          },
+          {
+            "day": 14,
+            "mean": 68.79,
+            "missing_hours": 0
+          },
+          {
+            "day": 15,
+            "mean": 63.54,
+            "missing_hours": 0
+          },
+          {
+            "day": 16,
+            "mean": 65.46,
+            "missing_hours": 0
+          },
+          {
+            "day": 17,
+            "mean": 61.5,
+            "missing_hours": 0
+          },
+          {
+            "day": 18,
+            "mean": 71.83,
+            "missing_hours": 0
+          },
+          {
+            "day": 19,
+            "mean": 65.38,
+            "missing_hours": 0
+          },
+          {
+            "day": 20,
+            "mean": 55.46,
+            "missing_hours": 0
+          },
+          {
+            "day": 21,
+            "mean": 75.75,
+            "missing_hours": 0
+          },
+          {
+            "day": 22,
+            "mean": 69.67,
+            "missing_hours": 0
+          },
+          {
+            "day": 23,
+            "mean": 56.62,
+            "missing_hours": 0
+          },
+          {
+            "day": 24,
+            "mean": 61.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 25,
+            "mean": 64.04,
+            "missing_hours": 0
+          },
+          {
+            "day": 26,
+            "mean": 72.46,
+            "missing_hours": 0
+          },
+          {
+            "day": 27,
+            "mean": 82.75,
+            "missing_hours": 0
+          },
+          {
+            "day": 28,
+            "mean": 82.96,
+            "missing_hours": 0
+          },
+          {
+            "day": 29,
+            "mean": 79.96,
+            "missing_hours": 0
+          },
+          {
+            "day": 30,
+            "mean": 85.83,
+            "missing_hours": 0
+          }
+        ],
+        "overall_mean": 77.72,
+        "total_missing_hours": 0,
+        "offline_days": 0
+      },
+      {
+        "sensor_id": "S10",
+        "sensor_key": "O3",
+        "param": "O3_ppb",
+        "unit": "ppb",
+        "normal_range": [
+          20,
+          60
+        ],
+        "daily_means": [
+          {
+            "day": 1,
+            "mean": 100.38,
+            "missing_hours": 0
+          },
+          {
+            "day": 2,
+            "mean": 98.42,
+            "missing_hours": 0
+          },
+          {
+            "day": 3,
+            "mean": 98.5,
+            "missing_hours": 0
+          },
+          {
+            "day": 4,
+            "mean": 107.04,
+            "missing_hours": 0
+          },
+          {
+            "day": 5,
+            "mean": 107.54,
+            "missing_hours": 0
+          },
+          {
+            "day": 6,
+            "mean": 84.71,
+            "missing_hours": 0
+          },
+          {
+            "day": 7,
+            "mean": 81.83,
+            "missing_hours": 0
+          },
+          {
+            "day": 8,
+            "mean": 90.83,
+            "missing_hours": 0
+          },
+          {
+            "day": 9,
+            "mean": 83.62,
+            "missing_hours": 0
+          },
+          {
+            "day": 10,
+            "mean": 73.25,
+            "missing_hours": 0
+          },
+          {
+            "day": 11,
+            "mean": 85.29,
+            "missing_hours": 0
+          },
+          {
+            "day": 12,
+            "mean": 67.04,
+            "missing_hours": 0
+          },
+          {
+            "day": 13,
+            "mean": 70.17,
+            "missing_hours": 0
+          },
+          {
+            "day": 14,
+            "mean": 68.79,
+            "missing_hours": 0
+          },
+          {
+            "day": 15,
+            "mean": 63.54,
+            "missing_hours": 0
+          },
+          {
+            "day": 16,
+            "mean": 65.46,
+            "missing_hours": 0
+          },
+          {
+            "day": 17,
+            "mean": 61.5,
+            "missing_hours": 0
+          },
+          {
+            "day": 18,
+            "mean": 71.83,
+            "missing_hours": 0
+          },
+          {
+            "day": 19,
+            "mean": 65.38,
+            "missing_hours": 0
+          },
+          {
+            "day": 20,
+            "mean": 55.46,
+            "missing_hours": 0
+          },
+          {
+            "day": 21,
+            "mean": 75.75,
+            "missing_hours": 0
+          },
+          {
+            "day": 22,
+            "mean": 69.67,
+            "missing_hours": 0
+          },
+          {
+            "day": 23,
+            "mean": 56.62,
+            "missing_hours": 0
+          },
+          {
+            "day": 24,
+            "mean": 61.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 25,
+            "mean": 64.04,
+            "missing_hours": 0
+          },
+          {
+            "day": 26,
+            "mean": 72.46,
+            "missing_hours": 0
+          },
+          {
+            "day": 27,
+            "mean": 82.75,
+            "missing_hours": 0
+          },
+          {
+            "day": 28,
+            "mean": 82.96,
+            "missing_hours": 0
+          },
+          {
+            "day": 29,
+            "mean": 79.96,
+            "missing_hours": 0
+          },
+          {
+            "day": 30,
+            "mean": 85.83,
+            "missing_hours": 0
+          }
+        ],
+        "overall_mean": 77.72,
+        "total_missing_hours": 0,
+        "offline_days": 0
+      }
+    ]
+  },
+  {
+    "scenario_id": 4,
+    "network_id": "OFFSHORE-PLATFORM-7",
+    "location": "Fixed Production Platform, North Sea, UK/Norway",
+    "location_key": "north_sea",
+    "lat": 57.5,
+    "lon": 2.0,
+    "period_days": 30,
+    "sensors": [
+      {
+        "sensor_id": "S1",
+        "sensor_key": "CH4",
+        "param": "CH4_ppb",
+        "unit": "ppb",
+        "normal_range": [
+          1800,
+          2000
+        ],
+        "daily_means": [
+          {
+            "day": 1,
+            "mean": 1405.38,
+            "missing_hours": 0
+          },
+          {
+            "day": 2,
+            "mean": 1393.88,
+            "missing_hours": 0
+          },
+          {
+            "day": 3,
+            "mean": 1404.62,
+            "missing_hours": 0
+          },
+          {
+            "day": 4,
+            "mean": 1403.92,
+            "missing_hours": 0
+          },
+          {
+            "day": 5,
+            "mean": 1403.54,
+            "missing_hours": 0
+          },
+          {
+            "day": 6,
+            "mean": 1414.25,
+            "missing_hours": 0
+          },
+          {
+            "day": 7,
+            "mean": 1508.67,
+            "missing_hours": 0
+          },
+          {
+            "day": 8,
+            "mean": 1454.25,
+            "missing_hours": 0
+          },
+          {
+            "day": 9,
+            "mean": 1405.67,
+            "missing_hours": 0
+          },
+          {
+            "day": 10,
+            "mean": 1418.96,
+            "missing_hours": 0
+          },
+          {
+            "day": 11,
+            "mean": 1447.54,
+            "missing_hours": 0
+          },
+          {
+            "day": 12,
+            "mean": 1448.33,
+            "missing_hours": 0
+          },
+          {
+            "day": 13,
+            "mean": 1398.29,
+            "missing_hours": 0
+          },
+          {
+            "day": 14,
+            "mean": 1391.25,
+            "missing_hours": 0
+          },
+          {
+            "day": 15,
+            "mean": 1398.62,
+            "missing_hours": 0
+          },
+          {
+            "day": 16,
+            "mean": 1398.88,
+            "missing_hours": 0
+          },
+          {
+            "day": 17,
+            "mean": 1401.92,
+            "missing_hours": 0
+          },
+          {
+            "day": 18,
+            "mean": 1397.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 19,
+            "mean": 1389.5,
+            "missing_hours": 0
+          },
+          {
+            "day": 20,
+            "mean": 1416.67,
+            "missing_hours": 0
+          },
+          {
+            "day": 21,
+            "mean": 1492.71,
+            "missing_hours": 0
+          },
+          {
+            "day": 22,
+            "mean": 1432.67,
+            "missing_hours": 0
+          },
+          {
+            "day": 23,
+            "mean": 1465.17,
+            "missing_hours": 0
+          },
+          {
+            "day": 24,
+            "mean": 1423.92,
+            "missing_hours": 0
+          },
+          {
+            "day": 25,
+            "mean": 1406.5,
+            "missing_hours": 0
+          },
+          {
+            "day": 26,
+            "mean": 1387.46,
+            "missing_hours": 0
+          },
+          {
+            "day": 27,
+            "mean": 1407.5,
+            "missing_hours": 0
+          },
+          {
+            "day": 28,
+            "mean": 1406.5,
+            "missing_hours": 0
+          },
+          {
+            "day": 29,
+            "mean": 1409.92,
+            "missing_hours": 0
+          },
+          {
+            "day": 30,
+            "mean": 1400.58,
+            "missing_hours": 0
+          }
+        ],
+        "overall_mean": 1417.8,
+        "total_missing_hours": 0,
+        "offline_days": 0
+      },
+      {
+        "sensor_id": "S2",
+        "sensor_key": "CO",
+        "param": "CO_ppb",
+        "unit": "ppb",
+        "normal_range": [
+          200,
+          800
+        ],
+        "daily_means": [
+          {
+            "day": 1,
+            "mean": 145.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 2,
+            "mean": 149.83,
+            "missing_hours": 0
+          },
+          {
+            "day": 3,
+            "mean": 153.17,
+            "missing_hours": 0
+          },
+          {
+            "day": 4,
+            "mean": 151.67,
+            "missing_hours": 0
+          },
+          {
+            "day": 5,
+            "mean": 157.21,
+            "missing_hours": 0
+          },
+          {
+            "day": 6,
+            "mean": 156.62,
+            "missing_hours": 0
+          },
+          {
+            "day": 7,
+            "mean": 235.42,
+            "missing_hours": 0
+          },
+          {
+            "day": 8,
+            "mean": 181.38,
+            "missing_hours": 0
+          },
+          {
+            "day": 9,
+            "mean": 155.04,
+            "missing_hours": 0
+          },
+          {
+            "day": 10,
+            "mean": 157.92,
+            "missing_hours": 0
+          },
+          {
+            "day": 11,
+            "mean": 182.67,
+            "missing_hours": 0
+          },
+          {
+            "day": 12,
+            "mean": 187.29,
+            "missing_hours": 0
+          },
+          {
+            "day": 13,
+            "mean": 146.79,
+            "missing_hours": 0
+          },
+          {
+            "day": 14,
+            "mean": 140.67,
+            "missing_hours": 0
+          },
+          {
+            "day": 15,
+            "mean": 151.88,
+            "missing_hours": 0
+          },
+          {
+            "day": 16,
+            "mean": 146.62,
+            "missing_hours": 0
+          },
+          {
+            "day": 17,
+            "mean": 146.33,
+            "missing_hours": 0
+          },
+          {
+            "day": 18,
+            "mean": 146.42,
+            "missing_hours": 0
+          },
+          {
+            "day": 19,
+            "mean": 124.79,
+            "missing_hours": 0
+          },
+          {
+            "day": 20,
+            "mean": 135.62,
+            "missing_hours": 0
+          },
+          {
+            "day": 21,
+            "mean": 147.04,
+            "missing_hours": 0
+          },
+          {
+            "day": 22,
+            "mean": 147.25,
+            "missing_hours": 0
+          },
+          {
+            "day": 23,
+            "mean": 169.71,
+            "missing_hours": 0
+          },
+          {
+            "day": 24,
+            "mean": 159.17,
+            "missing_hours": 0
+          },
+          {
+            "day": 25,
+            "mean": 159.29,
+            "missing_hours": 0
+          },
+          {
+            "day": 26,
+            "mean": 122.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 27,
+            "mean": 159.17,
+            "missing_hours": 0
+          },
+          {
+            "day": 28,
+            "mean": 165.17,
+            "missing_hours": 0
+          },
+          {
+            "day": 29,
+            "mean": 143.42,
+            "missing_hours": 0
+          },
+          {
+            "day": 30,
+            "mean": 156.17,
+            "missing_hours": 0
+          }
+        ],
+        "overall_mean": 156.02,
+        "total_missing_hours": 0,
+        "offline_days": 0
+      },
+      {
+        "sensor_id": "S3",
+        "sensor_key": "NO2",
+        "param": "NO2_ppb",
+        "unit": "ppb",
+        "normal_range": [
+          10,
+          50
+        ],
+        "daily_means": [
+          {
+            "day": 1,
+            "mean": 1.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 2,
+            "mean": 0.34,
+            "missing_hours": 0
+          },
+          {
+            "day": 3,
+            "mean": 2.07,
+            "missing_hours": 0
+          },
+          {
+            "day": 4,
+            "mean": 2.6,
+            "missing_hours": 0
+          },
+          {
+            "day": 5,
+            "mean": 0.82,
+            "missing_hours": 0
+          },
+          {
+            "day": 6,
+            "mean": 1.4,
+            "missing_hours": 0
+          },
+          {
+            "day": 7,
+            "mean": 6.92,
+            "missing_hours": 0
+          },
+          {
+            "day": 8,
+            "mean": 2.48,
+            "missing_hours": 0
+          },
+          {
+            "day": 9,
+            "mean": 0.97,
+            "missing_hours": 0
+          },
+          {
+            "day": 10,
+            "mean": 1.45,
+            "missing_hours": 0
+          },
+          {
+            "day": 11,
+            "mean": 2.2,
+            "missing_hours": 0
+          },
+          {
+            "day": 12,
+            "mean": 3.2,
+            "missing_hours": 0
+          },
+          {
+            "day": 13,
+            "mean": 1.19,
+            "missing_hours": 0
+          },
+          {
+            "day": 14,
+            "mean": 1.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 15,
+            "mean": 0.73,
+            "missing_hours": 0
+          },
+          {
+            "day": 16,
+            "mean": 0.6,
+            "missing_hours": 0
+          },
+          {
+            "day": 17,
+            "mean": 1.2,
+            "missing_hours": 0
+          },
+          {
+            "day": 18,
+            "mean": 0.66,
+            "missing_hours": 0
+          },
+          {
+            "day": 19,
+            "mean": 1.77,
+            "missing_hours": 0
+          },
+          {
+            "day": 20,
+            "mean": 2.43,
+            "missing_hours": 0
+          },
+          {
+            "day": 21,
+            "mean": 1.71,
+            "missing_hours": 0
+          },
+          {
+            "day": 22,
+            "mean": 1.38,
+            "missing_hours": 0
+          },
+          {
+            "day": 23,
+            "mean": 2.53,
+            "missing_hours": 0
+          },
+          {
+            "day": 24,
+            "mean": 1.47,
+            "missing_hours": 0
+          },
+          {
+            "day": 25,
+            "mean": 0.74,
+            "missing_hours": 0
+          },
+          {
+            "day": 26,
+            "mean": 1.01,
+            "missing_hours": 0
+          },
+          {
+            "day": 27,
+            "mean": 0.28,
+            "missing_hours": 0
+          },
+          {
+            "day": 28,
+            "mean": 0.24,
+            "missing_hours": 0
+          },
+          {
+            "day": 29,
+            "mean": 0.87,
+            "missing_hours": 0
+          },
+          {
+            "day": 30,
+            "mean": 0.27,
+            "missing_hours": 0
+          }
+        ],
+        "overall_mean": 1.52,
+        "total_missing_hours": 0,
+        "offline_days": 0
+      },
+      {
+        "sensor_id": "S4",
+        "sensor_key": "CH4",
+        "param": "CH4_ppb",
+        "unit": "ppb",
+        "normal_range": [
+          1800,
+          2000
+        ],
+        "daily_means": [
+          {
+            "day": 1,
+            "mean": 1405.38,
+            "missing_hours": 0
+          },
+          {
+            "day": 2,
+            "mean": 1393.88,
+            "missing_hours": 0
+          },
+          {
+            "day": 3,
+            "mean": 1404.62,
+            "missing_hours": 0
+          },
+          {
+            "day": 4,
+            "mean": 1403.92,
+            "missing_hours": 0
+          },
+          {
+            "day": 5,
+            "mean": 1403.54,
+            "missing_hours": 0
+          },
+          {
+            "day": 6,
+            "mean": 1414.25,
+            "missing_hours": 0
+          },
+          {
+            "day": 7,
+            "mean": 1508.67,
+            "missing_hours": 0
+          },
+          {
+            "day": 8,
+            "mean": 1454.25,
+            "missing_hours": 0
+          },
+          {
+            "day": 9,
+            "mean": 1405.67,
+            "missing_hours": 0
+          },
+          {
+            "day": 10,
+            "mean": 1418.96,
+            "missing_hours": 0
+          },
+          {
+            "day": 11,
+            "mean": 1447.54,
+            "missing_hours": 0
+          },
+          {
+            "day": 12,
+            "mean": 1448.33,
+            "missing_hours": 0
+          },
+          {
+            "day": 13,
+            "mean": 1398.29,
+            "missing_hours": 0
+          },
+          {
+            "day": 14,
+            "mean": 1391.25,
+            "missing_hours": 0
+          },
+          {
+            "day": 15,
+            "mean": 1398.62,
+            "missing_hours": 0
+          },
+          {
+            "day": 16,
+            "mean": 1398.88,
+            "missing_hours": 0
+          },
+          {
+            "day": 17,
+            "mean": 1401.92,
+            "missing_hours": 0
+          },
+          {
+            "day": 18,
+            "mean": 1397.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 19,
+            "mean": 1389.5,
+            "missing_hours": 0
+          },
+          {
+            "day": 20,
+            "mean": 1416.67,
+            "missing_hours": 0
+          },
+          {
+            "day": 21,
+            "mean": 1492.71,
+            "missing_hours": 0
+          },
+          {
+            "day": 22,
+            "mean": 1432.67,
+            "missing_hours": 0
+          },
+          {
+            "day": 23,
+            "mean": 1465.17,
+            "missing_hours": 0
+          },
+          {
+            "day": 24,
+            "mean": 1423.92,
+            "missing_hours": 0
+          },
+          {
+            "day": 25,
+            "mean": 1406.5,
+            "missing_hours": 0
+          },
+          {
+            "day": 26,
+            "mean": 1387.46,
+            "missing_hours": 0
+          },
+          {
+            "day": 27,
+            "mean": 1407.5,
+            "missing_hours": 0
+          },
+          {
+            "day": 28,
+            "mean": 1406.5,
+            "missing_hours": 0
+          },
+          {
+            "day": 29,
+            "mean": 1409.92,
+            "missing_hours": 0
+          },
+          {
+            "day": 30,
+            "mean": 1400.58,
+            "missing_hours": 0
+          }
+        ],
+        "overall_mean": 1417.8,
+        "total_missing_hours": 0,
+        "offline_days": 0
+      },
+      {
+        "sensor_id": "S5",
+        "sensor_key": "CH4",
+        "param": "CH4_ppb",
+        "unit": "ppb",
+        "normal_range": [
+          1800,
+          2000
+        ],
+        "daily_means": [
+          {
+            "day": 1,
+            "mean": 1405.38,
+            "missing_hours": 0
+          },
+          {
+            "day": 2,
+            "mean": 1393.88,
+            "missing_hours": 0
+          },
+          {
+            "day": 3,
+            "mean": 1404.62,
+            "missing_hours": 0
+          },
+          {
+            "day": 4,
+            "mean": 1403.92,
+            "missing_hours": 0
+          },
+          {
+            "day": 5,
+            "mean": 1403.54,
+            "missing_hours": 0
+          },
+          {
+            "day": 6,
+            "mean": 1414.25,
+            "missing_hours": 0
+          },
+          {
+            "day": 7,
+            "mean": 1508.67,
+            "missing_hours": 0
+          },
+          {
+            "day": 8,
+            "mean": 1454.25,
+            "missing_hours": 0
+          },
+          {
+            "day": 9,
+            "mean": 1405.67,
+            "missing_hours": 0
+          },
+          {
+            "day": 10,
+            "mean": 1418.96,
+            "missing_hours": 0
+          },
+          {
+            "day": 11,
+            "mean": 1447.54,
+            "missing_hours": 0
+          },
+          {
+            "day": 12,
+            "mean": 1448.33,
+            "missing_hours": 0
+          },
+          {
+            "day": 13,
+            "mean": 1398.29,
+            "missing_hours": 0
+          },
+          {
+            "day": 14,
+            "mean": 1391.25,
+            "missing_hours": 0
+          },
+          {
+            "day": 15,
+            "mean": 1398.62,
+            "missing_hours": 0
+          },
+          {
+            "day": 16,
+            "mean": 1398.88,
+            "missing_hours": 0
+          },
+          {
+            "day": 17,
+            "mean": 1401.92,
+            "missing_hours": 0
+          },
+          {
+            "day": 18,
+            "mean": 1397.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 19,
+            "mean": 1389.5,
+            "missing_hours": 0
+          },
+          {
+            "day": 20,
+            "mean": 1416.67,
+            "missing_hours": 0
+          },
+          {
+            "day": 21,
+            "mean": 1492.71,
+            "missing_hours": 0
+          },
+          {
+            "day": 22,
+            "mean": 1432.67,
+            "missing_hours": 0
+          },
+          {
+            "day": 23,
+            "mean": 1465.17,
+            "missing_hours": 0
+          },
+          {
+            "day": 24,
+            "mean": 1423.92,
+            "missing_hours": 0
+          },
+          {
+            "day": 25,
+            "mean": 1406.5,
+            "missing_hours": 0
+          },
+          {
+            "day": 26,
+            "mean": 1387.46,
+            "missing_hours": 0
+          },
+          {
+            "day": 27,
+            "mean": 1407.5,
+            "missing_hours": 0
+          },
+          {
+            "day": 28,
+            "mean": 1406.5,
+            "missing_hours": 0
+          },
+          {
+            "day": 29,
+            "mean": 1409.92,
+            "missing_hours": 0
+          },
+          {
+            "day": 30,
+            "mean": 1400.58,
+            "missing_hours": 0
+          }
+        ],
+        "overall_mean": 1417.8,
+        "total_missing_hours": 0,
+        "offline_days": 0
+      },
+      {
+        "sensor_id": "S6",
+        "sensor_key": "NO2",
+        "param": "NO2_ppb",
+        "unit": "ppb",
+        "normal_range": [
+          10,
+          50
+        ],
+        "daily_means": [
+          {
+            "day": 1,
+            "mean": 1.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 2,
+            "mean": 0.34,
+            "missing_hours": 0
+          },
+          {
+            "day": 3,
+            "mean": 2.07,
+            "missing_hours": 0
+          },
+          {
+            "day": 4,
+            "mean": 2.6,
+            "missing_hours": 0
+          },
+          {
+            "day": 5,
+            "mean": 0.82,
+            "missing_hours": 0
+          },
+          {
+            "day": 6,
+            "mean": 1.4,
+            "missing_hours": 0
+          },
+          {
+            "day": 7,
+            "mean": 6.92,
+            "missing_hours": 0
+          },
+          {
+            "day": 8,
+            "mean": 2.48,
+            "missing_hours": 0
+          },
+          {
+            "day": 9,
+            "mean": 0.97,
+            "missing_hours": 0
+          },
+          {
+            "day": 10,
+            "mean": 1.45,
+            "missing_hours": 0
+          },
+          {
+            "day": 11,
+            "mean": 2.2,
+            "missing_hours": 0
+          },
+          {
+            "day": 12,
+            "mean": 3.2,
+            "missing_hours": 0
+          },
+          {
+            "day": 13,
+            "mean": 1.19,
+            "missing_hours": 0
+          },
+          {
+            "day": 14,
+            "mean": 1.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 15,
+            "mean": 0.73,
+            "missing_hours": 0
+          },
+          {
+            "day": 16,
+            "mean": 0.6,
+            "missing_hours": 0
+          },
+          {
+            "day": 17,
+            "mean": 1.2,
+            "missing_hours": 0
+          },
+          {
+            "day": 18,
+            "mean": 0.66,
+            "missing_hours": 0
+          },
+          {
+            "day": 19,
+            "mean": 1.77,
+            "missing_hours": 0
+          },
+          {
+            "day": 20,
+            "mean": 2.43,
+            "missing_hours": 0
+          },
+          {
+            "day": 21,
+            "mean": 1.71,
+            "missing_hours": 0
+          },
+          {
+            "day": 22,
+            "mean": 1.38,
+            "missing_hours": 0
+          },
+          {
+            "day": 23,
+            "mean": 2.53,
+            "missing_hours": 0
+          },
+          {
+            "day": 24,
+            "mean": 1.47,
+            "missing_hours": 0
+          },
+          {
+            "day": 25,
+            "mean": 0.74,
+            "missing_hours": 0
+          },
+          {
+            "day": 26,
+            "mean": 1.01,
+            "missing_hours": 0
+          },
+          {
+            "day": 27,
+            "mean": 0.28,
+            "missing_hours": 0
+          },
+          {
+            "day": 28,
+            "mean": 0.24,
+            "missing_hours": 0
+          },
+          {
+            "day": 29,
+            "mean": 0.87,
+            "missing_hours": 0
+          },
+          {
+            "day": 30,
+            "mean": 0.27,
+            "missing_hours": 0
+          }
+        ],
+        "overall_mean": 1.52,
+        "total_missing_hours": 0,
+        "offline_days": 0
+      },
+      {
+        "sensor_id": "S7",
+        "sensor_key": "O3",
+        "param": "O3_ppb",
+        "unit": "ppb",
+        "normal_range": [
+          20,
+          60
+        ],
+        "daily_means": [
+          {
+            "day": 1,
+            "mean": 81.58,
+            "missing_hours": 0
+          },
+          {
+            "day": 2,
+            "mean": 97.83,
+            "missing_hours": 0
+          },
+          {
+            "day": 3,
+            "mean": 85.12,
+            "missing_hours": 0
+          },
+          {
+            "day": 4,
+            "mean": 78.92,
+            "missing_hours": 0
+          },
+          {
+            "day": 5,
+            "mean": 88.21,
+            "missing_hours": 0
+          },
+          {
+            "day": 6,
+            "mean": 91.83,
+            "missing_hours": 0
+          },
+          {
+            "day": 7,
+            "mean": 62.12,
+            "missing_hours": 0
+          },
+          {
+            "day": 8,
+            "mean": 82.5,
+            "missing_hours": 0
+          },
+          {
+            "day": 9,
+            "mean": 92.83,
+            "missing_hours": 0
+          },
+          {
+            "day": 10,
+            "mean": 86.75,
+            "missing_hours": 0
+          },
+          {
+            "day": 11,
+            "mean": 75.54,
+            "missing_hours": 0
+          },
+          {
+            "day": 12,
+            "mean": 67.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 13,
+            "mean": 87.29,
+            "missing_hours": 0
+          },
+          {
+            "day": 14,
+            "mean": 90.75,
+            "missing_hours": 0
+          },
+          {
+            "day": 15,
+            "mean": 88.62,
+            "missing_hours": 0
+          },
+          {
+            "day": 16,
+            "mean": 88.29,
+            "missing_hours": 0
+          },
+          {
+            "day": 17,
+            "mean": 82.67,
+            "missing_hours": 0
+          },
+          {
+            "day": 18,
+            "mean": 96.42,
+            "missing_hours": 0
+          },
+          {
+            "day": 19,
+            "mean": 86.12,
+            "missing_hours": 0
+          },
+          {
+            "day": 20,
+            "mean": 71.79,
+            "missing_hours": 0
+          },
+          {
+            "day": 21,
+            "mean": 66.62,
+            "missing_hours": 0
+          },
+          {
+            "day": 22,
+            "mean": 78.12,
+            "missing_hours": 0
+          },
+          {
+            "day": 23,
+            "mean": 70.92,
+            "missing_hours": 0
+          },
+          {
+            "day": 24,
+            "mean": 88.21,
+            "missing_hours": 0
+          },
+          {
+            "day": 25,
+            "mean": 97.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 26,
+            "mean": 91.79,
+            "missing_hours": 0
+          },
+          {
+            "day": 27,
+            "mean": 93.54,
+            "missing_hours": 0
+          },
+          {
+            "day": 28,
+            "mean": 96.5,
+            "missing_hours": 0
+          },
+          {
+            "day": 29,
+            "mean": 91.71,
+            "missing_hours": 0
+          },
+          {
+            "day": 30,
+            "mean": 94.92,
+            "missing_hours": 0
+          }
+        ],
+        "overall_mean": 85.05,
+        "total_missing_hours": 0,
+        "offline_days": 0
+      },
+      {
+        "sensor_id": "S8",
+        "sensor_key": "NO2",
+        "param": "NO2_ppb",
+        "unit": "ppb",
+        "normal_range": [
+          10,
+          50
+        ],
+        "daily_means": [
+          {
+            "day": 1,
+            "mean": 1.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 2,
+            "mean": 0.34,
+            "missing_hours": 0
+          },
+          {
+            "day": 3,
+            "mean": 2.07,
+            "missing_hours": 0
+          },
+          {
+            "day": 4,
+            "mean": 2.6,
+            "missing_hours": 0
+          },
+          {
+            "day": 5,
+            "mean": 0.82,
+            "missing_hours": 0
+          },
+          {
+            "day": 6,
+            "mean": 1.4,
+            "missing_hours": 0
+          },
+          {
+            "day": 7,
+            "mean": 6.92,
+            "missing_hours": 0
+          },
+          {
+            "day": 8,
+            "mean": 2.48,
+            "missing_hours": 0
+          },
+          {
+            "day": 9,
+            "mean": 0.97,
+            "missing_hours": 0
+          },
+          {
+            "day": 10,
+            "mean": 1.45,
+            "missing_hours": 0
+          },
+          {
+            "day": 11,
+            "mean": 2.2,
+            "missing_hours": 0
+          },
+          {
+            "day": 12,
+            "mean": 3.2,
+            "missing_hours": 0
+          },
+          {
+            "day": 13,
+            "mean": 1.19,
+            "missing_hours": 0
+          },
+          {
+            "day": 14,
+            "mean": 1.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 15,
+            "mean": 0.73,
+            "missing_hours": 0
+          },
+          {
+            "day": 16,
+            "mean": 0.6,
+            "missing_hours": 0
+          },
+          {
+            "day": 17,
+            "mean": 1.2,
+            "missing_hours": 0
+          },
+          {
+            "day": 18,
+            "mean": 0.66,
+            "missing_hours": 0
+          },
+          {
+            "day": 19,
+            "mean": 1.77,
+            "missing_hours": 0
+          },
+          {
+            "day": 20,
+            "mean": 2.43,
+            "missing_hours": 0
+          },
+          {
+            "day": 21,
+            "mean": 1.71,
+            "missing_hours": 0
+          },
+          {
+            "day": 22,
+            "mean": 1.38,
+            "missing_hours": 0
+          },
+          {
+            "day": 23,
+            "mean": 2.53,
+            "missing_hours": 0
+          },
+          {
+            "day": 24,
+            "mean": 1.47,
+            "missing_hours": 0
+          },
+          {
+            "day": 25,
+            "mean": 0.74,
+            "missing_hours": 0
+          },
+          {
+            "day": 26,
+            "mean": 1.01,
+            "missing_hours": 0
+          },
+          {
+            "day": 27,
+            "mean": 0.28,
+            "missing_hours": 0
+          },
+          {
+            "day": 28,
+            "mean": 0.24,
+            "missing_hours": 0
+          },
+          {
+            "day": 29,
+            "mean": 0.87,
+            "missing_hours": 0
+          },
+          {
+            "day": 30,
+            "mean": 0.27,
+            "missing_hours": 0
+          }
+        ],
+        "overall_mean": 1.52,
+        "total_missing_hours": 0,
+        "offline_days": 0
+      },
+      {
+        "sensor_id": "S9",
+        "sensor_key": "O3",
+        "param": "O3_ppb",
+        "unit": "ppb",
+        "normal_range": [
+          20,
+          60
+        ],
+        "daily_means": [
+          {
+            "day": 1,
+            "mean": 81.58,
+            "missing_hours": 0
+          },
+          {
+            "day": 2,
+            "mean": 97.83,
+            "missing_hours": 0
+          },
+          {
+            "day": 3,
+            "mean": 85.12,
+            "missing_hours": 0
+          },
+          {
+            "day": 4,
+            "mean": 78.92,
+            "missing_hours": 0
+          },
+          {
+            "day": 5,
+            "mean": 88.21,
+            "missing_hours": 0
+          },
+          {
+            "day": 6,
+            "mean": 91.83,
+            "missing_hours": 0
+          },
+          {
+            "day": 7,
+            "mean": 62.12,
+            "missing_hours": 0
+          },
+          {
+            "day": 8,
+            "mean": 82.5,
+            "missing_hours": 0
+          },
+          {
+            "day": 9,
+            "mean": 92.83,
+            "missing_hours": 0
+          },
+          {
+            "day": 10,
+            "mean": 86.75,
+            "missing_hours": 0
+          },
+          {
+            "day": 11,
+            "mean": 75.54,
+            "missing_hours": 0
+          },
+          {
+            "day": 12,
+            "mean": 67.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 13,
+            "mean": 87.29,
+            "missing_hours": 0
+          },
+          {
+            "day": 14,
+            "mean": 90.75,
+            "missing_hours": 0
+          },
+          {
+            "day": 15,
+            "mean": 88.62,
+            "missing_hours": 0
+          },
+          {
+            "day": 16,
+            "mean": 88.29,
+            "missing_hours": 0
+          },
+          {
+            "day": 17,
+            "mean": 82.67,
+            "missing_hours": 0
+          },
+          {
+            "day": 18,
+            "mean": 96.42,
+            "missing_hours": 0
+          },
+          {
+            "day": 19,
+            "mean": 86.12,
+            "missing_hours": 0
+          },
+          {
+            "day": 20,
+            "mean": 71.79,
+            "missing_hours": 0
+          },
+          {
+            "day": 21,
+            "mean": 66.62,
+            "missing_hours": 0
+          },
+          {
+            "day": 22,
+            "mean": 78.12,
+            "missing_hours": 0
+          },
+          {
+            "day": 23,
+            "mean": 70.92,
+            "missing_hours": 0
+          },
+          {
+            "day": 24,
+            "mean": 88.21,
+            "missing_hours": 0
+          },
+          {
+            "day": 25,
+            "mean": 97.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 26,
+            "mean": 91.79,
+            "missing_hours": 0
+          },
+          {
+            "day": 27,
+            "mean": 93.54,
+            "missing_hours": 0
+          },
+          {
+            "day": 28,
+            "mean": 96.5,
+            "missing_hours": 0
+          },
+          {
+            "day": 29,
+            "mean": 91.71,
+            "missing_hours": 0
+          },
+          {
+            "day": 30,
+            "mean": 94.92,
+            "missing_hours": 0
+          }
+        ],
+        "overall_mean": 85.05,
+        "total_missing_hours": 0,
+        "offline_days": 0
+      },
+      {
+        "sensor_id": "S10",
+        "sensor_key": "O3",
+        "param": "O3_ppb",
+        "unit": "ppb",
+        "normal_range": [
+          20,
+          60
+        ],
+        "daily_means": [
+          {
+            "day": 1,
+            "mean": 81.58,
+            "missing_hours": 0
+          },
+          {
+            "day": 2,
+            "mean": 97.83,
+            "missing_hours": 0
+          },
+          {
+            "day": 3,
+            "mean": 85.12,
+            "missing_hours": 0
+          },
+          {
+            "day": 4,
+            "mean": 78.92,
+            "missing_hours": 0
+          },
+          {
+            "day": 5,
+            "mean": 88.21,
+            "missing_hours": 0
+          },
+          {
+            "day": 6,
+            "mean": 91.83,
+            "missing_hours": 0
+          },
+          {
+            "day": 7,
+            "mean": 62.12,
+            "missing_hours": 0
+          },
+          {
+            "day": 8,
+            "mean": 82.5,
+            "missing_hours": 0
+          },
+          {
+            "day": 9,
+            "mean": 92.83,
+            "missing_hours": 0
+          },
+          {
+            "day": 10,
+            "mean": 86.75,
+            "missing_hours": 0
+          },
+          {
+            "day": 11,
+            "mean": 75.54,
+            "missing_hours": 0
+          },
+          {
+            "day": 12,
+            "mean": 67.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 13,
+            "mean": 87.29,
+            "missing_hours": 0
+          },
+          {
+            "day": 14,
+            "mean": 90.75,
+            "missing_hours": 0
+          },
+          {
+            "day": 15,
+            "mean": 88.62,
+            "missing_hours": 0
+          },
+          {
+            "day": 16,
+            "mean": 88.29,
+            "missing_hours": 0
+          },
+          {
+            "day": 17,
+            "mean": 82.67,
+            "missing_hours": 0
+          },
+          {
+            "day": 18,
+            "mean": 96.42,
+            "missing_hours": 0
+          },
+          {
+            "day": 19,
+            "mean": 86.12,
+            "missing_hours": 0
+          },
+          {
+            "day": 20,
+            "mean": 71.79,
+            "missing_hours": 0
+          },
+          {
+            "day": 21,
+            "mean": 66.62,
+            "missing_hours": 0
+          },
+          {
+            "day": 22,
+            "mean": 78.12,
+            "missing_hours": 0
+          },
+          {
+            "day": 23,
+            "mean": 70.92,
+            "missing_hours": 0
+          },
+          {
+            "day": 24,
+            "mean": 88.21,
+            "missing_hours": 0
+          },
+          {
+            "day": 25,
+            "mean": 97.0,
+            "missing_hours": 0
+          },
+          {
+            "day": 26,
+            "mean": 91.79,
+            "missing_hours": 0
+          },
+          {
+            "day": 27,
+            "mean": 93.54,
+            "missing_hours": 0
+          },
+          {
+            "day": 28,
+            "mean": 96.5,
+            "missing_hours": 0
+          },
+          {
+            "day": 29,
+            "mean": 91.71,
+            "missing_hours": 0
+          },
+          {
+            "day": 30,
+            "mean": 94.92,
+            "missing_hours": 0
+          }
+        ],
+        "overall_mean": 85.05,
+        "total_missing_hours": 0,
+        "offline_days": 0
+      }
+    ]
+  }
+]

@@ -14,8 +14,62 @@ tags:
 > An OpenEnv-compatible RL environment where AI agents learn to detect faults in climate sensor data, clean corrupted readings, and verify EPA regulatory compliance — exactly what data engineers at BP, EPA, and NOAA do every day.
 
 **Team:** ALGORITHMIC AVENGERS — Ramana Ganthan S + Sre Sandhya K
-**Hackathon:** OpenEnv (Meta × HuggingFace)
-**Live Space:** `https://huggingface.co/spaces/YOUR_USERNAME/climatewatch-env`
+**Hackathon:** OpenEnv (Meta x HuggingFace)
+**Live Space:** `https://huggingface.co/spaces/ramanaganthan7/climatewatch-env`
+
+---
+
+## System Architecture
+
+![ClimateWatch Architecture](architecture.svg)
+
+**How it works end-to-end:**
+
+```
+Open-Meteo CAMS/ECMWF API  (real measured air quality data)
+        |
+        v  [scripts/fetch_real_data.py — run once, committed to repo]
+        |
+app/data/real_task1.json   20 scenarios · 24hr real readings
+app/data/real_task2.json   10 networks  · 7-day real sensor data
+app/data/real_task3.json    5 networks  · 30-day real timelines
+        |
+        v  [fault injection on real baseline — deterministic by seed]
+        |
+ Task 1: outlier/stuck/missing/drift/spike/bias injected on real PM2.5/NO2/O3 readings
+ Task 2: drift/bias/noise/missing/stuck injected on real 7-day multi-sensor data
+ Task 3: reference sensors marked offline → dependents marked corrupted
+        |
+        v
+ClimateWatch FastAPI Server (port 7860)
+  POST /reset  ->  episode starts, real+injected sensor data returned
+  POST /step   ->  agent action graded, reward computed, feedback returned
+  GET  /state  ->  episode_id, task_id, step_count, total_reward, done
+  GET  /health ->  {"status": "healthy"}
+  GET  /tasks  ->  3 tasks with schemas
+  POST /grader ->  final score 0.0-1.0
+        |
+        +---> Hackathon Judges (Nemotron 3 Super)
+        +---> Web Dashboard (real-time sensor tables, compliance status)
+        +---> inference.py (Llama-3.3-70B via HF Router, free, no key needed)
+```
+
+---
+
+## Real Data Source
+
+All sensor readings are sourced from **Open-Meteo Air Quality API** backed by **CAMS (Copernicus Atmosphere Monitoring Service / ECMWF)**:
+
+| Parameter | Source | Locations |
+|---|---|---|
+| PM2.5 (ug/m3) | CAMS global reanalysis | Houston TX, Delhi NCR, Guangzhou |
+| NO2 (ppb) | CAMS European model | Jubail, Essen, Tilbury |
+| O3 (ppb) | CAMS atmospheric model | Los Angeles, Chennai, Wichita |
+| SO2 (ppb) | CAMS emission inventories | North Sea, Svalbard, Tilbury |
+| CO (ppb) | CAMS global model | Baton Rouge, Manaus, Beijing |
+| CH4 (ppb) | CAMS methane inversion | Ahmadi Kuwait, Houston, North Sea |
+
+**No synthetic gauss() values.** The base readings are real hourly measurements from the CAMS network, pre-fetched and committed to the repo for deterministic reproducibility. Faults (outlier, stuck, drift, bias, missing, cascade) are injected on top of the real baseline with known ground truth for grading.
 
 ---
 
