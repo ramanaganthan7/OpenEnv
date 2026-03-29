@@ -1,4 +1,3 @@
-# ClimateWatch
 ---
 title: ClimateWatch Environment
 emoji: 🌍
@@ -9,6 +8,8 @@ app_port: 7860
 tags:
   - openenv
 ---
+
+# ClimateWatch
 
 **Environmental Sensor AI Environment — OpenEnv Specification**
 
