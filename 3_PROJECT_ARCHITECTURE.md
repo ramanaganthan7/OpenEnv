@@ -993,4 +993,3 @@ TOTAL TARGET: 82–100 points
 ---
 
 *ClimateWatch — Environmental Sensor Data Quality & Compliance Monitoring*
-*ALGORITHMIC AVENGERS — Ramana Ganthan S + Sre Sandhya K*

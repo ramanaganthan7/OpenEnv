@@ -2,13 +2,13 @@
 
 Run these curl commands from a **non-corporate network** (mobile hotspot or personal PC not on Cognizant VPN).
 
-**Base URL:** `https://ramanaganthan7-climatewatch-env.hf.space`
+**Base URL:** `https://YOUR_USERNAME-climatewatch-env.hf.space`
 
 ---
 
 ## 1. Health Check
 ```bash
-curl https://ramanaganthan7-climatewatch-env.hf.space/health
+curl https://YOUR_USERNAME-climatewatch-env.hf.space/health
 ```
 **Expected:**
 ```json
@@ -19,7 +19,7 @@ curl https://ramanaganthan7-climatewatch-env.hf.space/health
 
 ## 2. List All Tasks
 ```bash
-curl https://ramanaganthan7-climatewatch-env.hf.space/tasks
+curl https://YOUR_USERNAME-climatewatch-env.hf.space/tasks
 ```
 **Expected:** 3 tasks with ids `task1_detect` (easy), `task2_clean` (medium), `task3_cascade` (hard), each with `action_schema`.
 
@@ -27,7 +27,7 @@ curl https://ramanaganthan7-climatewatch-env.hf.space/tasks
 
 ## 3. Reset — Task 1 (Easy)
 ```bash
-curl -X POST https://ramanaganthan7-climatewatch-env.hf.space/reset \
+curl -X POST https://YOUR_USERNAME-climatewatch-env.hf.space/reset \
   -H "Content-Type: application/json" \
   -d '{"task_id": "task1_detect", "seed": 0}'
 ```
@@ -48,7 +48,7 @@ curl -X POST https://ramanaganthan7-climatewatch-env.hf.space/reset \
 
 ## 4. Get State
 ```bash
-curl https://ramanaganthan7-climatewatch-env.hf.space/state
+curl https://YOUR_USERNAME-climatewatch-env.hf.space/state
 ```
 **Expected:**
 ```json
@@ -65,7 +65,7 @@ curl https://ramanaganthan7-climatewatch-env.hf.space/state
 
 ## 5. Step — Wrong Action (should score low)
 ```bash
-curl -X POST https://ramanaganthan7-climatewatch-env.hf.space/step \
+curl -X POST https://YOUR_USERNAME-climatewatch-env.hf.space/step \
   -H "Content-Type: application/json" \
   -d '{"action": {"sensor_id": "CO2-100", "flags": []}}'
 ```
@@ -75,14 +75,14 @@ curl -X POST https://ramanaganthan7-climatewatch-env.hf.space/step \
 
 ## 6. Reset Again + Perfect Answer (should score high)
 ```bash
-curl -X POST https://ramanaganthan7-climatewatch-env.hf.space/reset \
+curl -X POST https://YOUR_USERNAME-climatewatch-env.hf.space/reset \
   -H "Content-Type: application/json" \
   -d '{"task_id": "task1_detect", "seed": 0}'
 ```
 
 Then submit the correct answer (seed=0 scenario has stuck h3-5, outlier h6, missing h8-9):
 ```bash
-curl -X POST https://ramanaganthan7-climatewatch-env.hf.space/step \
+curl -X POST https://YOUR_USERNAME-climatewatch-env.hf.space/step \
   -H "Content-Type: application/json" \
   -d '{
     "action": {
@@ -104,7 +104,7 @@ curl -X POST https://ramanaganthan7-climatewatch-env.hf.space/step \
 
 ## 7. Final Grade
 ```bash
-curl -X POST https://ramanaganthan7-climatewatch-env.hf.space/grader
+curl -X POST https://YOUR_USERNAME-climatewatch-env.hf.space/grader
 ```
 **Expected:**
 ```json
@@ -121,7 +121,7 @@ curl -X POST https://ramanaganthan7-climatewatch-env.hf.space/grader
 
 ## 8. Reset — Task 2 (Medium)
 ```bash
-curl -X POST https://ramanaganthan7-climatewatch-env.hf.space/reset \
+curl -X POST https://YOUR_USERNAME-climatewatch-env.hf.space/reset \
   -H "Content-Type: application/json" \
   -d '{"task_id": "task2_clean", "seed": 0}'
 ```
@@ -131,7 +131,7 @@ curl -X POST https://ramanaganthan7-climatewatch-env.hf.space/reset \
 
 ## 9. Reset — Task 3 (Hard)
 ```bash
-curl -X POST https://ramanaganthan7-climatewatch-env.hf.space/reset \
+curl -X POST https://YOUR_USERNAME-climatewatch-env.hf.space/reset \
   -H "Content-Type: application/json" \
   -d '{"task_id": "task3_cascade", "seed": 0}'
 ```
@@ -141,7 +141,7 @@ curl -X POST https://ramanaganthan7-climatewatch-env.hf.space/reset \
 
 ## 10. Invalid Task → Must Return 400
 ```bash
-curl -X POST https://ramanaganthan7-climatewatch-env.hf.space/reset \
+curl -X POST https://YOUR_USERNAME-climatewatch-env.hf.space/reset \
   -H "Content-Type: application/json" \
   -d '{"task_id": "fake_task"}'
 ```
@@ -152,15 +152,15 @@ curl -X POST https://ramanaganthan7-climatewatch-env.hf.space/reset \
 ## 11. Anti-Loop Penalty Check
 Reset, then submit the SAME action twice:
 ```bash
-curl -X POST https://ramanaganthan7-climatewatch-env.hf.space/reset \
+curl -X POST https://YOUR_USERNAME-climatewatch-env.hf.space/reset \
   -H "Content-Type: application/json" \
   -d '{"task_id": "task1_detect", "seed": 0}'
 
-curl -X POST https://ramanaganthan7-climatewatch-env.hf.space/step \
+curl -X POST https://YOUR_USERNAME-climatewatch-env.hf.space/step \
   -H "Content-Type: application/json" \
   -d '{"action": {"sensor_id": "CO2-100", "flags": [{"hour": 3, "fault": "stuck", "confidence": 0.9}]}}'
 
-curl -X POST https://ramanaganthan7-climatewatch-env.hf.space/step \
+curl -X POST https://YOUR_USERNAME-climatewatch-env.hf.space/step \
   -H "Content-Type: application/json" \
   -d '{"action": {"sensor_id": "CO2-100", "flags": [{"hour": 3, "fault": "stuck", "confidence": 0.9}]}}'
 ```
@@ -170,7 +170,7 @@ curl -X POST https://ramanaganthan7-climatewatch-env.hf.space/step \
 
 ## 12. Open Dashboard in Browser
 ```
-https://ramanaganthan7-climatewatch-env.hf.space/
+https://YOUR_USERNAME-climatewatch-env.hf.space/
 ```
 **Expected:** Green terminal-style UI with 3 task buttons.
 
@@ -178,7 +178,7 @@ https://ramanaganthan7-climatewatch-env.hf.space/
 
 ## 13. Open Swagger API Docs
 ```
-https://ramanaganthan7-climatewatch-env.hf.space/docs
+https://YOUR_USERNAME-climatewatch-env.hf.space/docs
 ```
 **Expected:** Interactive Swagger UI showing all 7 endpoints.
 

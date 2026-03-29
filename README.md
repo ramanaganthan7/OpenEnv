@@ -13,8 +13,6 @@ tags:
 
 > An OpenEnv-compatible RL environment where AI agents learn to detect faults in climate sensor data, clean corrupted readings, and verify EPA regulatory compliance — exactly what data engineers at BP, EPA, and NOAA do every day.
 
-**Team:** ALGORITHMIC AVENGERS — Ramana Ganthan S + Sre Sandhya K
-**Hackathon:** OpenEnv (Meta x HuggingFace)
 **Live Space:** `https://huggingface.co/spaces/ramanaganthan7/climatewatch-env`
 
 ---
@@ -725,4 +723,3 @@ curl https://USERNAME-climatewatch-env.hf.space/health
 ---
 
 *ClimateWatch — Environmental Sensor Data Quality & Compliance Monitoring*
-*ALGORITHMIC AVENGERS — Ramana Ganthan S + Sre Sandhya K*

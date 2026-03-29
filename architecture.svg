@@ -1,171 +1,214 @@
-<svg viewBox="0 0 1100 720" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, Arial, sans-serif">
-  <!-- Background -->
-  <rect width="1100" height="720" fill="#f4f6f8" rx="12"/>
-
-  <!-- Title -->
-  <text x="550" y="38" text-anchor="middle" font-size="20" font-weight="700" fill="#1a7a40">ClimateWatch — System Architecture</text>
-  <text x="550" y="58" text-anchor="middle" font-size="12" fill="#4a6a4a">Real-world Environmental Sensor AI Environment · OpenEnv Hackathon</text>
-
-  <!-- ─── Row 1: Data Sources ─── -->
-  <!-- Box: Open-Meteo -->
-  <rect x="30" y="85" width="200" height="80" rx="8" fill="#ffffff" stroke="#2e9e58" stroke-width="2"/>
-  <rect x="30" y="85" width="200" height="28" rx="8" fill="#2e9e58"/>
-  <rect x="30" y="101" width="200" height="12" fill="#2e9e58"/>
-  <text x="130" y="103" text-anchor="middle" font-size="11" font-weight="700" fill="#ffffff">Open-Meteo API (CAMS/ECMWF)</text>
-  <text x="130" y="128" text-anchor="middle" font-size="10" fill="#333">Real measured hourly readings</text>
-  <text x="130" y="143" text-anchor="middle" font-size="10" fill="#333">PM2.5 · NO2 · O3 · SO2 · CO · CH4</text>
-  <text x="130" y="158" text-anchor="middle" font-size="10" fill="#4a6a4a">20 global industrial locations</text>
-
-  <!-- Box: EPA NAAQS -->
-  <rect x="260" y="85" width="200" height="80" rx="8" fill="#ffffff" stroke="#1565a8" stroke-width="2"/>
-  <rect x="260" y="85" width="200" height="28" rx="8" fill="#1565a8"/>
-  <rect x="260" y="101" width="200" height="12" fill="#1565a8"/>
-  <text x="360" y="103" text-anchor="middle" font-size="11" font-weight="700" fill="#ffffff">EPA/WHO Standards</text>
-  <text x="360" y="128" text-anchor="middle" font-size="10" fill="#333">NAAQS thresholds</text>
-  <text x="360" y="143" text-anchor="middle" font-size="10" fill="#333">Regulatory limits per pollutant</text>
-  <text x="360" y="158" text-anchor="middle" font-size="10" fill="#4a6a4a">CH4 · NOx · PM2.5 · SO2 · O3</text>
-
-  <!-- Box: Real Locations -->
-  <rect x="490" y="85" width="200" height="80" rx="8" fill="#ffffff" stroke="#b45d00" stroke-width="2"/>
-  <rect x="490" y="85" width="200" height="28" rx="8" fill="#b45d00"/>
-  <rect x="490" y="101" width="200" height="12" fill="#b45d00"/>
-  <text x="590" y="103" text-anchor="middle" font-size="11" font-weight="700" fill="#ffffff">Real Industrial Sites</text>
-  <text x="590" y="128" text-anchor="middle" font-size="10" fill="#333">Houston TX · Delhi NCR · Jubail</text>
-  <text x="590" y="143" text-anchor="middle" font-size="10" fill="#333">North Sea · Beijing · Chennai</text>
-  <text x="590" y="158" text-anchor="middle" font-size="10" fill="#4a6a4a">Ahmadi Kuwait · Svalbard · more</text>
-
-  <!-- Box: Fetch Script -->
-  <rect x="720" y="85" width="200" height="80" rx="8" fill="#ffffff" stroke="#7a3a9a" stroke-width="2"/>
-  <rect x="720" y="85" width="200" height="28" rx="8" fill="#7a3a9a"/>
-  <rect x="720" y="101" width="200" height="12" fill="#7a3a9a"/>
-  <text x="820" y="103" text-anchor="middle" font-size="11" font-weight="700" fill="#ffffff">scripts/fetch_real_data.py</text>
-  <text x="820" y="128" text-anchor="middle" font-size="10" fill="#333">Pre-fetches and caches real data</text>
-  <text x="820" y="143" text-anchor="middle" font-size="10" fill="#333">Committed to repo (deterministic)</text>
-  <text x="820" y="158" text-anchor="middle" font-size="10" fill="#4a6a4a">No runtime API calls</text>
-
-  <!-- Arrows Row 1 -> Row 2 -->
-  <line x1="130" y1="165" x2="440" y2="225" stroke="#2e9e58" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arr)"/>
-  <line x1="360" y1="165" x2="470" y2="225" stroke="#1565a8" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arr)"/>
-  <line x1="590" y1="165" x2="520" y2="225" stroke="#b45d00" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arr)"/>
-  <line x1="820" y1="165" x2="560" y2="225" stroke="#7a3a9a" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arr)"/>
-
-  <!-- ─── Row 2: Data Layer ─── -->
-  <rect x="300" y="225" width="500" height="70" rx="8" fill="#ffffff" stroke="#1a7a40" stroke-width="2.5"/>
-  <rect x="300" y="225" width="500" height="26" rx="8" fill="#1a7a40"/>
-  <rect x="300" y="239" width="500" height="12" fill="#1a7a40"/>
-  <text x="550" y="242" text-anchor="middle" font-size="12" font-weight="700" fill="#ffffff">app/data/  —  Real Sensor Data Cache (JSON)</text>
-  <text x="550" y="268" text-anchor="middle" font-size="10" fill="#333">real_task1.json · 20 scenarios · 24hr PM2.5/NO2/O3/SO2/CO/CH4 real readings</text>
-  <text x="550" y="283" text-anchor="middle" font-size="10" fill="#333">real_task2.json · 10 networks · 7-day multi-sensor daily means</text>
-  <text x="550" y="298" text-anchor="middle" font-size="9" fill="#4a6a4a">real_task3.json · 5 cascade networks · 30-day sensor status timelines</text>
-
-  <!-- Arrow Row 2 -> Row 3 -->
-  <line x1="550" y1="295" x2="550" y2="330" stroke="#1a7a40" stroke-width="2" marker-end="url(#arr)"/>
-
-  <!-- ─── Row 3: Task Engine ─── -->
-  <text x="550" y="348" text-anchor="middle" font-size="11" font-weight="700" fill="#1a7a40">FAULT INJECTION ENGINE — Deterministic, Seeded (seed % n_scenarios)</text>
-
-  <!-- Task 1 -->
-  <rect x="30" y="358" width="300" height="95" rx="8" fill="#ffffff" stroke="#2e9e58" stroke-width="2"/>
-  <rect x="30" y="358" width="300" height="24" rx="8" fill="#2e9e58"/>
-  <rect x="30" y="370" width="300" height="12" fill="#2e9e58"/>
-  <text x="180" y="374" text-anchor="middle" font-size="11" font-weight="700" fill="#ffffff">Task 1 — Single Sensor Detect [EASY]</text>
-  <text x="180" y="397" text-anchor="middle" font-size="9.5" fill="#333">Real 24hr readings + fault injection</text>
-  <text x="180" y="411" text-anchor="middle" font-size="9.5" fill="#333">Faults: outlier · stuck · missing · drift · spike · bias</text>
-  <text x="180" y="425" text-anchor="middle" font-size="9.5" fill="#333">Grader: F1 score + calibration bonus</text>
-  <text x="180" y="440" text-anchor="middle" font-size="9" fill="#4a6a4a">20 real-world scenarios · 20 industrial locations</text>
-
-  <!-- Task 2 -->
-  <rect x="390" y="358" width="320" height="95" rx="8" fill="#ffffff" stroke="#b45d00" stroke-width="2"/>
-  <rect x="390" y="358" width="320" height="24" rx="8" fill="#b45d00"/>
-  <rect x="390" y="370" width="320" height="12" fill="#b45d00"/>
-  <text x="550" y="374" text-anchor="middle" font-size="11" font-weight="700" fill="#ffffff">Task 2 — Multi-Sensor Clean [MEDIUM]</text>
-  <text x="550" y="397" text-anchor="middle" font-size="9.5" fill="#333">Real 7-day data · 5 sensors with different faults</text>
-  <text x="550" y="411" text-anchor="middle" font-size="9.5" fill="#333">Agent diagnoses fault + recommends fix</text>
-  <text x="550" y="425" text-anchor="middle" font-size="9.5" fill="#333">Grader: 60% fault type + 40% fix accuracy</text>
-  <text x="550" y="440" text-anchor="middle" font-size="9" fill="#4a6a4a">10 real network scenarios</text>
-
-  <!-- Task 3 -->
-  <rect x="770" y="358" width="300" height="95" rx="8" fill="#ffffff" stroke="#c0323e" stroke-width="2"/>
-  <rect x="770" y="358" width="300" height="24" rx="8" fill="#c0323e"/>
-  <rect x="770" y="370" width="300" height="12" fill="#c0323e"/>
-  <text x="920" y="374" text-anchor="middle" font-size="11" font-weight="700" fill="#ffffff">Task 3 — Cascade Failure [HARD]</text>
-  <text x="920" y="397" text-anchor="middle" font-size="9.5" fill="#333">Real 30-day data · 10-sensor network</text>
-  <text x="920" y="411" text-anchor="middle" font-size="9.5" fill="#333">Root cause · repair order · compliance</text>
-  <text x="920" y="425" text-anchor="middle" font-size="9.5" fill="#333">Grader: 4-component weighted score</text>
-  <text x="920" y="440" text-anchor="middle" font-size="9" fill="#4a6a4a">5 cascade network scenarios · EPA thresholds</text>
-
-  <!-- Arrows Tasks -> API -->
-  <line x1="180" y1="453" x2="400" y2="500" stroke="#2e9e58" stroke-width="1.5" marker-end="url(#arr)"/>
-  <line x1="550" y1="453" x2="550" y2="500" stroke="#b45d00" stroke-width="1.5" marker-end="url(#arr)"/>
-  <line x1="920" y1="453" x2="700" y2="500" stroke="#c0323e" stroke-width="1.5" marker-end="url(#arr)"/>
-
-  <!-- ─── Row 4: FastAPI Server ─── -->
-  <rect x="280" y="500" width="540" height="95" rx="8" fill="#ffffff" stroke="#1565a8" stroke-width="2.5"/>
-  <rect x="280" y="500" width="540" height="26" rx="8" fill="#1565a8"/>
-  <rect x="280" y="514" width="540" height="12" fill="#1565a8"/>
-  <text x="550" y="518" text-anchor="middle" font-size="12" font-weight="700" fill="#ffffff">ClimateWatch FastAPI Server (app/main.py) · Port 7860</text>
-  <!-- Endpoint pills -->
-  <rect x="295" y="533" width="90" height="18" rx="4" fill="#e8f5ee" stroke="#2e9e58" stroke-width="1"/>
-  <text x="340" y="545" text-anchor="middle" font-size="9" fill="#1a7a40" font-weight="600">POST /reset</text>
-  <rect x="393" y="533" width="80" height="18" rx="4" fill="#e8f5ee" stroke="#2e9e58" stroke-width="1"/>
-  <text x="433" y="545" text-anchor="middle" font-size="9" fill="#1a7a40" font-weight="600">POST /step</text>
-  <rect x="481" y="533" width="75" height="18" rx="4" fill="#dce8f8" stroke="#1565a8" stroke-width="1"/>
-  <text x="518" y="545" text-anchor="middle" font-size="9" fill="#1565a8" font-weight="600">GET /state</text>
-  <rect x="564" y="533" width="75" height="18" rx="4" fill="#dce8f8" stroke="#1565a8" stroke-width="1"/>
-  <text x="601" y="545" text-anchor="middle" font-size="9" fill="#1565a8" font-weight="600">GET /health</text>
-  <rect x="647" y="533" width="75" height="18" rx="4" fill="#dce8f8" stroke="#1565a8" stroke-width="1"/>
-  <text x="684" y="545" text-anchor="middle" font-size="9" fill="#1565a8" font-weight="600">GET /tasks</text>
-  <rect x="730" y="533" width="80" height="18" rx="4" fill="#fdebd0" stroke="#b45d00" stroke-width="1"/>
-  <text x="770" y="545" text-anchor="middle" font-size="9" fill="#b45d00" font-weight="600">POST /grader</text>
-
-  <text x="550" y="572" text-anchor="middle" font-size="9.5" fill="#333">Reward: partial credit · anti-loop penalty (-0.30) · regression penalty (-0.05) · always [0.0, 1.0]</text>
-  <text x="550" y="585" text-anchor="middle" font-size="9.5" fill="#333">Episode: max 5 steps · early stop at score ≥ 0.80 · thread-safe (RLock)</text>
-
-  <!-- Arrow Server -> Clients -->
-  <line x1="400" y1="595" x2="220" y2="640" stroke="#1565a8" stroke-width="1.5" marker-end="url(#arr)"/>
-  <line x1="550" y1="595" x2="550" y2="640" stroke="#1565a8" stroke-width="1.5" marker-end="url(#arr)"/>
-  <line x1="700" y1="595" x2="870" y2="640" stroke="#1565a8" stroke-width="1.5" marker-end="url(#arr)"/>
-
-  <!-- ─── Row 5: Clients ─── -->
-  <!-- Hackathon Judges -->
-  <rect x="60" y="638" width="230" height="65" rx="8" fill="#ffffff" stroke="#c0323e" stroke-width="2"/>
-  <rect x="60" y="638" width="230" height="22" rx="8" fill="#c0323e"/>
-  <rect x="60" y="648" width="230" height="12" fill="#c0323e"/>
-  <text x="175" y="652" text-anchor="middle" font-size="10" font-weight="700" fill="#ffffff">Hackathon Judges (Nemotron)</text>
-  <text x="175" y="672" text-anchor="middle" font-size="9" fill="#333">Call /reset · /step · /grader</text>
-  <text x="175" y="685" text-anchor="middle" font-size="9" fill="#333">Bring their own LLM agent</text>
-  <text x="175" y="698" text-anchor="middle" font-size="9" fill="#4a6a4a">Phase 2: Agentic evaluation</text>
-
-  <!-- Dashboard -->
-  <rect x="420" y="638" width="260" height="65" rx="8" fill="#ffffff" stroke="#2e9e58" stroke-width="2"/>
-  <rect x="420" y="638" width="260" height="22" rx="8" fill="#2e9e58"/>
-  <rect x="420" y="648" width="260" height="12" fill="#2e9e58"/>
-  <text x="550" y="652" text-anchor="middle" font-size="10" font-weight="700" fill="#ffffff">Web Dashboard (GET /)</text>
-  <text x="550" y="672" text-anchor="middle" font-size="9" fill="#333">Live sensor data tables · inline bar charts</text>
-  <text x="550" y="685" text-anchor="middle" font-size="9" fill="#333">Dependency graph · compliance status</text>
-  <text x="550" y="698" text-anchor="middle" font-size="9" fill="#4a6a4a">Real-time episode score meters</text>
-
-  <!-- Baseline inference -->
-  <rect x="800" y="638" width="270" height="65" rx="8" fill="#ffffff" stroke="#7a3a9a" stroke-width="2"/>
-  <rect x="800" y="638" width="270" height="22" rx="8" fill="#7a3a9a"/>
-  <rect x="800" y="648" width="270" height="12" fill="#7a3a9a"/>
-  <text x="935" y="652" text-anchor="middle" font-size="10" font-weight="700" fill="#ffffff">inference.py Baseline Agent</text>
-  <text x="935" y="672" text-anchor="middle" font-size="9" fill="#333">OpenAI client → HF Router (free)</text>
-  <text x="935" y="685" text-anchor="middle" font-size="9" fill="#333">meta-llama/Llama-3.3-70B-Instruct</text>
-  <text x="935" y="698" text-anchor="middle" font-size="9" fill="#4a6a4a">Temp=0.0 · deterministic scores</text>
-
-  <!-- Legend -->
-  <rect x="30" y="625" width="12" height="12" fill="#2e9e58" rx="2"/>
-  <text x="47" y="635" font-size="9" fill="#333">Real data / Environment</text>
-  <rect x="140" y="625" width="12" height="12" fill="#1565a8" rx="2"/>
-  <text x="157" y="635" font-size="9" fill="#333">API endpoints</text>
-  <rect x="235" y="625" width="12" height="12" fill="#c0323e" rx="2"/>
-  <text x="252" y="635" font-size="9" fill="#333">Clients / Agents</text>
-
-  <!-- Arrow marker -->
+<svg viewBox="0 0 1000 900" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, Arial, sans-serif">
   <defs>
-    <marker id="arr" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
-      <path d="M0,0 L0,6 L8,3 z" fill="#888"/>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#6b7280"/>
+    </marker>
+    <marker id="arrow-green" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#2e9e58"/>
+    </marker>
+    <marker id="arrow-blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#1565a8"/>
     </marker>
   </defs>
+
+  <!-- Page background -->
+  <rect width="1000" height="900" fill="#f8fafc" rx="0"/>
+
+  <!-- ══════════════════════════════════════════════════════════
+       TITLE
+  ══════════════════════════════════════════════════════════ -->
+  <rect x="0" y="0" width="1000" height="58" fill="#1a7a40"/>
+  <text x="500" y="28" text-anchor="middle" font-size="18" font-weight="700" fill="#ffffff">ClimateWatch — System Architecture</text>
+  <text x="500" y="47" text-anchor="middle" font-size="11" fill="#a8d8b8">Environmental Sensor AI Environment · OpenEnv Specification</text>
+
+  <!-- ══════════════════════════════════════════════════════════
+       LAYER 1 — DATA SOURCE
+  ══════════════════════════════════════════════════════════ -->
+  <text x="20" y="88" font-size="10" font-weight="700" fill="#6b7280" letter-spacing="1.5">LAYER 1 — REAL DATA SOURCE</text>
+  <line x1="20" y1="92" x2="980" y2="92" stroke="#e2e8f0" stroke-width="1"/>
+
+  <rect x="60" y="102" width="380" height="90" rx="8" fill="#ffffff" stroke="#2e9e58" stroke-width="2"/>
+  <rect x="60" y="102" width="380" height="30" rx="8" fill="#2e9e58"/>
+  <rect x="60" y="120" width="380" height="12" fill="#2e9e58"/>
+  <text x="250" y="122" text-anchor="middle" font-size="12" font-weight="700" fill="#ffffff">Open-Meteo Air Quality API</text>
+  <text x="250" y="148" text-anchor="middle" font-size="10" fill="#374151">CAMS / ECMWF — European Centre for Medium-Range Weather Forecasts</text>
+  <text x="250" y="163" text-anchor="middle" font-size="10" fill="#374151">Hourly measured readings · No API key required · Free</text>
+  <text x="250" y="178" text-anchor="middle" font-size="9.5" fill="#2e9e58">PM2.5 · NO2 · O3 · SO2 · CO · CH4</text>
+
+  <rect x="560" y="102" width="380" height="90" rx="8" fill="#ffffff" stroke="#1565a8" stroke-width="2"/>
+  <rect x="560" y="102" width="380" height="30" rx="8" fill="#1565a8"/>
+  <rect x="560" y="120" width="380" height="12" fill="#1565a8"/>
+  <text x="750" y="122" text-anchor="middle" font-size="12" font-weight="700" fill="#ffffff">Real Industrial Monitoring Locations</text>
+  <text x="750" y="148" text-anchor="middle" font-size="10" fill="#374151">Houston TX · Delhi NCR · North Sea · Jubail Saudi Arabia</text>
+  <text x="750" y="163" text-anchor="middle" font-size="10" fill="#374151">Beijing · Chennai · Svalbard · Manaus · Essen · Guangzhou</text>
+  <text x="750" y="178" text-anchor="middle" font-size="9.5" fill="#1565a8">20 locations for Task 1 · 10 networks for Task 2 · 5 for Task 3</text>
+
+  <!-- Arrow: Data Source → fetch script -->
+  <line x1="500" y1="147" x2="500" y2="218" stroke="#6b7280" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arrow)"/>
+  <rect x="395" y="193" width="210" height="20" rx="4" fill="#f1f5f9"/>
+  <text x="500" y="207" text-anchor="middle" font-size="9" fill="#6b7280">scripts/fetch_real_data.py · run once · committed to repo</text>
+
+  <!-- ══════════════════════════════════════════════════════════
+       LAYER 2 — DATA CACHE
+  ══════════════════════════════════════════════════════════ -->
+  <text x="20" y="243" font-size="10" font-weight="700" fill="#6b7280" letter-spacing="1.5">LAYER 2 — CACHED REAL DATA  (app/data/)</text>
+  <line x1="20" y1="247" x2="980" y2="247" stroke="#e2e8f0" stroke-width="1"/>
+
+  <rect x="60" y="257" width="270" height="80" rx="8" fill="#ffffff" stroke="#2e9e58" stroke-width="1.5"/>
+  <rect x="60" y="257" width="270" height="26" rx="8" fill="#e8f5ee"/>
+  <rect x="60" y="271" width="270" height="12" fill="#e8f5ee"/>
+  <text x="195" y="274" text-anchor="middle" font-size="10" font-weight="700" fill="#1a7a40">real_task1.json</text>
+  <text x="195" y="297" text-anchor="middle" font-size="9.5" fill="#374151">20 scenarios · 24-hour readings</text>
+  <text x="195" y="311" text-anchor="middle" font-size="9.5" fill="#374151">PM2.5 / NO2 / O3 / SO2 / CO / CH4</text>
+  <text x="195" y="327" text-anchor="middle" font-size="9" fill="#6b7280">20 global industrial locations</text>
+
+  <rect x="365" y="257" width="270" height="80" rx="8" fill="#ffffff" stroke="#b45d00" stroke-width="1.5"/>
+  <rect x="365" y="257" width="270" height="26" rx="8" fill="#fef3e8"/>
+  <rect x="365" y="271" width="270" height="12" fill="#fef3e8"/>
+  <text x="500" y="274" text-anchor="middle" font-size="10" font-weight="700" fill="#b45d00">real_task2.json</text>
+  <text x="500" y="297" text-anchor="middle" font-size="9.5" fill="#374151">10 network scenarios · 7-day data</text>
+  <text x="500" y="311" text-anchor="middle" font-size="9.5" fill="#374151">5 sensors · daily means per sensor</text>
+  <text x="500" y="327" text-anchor="middle" font-size="9" fill="#6b7280">10 industrial network locations</text>
+
+  <rect x="670" y="257" width="270" height="80" rx="8" fill="#ffffff" stroke="#c0323e" stroke-width="1.5"/>
+  <rect x="670" y="257" width="270" height="26" rx="8" fill="#fef0f0"/>
+  <rect x="670" y="271" width="270" height="12" fill="#fef0f0"/>
+  <text x="805" y="274" text-anchor="middle" font-size="10" font-weight="700" fill="#c0323e">real_task3.json</text>
+  <text x="805" y="297" text-anchor="middle" font-size="9.5" fill="#374151">5 cascade networks · 30-day data</text>
+  <text x="805" y="311" text-anchor="middle" font-size="9.5" fill="#374151">10 sensors · daily status timelines</text>
+  <text x="805" y="327" text-anchor="middle" font-size="9" fill="#6b7280">Kuwait · Texas · Beijing · Chennai · North Sea</text>
+
+  <!-- Arrows: Cache → Tasks -->
+  <line x1="195" y1="337" x2="195" y2="397" stroke="#2e9e58" stroke-width="1.5" marker-end="url(#arrow-green)"/>
+  <line x1="500" y1="337" x2="500" y2="397" stroke="#b45d00" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="805" y1="337" x2="805" y2="397" stroke="#c0323e" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- ══════════════════════════════════════════════════════════
+       LAYER 3 — TASK ENGINE
+  ══════════════════════════════════════════════════════════ -->
+  <text x="20" y="392" font-size="10" font-weight="700" fill="#6b7280" letter-spacing="1.5">LAYER 3 — FAULT INJECTION ENGINE  (deterministic · seeded)</text>
+  <line x1="20" y1="396" x2="980" y2="396" stroke="#e2e8f0" stroke-width="1"/>
+
+  <!-- Task 1 -->
+  <rect x="30" y="406" width="290" height="120" rx="8" fill="#ffffff" stroke="#2e9e58" stroke-width="2"/>
+  <rect x="30" y="406" width="290" height="30" rx="8" fill="#2e9e58"/>
+  <rect x="30" y="424" width="290" height="12" fill="#2e9e58"/>
+  <text x="175" y="426" text-anchor="middle" font-size="11" font-weight="700" fill="#ffffff">Task 1 · Single Sensor Detect</text>
+  <rect x="296" y="409" width="44" height="18" rx="4" fill="#d4f0df"/>
+  <text x="318" y="421" text-anchor="middle" font-size="9" font-weight="700" fill="#1a7a40">EASY</text>
+  <text x="175" y="454" text-anchor="middle" font-size="9.5" fill="#374151">Real 24-hr baseline + fault injection</text>
+  <text x="175" y="468" text-anchor="middle" font-size="9.5" fill="#374151">outlier · stuck · missing · drift · spike · bias</text>
+  <text x="175" y="484" text-anchor="middle" font-size="9.5" fill="#374151">Grader: F1 score + calibration bonus</text>
+  <text x="175" y="500" text-anchor="middle" font-size="9.5" fill="#374151">20 scenarios · deterministic by seed</text>
+  <text x="175" y="518" text-anchor="middle" font-size="9" fill="#6b7280">Score range: 0.0 – 1.0</text>
+
+  <!-- Task 2 -->
+  <rect x="355" y="406" width="290" height="120" rx="8" fill="#ffffff" stroke="#b45d00" stroke-width="2"/>
+  <rect x="355" y="406" width="290" height="30" rx="8" fill="#b45d00"/>
+  <rect x="355" y="424" width="290" height="12" fill="#b45d00"/>
+  <text x="500" y="426" text-anchor="middle" font-size="11" font-weight="700" fill="#ffffff">Task 2 · Multi-Sensor Cleaning</text>
+  <rect x="617" y="409" width="52" height="18" rx="4" fill="#fdebd0"/>
+  <text x="643" y="421" text-anchor="middle" font-size="9" font-weight="700" fill="#b45d00">MEDIUM</text>
+  <text x="500" y="454" text-anchor="middle" font-size="9.5" fill="#374151">Real 7-day baseline · 5 sensors / network</text>
+  <text x="500" y="468" text-anchor="middle" font-size="9.5" fill="#374151">drift · bias · noise · missing · stuck</text>
+  <text x="500" y="484" text-anchor="middle" font-size="9.5" fill="#374151">Grader: 60% fault + 40% fix accuracy</text>
+  <text x="500" y="500" text-anchor="middle" font-size="9.5" fill="#374151">10 network scenarios</text>
+  <text x="500" y="518" text-anchor="middle" font-size="9" fill="#6b7280">Score range: 0.0 – 1.0</text>
+
+  <!-- Task 3 -->
+  <rect x="680" y="406" width="290" height="120" rx="8" fill="#ffffff" stroke="#c0323e" stroke-width="2"/>
+  <rect x="680" y="406" width="290" height="30" rx="8" fill="#c0323e"/>
+  <rect x="680" y="424" width="290" height="12" fill="#c0323e"/>
+  <text x="825" y="426" text-anchor="middle" font-size="11" font-weight="700" fill="#ffffff">Task 3 · Cascade Failure Audit</text>
+  <rect x="938" y="409" width="44" height="18" rx="4" fill="#fad4d8"/>
+  <text x="960" y="421" text-anchor="middle" font-size="9" font-weight="700" fill="#c0323e">HARD</text>
+  <text x="825" y="454" text-anchor="middle" font-size="9.5" fill="#374151">Real 30-day baseline · 10-sensor network</text>
+  <text x="825" y="468" text-anchor="middle" font-size="9.5" fill="#374151">Reference outage → dependent corruption</text>
+  <text x="825" y="484" text-anchor="middle" font-size="9.5" fill="#374151">Root cause · repair order · EPA compliance</text>
+  <text x="825" y="500" text-anchor="middle" font-size="9.5" fill="#374151">4-component grader · 5 cascade scenarios</text>
+  <text x="825" y="518" text-anchor="middle" font-size="9" fill="#6b7280">Score range: 0.0 – 1.0</text>
+
+  <!-- Arrows Tasks → Server -->
+  <line x1="175" y1="526" x2="380" y2="610" stroke="#6b7280" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="500" y1="526" x2="500" y2="610" stroke="#6b7280" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="825" y1="526" x2="620" y2="610" stroke="#6b7280" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- ══════════════════════════════════════════════════════════
+       LAYER 4 — FASTAPI SERVER
+  ══════════════════════════════════════════════════════════ -->
+  <text x="20" y="600" font-size="10" font-weight="700" fill="#6b7280" letter-spacing="1.5">LAYER 4 — FASTAPI SERVER  (port 7860 · Docker · HuggingFace Spaces)</text>
+  <line x1="20" y1="604" x2="980" y2="604" stroke="#e2e8f0" stroke-width="1"/>
+
+  <rect x="60" y="614" width="880" height="110" rx="8" fill="#ffffff" stroke="#1565a8" stroke-width="2"/>
+  <rect x="60" y="614" width="880" height="30" rx="8" fill="#1565a8"/>
+  <rect x="60" y="632" width="880" height="12" fill="#1565a8"/>
+  <text x="500" y="634" text-anchor="middle" font-size="12" font-weight="700" fill="#ffffff">ClimateWatch Environment Server  —  app/main.py</text>
+
+  <!-- Endpoint row -->
+  <rect x="80"  y="652" width="110" height="24" rx="5" fill="#e8f5ee" stroke="#2e9e58" stroke-width="1.2"/>
+  <text x="135" y="668" text-anchor="middle" font-size="9.5" font-weight="700" fill="#1a7a40">POST /reset</text>
+
+  <rect x="202" y="652" width="105" height="24" rx="5" fill="#e8f5ee" stroke="#2e9e58" stroke-width="1.2"/>
+  <text x="254" y="668" text-anchor="middle" font-size="9.5" font-weight="700" fill="#1a7a40">POST /step</text>
+
+  <rect x="319" y="652" width="105" height="24" rx="5" fill="#dce8f8" stroke="#1565a8" stroke-width="1.2"/>
+  <text x="371" y="668" text-anchor="middle" font-size="9.5" font-weight="700" fill="#1565a8">GET /state</text>
+
+  <rect x="436" y="652" width="105" height="24" rx="5" fill="#dce8f8" stroke="#1565a8" stroke-width="1.2"/>
+  <text x="488" y="668" text-anchor="middle" font-size="9.5" font-weight="700" fill="#1565a8">GET /health</text>
+
+  <rect x="553" y="652" width="105" height="24" rx="5" fill="#dce8f8" stroke="#1565a8" stroke-width="1.2"/>
+  <text x="605" y="668" text-anchor="middle" font-size="9.5" font-weight="700" fill="#1565a8">GET /tasks</text>
+
+  <rect x="670" y="652" width="110" height="24" rx="5" fill="#fdebd0" stroke="#b45d00" stroke-width="1.2"/>
+  <text x="725" y="668" text-anchor="middle" font-size="9.5" font-weight="700" fill="#b45d00">POST /grader</text>
+
+  <rect x="792" y="652" width="130" height="24" rx="5" fill="#fdebd0" stroke="#b45d00" stroke-width="1.2"/>
+  <text x="857" y="668" text-anchor="middle" font-size="9.5" font-weight="700" fill="#b45d00">POST /baseline</text>
+
+  <!-- Reward rules -->
+  <text x="500" y="698" text-anchor="middle" font-size="9.5" fill="#374151">Reward: partial credit per step  ·  anti-loop penalty −0.30  ·  always clamped to [0.0, 1.0]</text>
+  <text x="500" y="714" text-anchor="middle" font-size="9.5" fill="#374151">Episode: max 5 steps  ·  early stop at score ≥ 0.80  ·  thread-safe (RLock)</text>
+
+  <!-- Arrows Server → Clients -->
+  <line x1="200" y1="724" x2="160" y2="784" stroke="#6b7280" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="500" y1="724" x2="500" y2="784" stroke="#6b7280" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="800" y1="724" x2="840" y2="784" stroke="#6b7280" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- ══════════════════════════════════════════════════════════
+       LAYER 5 — CLIENTS
+  ══════════════════════════════════════════════════════════ -->
+  <text x="20" y="779" font-size="10" font-weight="700" fill="#6b7280" letter-spacing="1.5">LAYER 5 — CLIENTS</text>
+  <line x1="20" y1="783" x2="980" y2="783" stroke="#e2e8f0" stroke-width="1"/>
+
+  <!-- Client 1: Judges -->
+  <rect x="30" y="793" width="280" height="88" rx="8" fill="#ffffff" stroke="#c0323e" stroke-width="2"/>
+  <rect x="30" y="793" width="280" height="26" rx="8" fill="#c0323e"/>
+  <rect x="30" y="807" width="280" height="12" fill="#c0323e"/>
+  <text x="170" y="810" text-anchor="middle" font-size="11" font-weight="700" fill="#ffffff">Evaluation Agent (Judges)</text>
+  <text x="170" y="834" text-anchor="middle" font-size="9.5" fill="#374151">Calls /reset · /step · /grader</text>
+  <text x="170" y="848" text-anchor="middle" font-size="9.5" fill="#374151">Nemotron 3 Super or GPT-4</text>
+  <text x="170" y="864" text-anchor="middle" font-size="9" fill="#6b7280">Phase 2: Automated agentic evaluation</text>
+  <text x="170" y="876" text-anchor="middle" font-size="9" fill="#6b7280">Checks score variance across episodes</text>
+
+  <!-- Client 2: Dashboard -->
+  <rect x="360" y="793" width="280" height="88" rx="8" fill="#ffffff" stroke="#2e9e58" stroke-width="2"/>
+  <rect x="360" y="793" width="280" height="26" rx="8" fill="#2e9e58"/>
+  <rect x="360" y="807" width="280" height="12" fill="#2e9e58"/>
+  <text x="500" y="810" text-anchor="middle" font-size="11" font-weight="700" fill="#ffffff">Web Dashboard  (GET /)</text>
+  <text x="500" y="834" text-anchor="middle" font-size="9.5" fill="#374151">Live sensor data tables with real values</text>
+  <text x="500" y="848" text-anchor="middle" font-size="9.5" fill="#374151">Dependency graph · compliance status</text>
+  <text x="500" y="864" text-anchor="middle" font-size="9" fill="#6b7280">Real-time episode score meters</text>
+  <text x="500" y="876" text-anchor="middle" font-size="9" fill="#6b7280">White professional theme · no emojis</text>
+
+  <!-- Client 3: inference.py -->
+  <rect x="690" y="793" width="280" height="88" rx="8" fill="#ffffff" stroke="#7a3a9a" stroke-width="2"/>
+  <rect x="690" y="793" width="280" height="26" rx="8" fill="#7a3a9a"/>
+  <rect x="690" y="807" width="280" height="12" fill="#7a3a9a"/>
+  <text x="830" y="810" text-anchor="middle" font-size="11" font-weight="700" fill="#ffffff">inference.py  (Baseline Agent)</text>
+  <text x="830" y="834" text-anchor="middle" font-size="9.5" fill="#374151">OpenAI client → HF Router (free)</text>
+  <text x="830" y="848" text-anchor="middle" font-size="9.5" fill="#374151">Llama-3.3-70B · temperature=0.0</text>
+  <text x="830" y="864" text-anchor="middle" font-size="9" fill="#6b7280">Reproducible baseline scores</text>
+  <text x="830" y="876" text-anchor="middle" font-size="9" fill="#6b7280">Runtime &lt; 20 minutes · all 3 tasks</text>
+
 </svg>

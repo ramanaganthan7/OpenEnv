@@ -11,12 +11,12 @@ YOUR CODE (BuildVerse folder)
         │  git push huggingface master
         ▼
 HUGGINGFACE SPACE
-huggingface.co/spaces/ramanaganthan7/climatewatch-env
+huggingface.co/spaces/YOUR_USERNAME/climatewatch-env
         │
         │  HF reads Dockerfile → builds image → runs container on port 7860
         ▼
 LIVE SERVER
-https://ramanaganthan7-climatewatch-env.hf.space
+https://YOUR_USERNAME-climatewatch-env.hf.space
         │
         ├──► Hackathon judges call /reset, /step, /grader with Nemotron
         └──► inference.py calls https://router.huggingface.co/v1 for free LLM
@@ -50,45 +50,33 @@ uv --version
 
 ## Step 1 — Get Your HuggingFace Token
 
-Your Space: **https://huggingface.co/spaces/ramanaganthan7/climatewatch-env**
+Go to: `huggingface.co → Profile → Settings → Access Tokens → New Token`
+- Name: `climatewatch-deploy`
+- Type: **Write** (needed to push code)
 
-To get your token:
-```
-huggingface.co → Profile → Settings → Access Tokens → New Token
-Name: climatewatch-deploy
-Type: Write  (needed to push code)
-```
-
-Keep it safe — used as git password when pushing.
+Keep it safe — used as the git password when pushing.
 
 ---
 
 ## Step 2 — Push Code to HuggingFace
 
-On the other PC, copy the BuildVerse folder, then:
-
 ```bash
 cd path\to\BuildVerse
 
-# Add HuggingFace as a git remote
-git remote add huggingface https://huggingface.co/spaces/ramanaganthan7/climatewatch-env
+# Add HuggingFace as a git remote (replace YOUR_USERNAME with your HF username)
+git remote add huggingface https://huggingface.co/spaces/YOUR_USERNAME/climatewatch-env
 
 # Push all code
-git push huggingface master
+git push huggingface main
 ```
 
-When prompted:
-```
-Username: ramanaganthan7
-Password: hf_your_write_token
-```
+When prompted, enter your HuggingFace username and token.
 
 ---
 
 ## Step 3 — Set Environment Variables in Space Settings
 
-Go to:
-**https://huggingface.co/spaces/ramanaganthan7/climatewatch-env → Settings → Variables and Secrets**
+Go to your Space → **Settings → Variables and Secrets**
 
 Add exactly these 4:
 
@@ -124,19 +112,19 @@ Once status shows **Running**:
 
 ```bash
 # Health check
-curl https://ramanaganthan7-climatewatch-env.hf.space/health
+curl https://YOUR_USERNAME-climatewatch-env.hf.space/health
 # → {"status":"healthy"}
 
 # View tasks
-curl https://ramanaganthan7-climatewatch-env.hf.space/tasks
+curl https://YOUR_USERNAME-climatewatch-env.hf.space/tasks
 
 # Start an episode
-curl -X POST https://ramanaganthan7-climatewatch-env.hf.space/reset \
+curl -X POST https://YOUR_USERNAME-climatewatch-env.hf.space/reset \
   -H "Content-Type: application/json" \
   -d '{"task_id": "task1_detect", "seed": 0}'
 
 # Open dashboard in browser:
-# https://ramanaganthan7-climatewatch-env.hf.space
+# https://YOUR_USERNAME-climatewatch-env.hf.space
 ```
 
 ---
@@ -146,7 +134,7 @@ curl -X POST https://ramanaganthan7-climatewatch-env.hf.space/reset \
 ```bash
 set HF_TOKEN=your_hf_token_here
 set MODEL_NAME=meta-llama/Llama-3.3-70B-Instruct
-set ENV_URL=https://ramanaganthan7-climatewatch-env.hf.space
+set ENV_URL=https://YOUR_USERNAME-climatewatch-env.hf.space
 
 uv run task infer
 ```
@@ -236,7 +224,7 @@ MODEL_NAME=meta-llama/Llama-3.2-3B-Instruct
 
 ```
 Before submitting, verify:
-  ✓ curl https://ramanaganthan7-climatewatch-env.hf.space/health  → {"status":"healthy"}
+  ✓ curl https://YOUR_USERNAME-climatewatch-env.hf.space/health  → {"status":"healthy"}
   ✓ POST /reset returns done=false, reward=0.0 with sensor data
   ✓ GET /state returns episode_id, task_id, step_count, total_reward, done
   ✓ Space is PUBLIC (not private)
@@ -244,7 +232,7 @@ Before submitting, verify:
   ✓ All 3 tasks listed with easy/medium/hard difficulty
 
 Submit this URL:
-  https://huggingface.co/spaces/ramanaganthan7/climatewatch-env
+  https://huggingface.co/spaces/YOUR_USERNAME/climatewatch-env
 ```
 
 ---
@@ -263,5 +251,5 @@ git commit -m "update"
 git push huggingface master
 
 # Test live space
-curl https://ramanaganthan7-climatewatch-env.hf.space/health
+curl https://YOUR_USERNAME-climatewatch-env.hf.space/health
 ```
