@@ -1,4 +1,14 @@
 # ClimateWatch
+---
+title: ClimateWatch Environment
+emoji: 🌍
+colorFrom: green
+colorTo: blue
+sdk: docker
+app_port: 7860
+tags:
+  - openenv
+---
 
 **Environmental Sensor AI Environment — OpenEnv Specification**
 
