@@ -655,7 +655,7 @@ def dashboard() -> str:
 <header>
   <div class="brand">
     <span class="brand-title">ClimateWatch</span>
-    <span class="brand-sub">Environmental Sensor AI Environment &mdash; OpenEnv Hackathon</span>
+    <span class="brand-sub">Environmental Sensor Data Quality &amp; Compliance Monitoring</span>
   </div>
   <div class="header-links">
     <a href="/docs">API Docs</a>
@@ -666,28 +666,29 @@ def dashboard() -> str:
 </header>
 
 <div id="episodeBar">
-  <div class="ep-item"><span class="ep-label">Episode</span><span class="ep-val" id="ep-id">No active episode</span></div>
+  <div class="ep-item"><span class="ep-label">Episode</span><span class="ep-val" id="ep-id">—</span></div>
   <div class="ep-item"><span class="ep-label">Task</span><span class="ep-val" id="ep-task">—</span></div>
   <div class="ep-item"><span class="ep-label">Step</span><span class="ep-val" id="ep-step">0 / 5</span></div>
   <div class="ep-item"><span class="ep-label">Total Reward</span><span class="ep-val" id="ep-reward">0.0000</span></div>
   <div class="ep-item"><span class="ep-label">Status</span><span class="ep-val" id="ep-done">Idle</span></div>
+  <div class="ep-item" style="margin-left:auto"><span class="ep-label">Data</span><span class="ep-val" style="color:var(--green);font-size:0.75rem">CAMS / ECMWF Real Measurements</span></div>
 </div>
 
 <div class="layout">
   <aside>
     <div>
-      <div class="section-label">Start Episode</div>
+      <div class="section-label">Run Episode</div>
       <button class="task-btn" id="btn-t1" onclick="startTask('task1_detect')">
-        <span class="task-btn-name">Task 1 <span class="badge easy">EASY</span></span>
-        <span class="task-btn-desc">Single Sensor Anomaly Detection</span>
+        <span class="task-btn-name">Fault Detection <span class="badge easy">EASY</span></span>
+        <span class="task-btn-desc">24-hour single sensor · identify faulty readings</span>
       </button>
       <button class="task-btn" id="btn-t2" onclick="startTask('task2_clean')">
-        <span class="task-btn-name">Task 2 <span class="badge medium">MEDIUM</span></span>
-        <span class="task-btn-desc">Multi-Sensor Data Cleaning</span>
+        <span class="task-btn-name">Data Cleaning <span class="badge medium">MEDIUM</span></span>
+        <span class="task-btn-desc">7-day network · diagnose and fix 5 sensors</span>
       </button>
       <button class="task-btn" id="btn-t3" onclick="startTask('task3_cascade')">
-        <span class="task-btn-name">Task 3 <span class="badge hard">HARD</span></span>
-        <span class="task-btn-desc">Cascade Failure &amp; Compliance</span>
+        <span class="task-btn-name">Cascade Audit <span class="badge hard">HARD</span></span>
+        <span class="task-btn-desc">30-day network · root cause &amp; EPA compliance</span>
       </button>
     </div>
 
@@ -700,25 +701,37 @@ def dashboard() -> str:
     </div>
 
     <div>
-      <div class="section-label">Environment</div>
-      <div class="info-box" id="envInfo">
-        <strong>ClimateWatch v1.0</strong><br>
-        3 tasks &mdash; 35 total scenarios<br>
-        Max 5 steps per episode<br>
-        Early stop at score &ge; 0.80<br>
-        Reward: F1 + partial credit
+      <div class="section-label">Data Source</div>
+      <div class="info-box">
+        <strong>Open-Meteo CAMS / ECMWF</strong><br>
+        Real hourly air quality measurements<br>
+        20 global industrial monitoring sites<br>
+        PM2.5 &middot; NO2 &middot; O3 &middot; SO2 &middot; CO &middot; CH4<br>
+        <span style="color:var(--muted);font-size:0.72rem">No synthetic random values</span>
       </div>
     </div>
 
     <div>
-      <div class="section-label">Fault Types</div>
+      <div class="section-label">Episode Rules</div>
+      <div class="info-box">
+        Max 5 steps per episode<br>
+        Early stop when score &ge; 0.80<br>
+        Reward given at every step<br>
+        Anti-loop penalty &minus;0.30<br>
+        Score always in [0.0, 1.0]
+      </div>
+    </div>
+
+    <div>
+      <div class="section-label">Sensor Fault Types</div>
       <div class="info-box">
         <strong>outlier</strong> &mdash; single extreme spike<br>
         <strong>stuck</strong> &mdash; frozen repeated value<br>
         <strong>missing</strong> &mdash; null data gap<br>
         <strong>drift</strong> &mdash; gradual baseline shift<br>
         <strong>spike</strong> &mdash; short burst anomaly<br>
-        <strong>bias</strong> &mdash; constant offset error
+        <strong>bias</strong> &mdash; constant offset error<br>
+        <strong>cascade</strong> &mdash; reference sensor failure
       </div>
     </div>
   </aside>
@@ -727,9 +740,9 @@ def dashboard() -> str:
     <div class="panel">
       <div class="panel-body">
         <div class="placeholder">
-          <strong>No active episode</strong>
-          Select a task from the sidebar to start an episode.<br>
-          Real sensor data will appear here with live readings.
+          <strong>Select a task to begin</strong>
+          Real CAMS/ECMWF air quality data loads when you start an episode.<br>
+          Readings are actual measured values from industrial monitoring stations.
         </div>
       </div>
     </div>
@@ -862,8 +875,8 @@ function renderTask1(obs, sd) {
   main.innerHTML = `
     <div class="panel">
       <div class="panel-header">
-        <span>Sensor Readings &mdash; ${sd.sensor_id || ''}</span>
-        <button class="raw-toggle" onclick="toggleRaw(this)">Show Raw JSON</button>
+        <span>${sd.parameter||''} &mdash; ${sd.sensor_id||''} &mdash; ${sd.location||''}</span>
+        <button class="raw-toggle" onclick="toggleRaw(this)">Raw JSON</button>
       </div>
       <div class="panel-body">
         <div class="sensor-meta">
@@ -873,6 +886,7 @@ function renderTask1(obs, sd) {
           <div class="sensor-meta-item"><span class="k">Normal Range</span><span class="v">${nMin} &ndash; ${nMax} ${sd.unit||''}</span></div>
           <div class="sensor-meta-item"><span class="k">Location</span><span class="v">${sd.location||'—'}</span></div>
           <div class="sensor-meta-item"><span class="k">Readings</span><span class="v">${readings.length} hours</span></div>
+          <div class="sensor-meta-item"><span class="k">Data Source</span><span class="v" style="color:var(--green);font-size:0.78rem">${sd.data_source||'CAMS/ECMWF'}</span></div>
         </div>
         <table class="readings-table">
           <thead><tr><th>Time</th><th>Value</th><th>Unit</th><th>Level</th><th>Flag</th></tr></thead>
@@ -936,15 +950,16 @@ function renderTask2(obs, sd) {
   document.getElementById('mainPanel').innerHTML = `
     <div class="panel">
       <div class="panel-header">
-        <span>Network &mdash; ${sd.network_id||''} &mdash; ${sd.location||''}</span>
-        <button class="raw-toggle" onclick="toggleRaw(this)">Show Raw JSON</button>
+        <span>7-Day Network &mdash; ${sd.network_id||''} &mdash; ${sd.location||''}</span>
+        <button class="raw-toggle" onclick="toggleRaw(this)">Raw JSON</button>
       </div>
       <div class="panel-body">
         <div class="sensor-meta" style="margin-bottom:1rem">
-          <div class="sensor-meta-item"><span class="k">Network</span><span class="v">${sd.network_id||'—'}</span></div>
+          <div class="sensor-meta-item"><span class="k">Network ID</span><span class="v">${sd.network_id||'—'}</span></div>
           <div class="sensor-meta-item"><span class="k">Period</span><span class="v">${sd.period_days||7} days</span></div>
-          <div class="sensor-meta-item"><span class="k">Sensors</span><span class="v">${sensors.length}</span></div>
+          <div class="sensor-meta-item"><span class="k">Sensors</span><span class="v">${sensors.length} active</span></div>
           <div class="sensor-meta-item"><span class="k">Reference Station</span><span class="v">${(sd.reference_station||{}).id||'—'}</span></div>
+          <div class="sensor-meta-item"><span class="k">Data Source</span><span class="v" style="color:var(--green);font-size:0.78rem">${sd.data_source||'CAMS/ECMWF'}</span></div>
         </div>
         <div class="sensor-grid">${cards}</div>
         ${obs.feedback ? '<div style="margin-top:1rem"><div class="feedback-box ' + feedCls + '">' + obs.feedback + '</div></div>' : ''}
@@ -1011,14 +1026,15 @@ function renderTask3(obs, sd) {
   document.getElementById('mainPanel').innerHTML = `
     <div class="panel">
       <div class="panel-header">
-        <span>Cascade Network &mdash; ${sd.network_id||''} &mdash; ${sd.location||''}</span>
-        <button class="raw-toggle" onclick="toggleRaw(this)">Show Raw JSON</button>
+        <span>30-Day Cascade Network &mdash; ${sd.network_id||''} &mdash; ${sd.location||''}</span>
+        <button class="raw-toggle" onclick="toggleRaw(this)">Raw JSON</button>
       </div>
       <div class="panel-body">
         <div class="sensor-meta" style="margin-bottom:1rem">
-          <div class="sensor-meta-item"><span class="k">Network</span><span class="v">${sd.network_id||'—'}</span></div>
+          <div class="sensor-meta-item"><span class="k">Network ID</span><span class="v">${sd.network_id||'—'}</span></div>
           <div class="sensor-meta-item"><span class="k">Period</span><span class="v">${sd.period_days||30} days</span></div>
-          <div class="sensor-meta-item"><span class="k">Sensors</span><span class="v">${sensors.length}</span></div>
+          <div class="sensor-meta-item"><span class="k">Sensors</span><span class="v">${sensors.length} sensors</span></div>
+          <div class="sensor-meta-item"><span class="k">Data Source</span><span class="v" style="color:var(--green);font-size:0.78rem">${sd.data_source||'CAMS/ECMWF'}</span></div>
         </div>
 
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem">
