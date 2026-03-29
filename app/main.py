@@ -286,148 +286,773 @@ def dashboard() -> str:
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ClimateWatch — Environmental Sensor AI Environment</title>
   <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
     :root {
-      --bg: #080e08; --bg2: #0d160d; --bg3: #112011;
-      --green: #00ff88; --blue: #00ccff; --amber: #ffaa00;
-      --red: #ff4466; --text: #c8e6c9; --border: #1e3a1e;
+      --bg:      #0b0f0b;
+      --surface: #111811;
+      --raised:  #172017;
+      --border:  #253525;
+      --border2: #1e2e1e;
+      --green:   #3ddc84;
+      --green2:  #26a05c;
+      --blue:    #5bc8f5;
+      --amber:   #f5a623;
+      --red:     #e05c6e;
+      --muted:   #607060;
+      --text:    #d4e8d4;
+      --text2:   #8aaa8a;
     }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'Courier New', monospace; background: var(--bg);
-           color: var(--text); padding: 1.5rem; line-height: 1.6; }
-    h1 { color: var(--green); font-size: 1.5rem; margin-bottom: 0.3rem; }
-    .subtitle { color: var(--blue); font-size: 0.85rem; margin-bottom: 1.5rem; opacity: 0.8; }
-    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-    .card { border: 1px solid var(--border); border-radius: 6px;
-            padding: 1rem; background: var(--bg2); }
-    .card h3 { color: var(--blue); margin-bottom: 0.7rem; font-size: 0.95rem; }
+
+    body {
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ── Header ── */
+    header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 0.9rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+    .brand { display: flex; flex-direction: column; }
+    .brand-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--green);
+      letter-spacing: 0.02em;
+    }
+    .brand-sub {
+      font-size: 0.73rem;
+      color: var(--text2);
+      margin-top: 1px;
+    }
+    .header-links { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+    .header-links a {
+      font-size: 0.78rem;
+      color: var(--blue);
+      text-decoration: none;
+      padding: 0.25rem 0.6rem;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      background: var(--raised);
+      transition: border-color 0.15s;
+    }
+    .header-links a:hover { border-color: var(--blue); }
+
+    /* ── Episode bar ── */
+    #episodeBar {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border2);
+      padding: 0.45rem 1.5rem;
+      display: flex;
+      gap: 2rem;
+      font-size: 0.78rem;
+      color: var(--text2);
+      flex-wrap: wrap;
+    }
+    .ep-item { display: flex; gap: 0.4rem; align-items: center; }
+    .ep-label { color: var(--muted); }
+    .ep-val   { color: var(--text); font-weight: 600; font-variant-numeric: tabular-nums; }
+    .ep-val.good { color: var(--green); }
+    .ep-val.done { color: var(--red); }
+
+    /* ── Main layout ── */
+    .layout {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      flex: 1;
+      min-height: 0;
+    }
+
+    /* ── Sidebar ── */
+    aside {
+      background: var(--surface);
+      border-right: 1px solid var(--border);
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      overflow-y: auto;
+    }
+    .section-label {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.4rem;
+    }
+
+    /* Task buttons */
     .task-btn {
-      display: block; width: 100%; padding: 0.6rem 1rem;
-      margin: 0.3rem 0; background: var(--bg3); color: var(--green);
-      border: 1px solid var(--border); border-radius: 4px;
-      cursor: pointer; font-family: monospace; font-size: 0.88rem;
-      text-align: left; transition: all 0.15s;
+      display: block;
+      width: 100%;
+      padding: 0.6rem 0.8rem;
+      margin-bottom: 0.4rem;
+      background: var(--raised);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      cursor: pointer;
+      text-align: left;
+      transition: border-color 0.15s, background 0.15s;
+      color: var(--text);
     }
-    .task-btn:hover { background: var(--border); border-color: var(--green); }
-    .task-btn .badge {
-      float: right; font-size: 0.75rem; padding: 0.1rem 0.5rem;
-      border-radius: 10px; font-weight: bold;
+    .task-btn:hover { border-color: var(--green2); background: #1a281a; }
+    .task-btn.active { border-color: var(--green); background: #1a281a; }
+    .task-btn-name { font-size: 0.82rem; font-weight: 600; display: block; margin-bottom: 0.2rem; }
+    .task-btn-desc { font-size: 0.71rem; color: var(--text2); display: block; }
+    .badge {
+      display: inline-block;
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      padding: 0.1rem 0.45rem;
+      border-radius: 3px;
+      margin-left: 0.4rem;
+      vertical-align: middle;
     }
     .easy   { background: #1a3a1a; color: var(--green); }
-    .medium { background: #3a2a00; color: var(--amber); }
-    .hard   { background: #3a1020; color: var(--red); }
-    pre {
-      background: var(--bg); padding: 0.8rem; border-radius: 4px;
-      overflow: auto; max-height: 350px; font-size: 0.78rem;
-      border: 1px solid var(--border); white-space: pre-wrap;
+    .medium { background: #3a2c00; color: var(--amber); }
+    .hard   { background: #3a1520; color: var(--red); }
+
+    /* Score meters */
+    .score-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.78rem;
+      margin-bottom: 0.5rem;
     }
-    .links a {
-      display: inline-block; color: var(--blue); text-decoration: none;
-      margin: 0.2rem 0.4rem 0.2rem 0; padding: 0.3rem 0.7rem;
-      border: 1px solid var(--border); border-radius: 4px; font-size: 0.83rem;
+    .score-label { color: var(--text2); }
+    .score-num   { font-weight: 700; color: var(--green); font-variant-numeric: tabular-nums; }
+    .meter {
+      height: 5px;
+      background: var(--raised);
+      border-radius: 3px;
+      overflow: hidden;
+      margin-bottom: 0.8rem;
     }
-    .links a:hover { border-color: var(--blue); }
-    .status-bar {
-      display: flex; gap: 1rem; padding: 0.5rem 1rem;
-      background: var(--bg3); border: 1px solid var(--border);
-      border-radius: 4px; margin-bottom: 1rem; font-size: 0.82rem;
+    .meter-fill {
+      height: 100%;
+      border-radius: 3px;
+      background: var(--green2);
+      transition: width 0.4s ease;
     }
-    .status-bar span { color: var(--green); }
-    .full { grid-column: 1 / -1; }
-    @media (max-width: 700px) { .grid { grid-template-columns: 1fr; } }
+
+    /* Sidebar info box */
+    .info-box {
+      background: var(--raised);
+      border: 1px solid var(--border2);
+      border-radius: 6px;
+      padding: 0.7rem;
+      font-size: 0.75rem;
+      color: var(--text2);
+      line-height: 1.6;
+    }
+    .info-box strong { color: var(--text); }
+
+    /* ── Main panel ── */
+    main {
+      padding: 1.2rem 1.5rem;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+
+    /* Panel cards */
+    .panel {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .panel-header {
+      padding: 0.55rem 1rem;
+      background: var(--raised);
+      border-bottom: 1px solid var(--border2);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--text2);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .panel-body { padding: 1rem; }
+
+    /* Sensor info strip */
+    .sensor-meta {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 1rem;
+      font-size: 0.78rem;
+    }
+    .sensor-meta-item { display: flex; flex-direction: column; gap: 2px; }
+    .sensor-meta-item .k { color: var(--muted); font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.06em; }
+    .sensor-meta-item .v { color: var(--text); font-weight: 600; }
+
+    /* Readings table */
+    .readings-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.78rem;
+    }
+    .readings-table th {
+      text-align: left;
+      padding: 0.35rem 0.6rem;
+      color: var(--muted);
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      border-bottom: 1px solid var(--border);
+    }
+    .readings-table td {
+      padding: 0.3rem 0.6rem;
+      border-bottom: 1px solid var(--border2);
+      font-variant-numeric: tabular-nums;
+    }
+    .readings-table tr:last-child td { border-bottom: none; }
+    .val-normal { color: var(--text); }
+    .val-missing { color: var(--muted); font-style: italic; }
+    .val-anomaly { color: var(--amber); font-weight: 600; }
+    .val-outlier { color: var(--red); font-weight: 700; }
+
+    /* Inline bar */
+    .bar-cell { width: 120px; }
+    .inline-bar {
+      height: 8px;
+      background: var(--raised);
+      border-radius: 2px;
+      overflow: hidden;
+      position: relative;
+    }
+    .inline-bar-fill {
+      height: 100%;
+      border-radius: 2px;
+      background: var(--green2);
+      transition: width 0.3s;
+    }
+    .inline-bar-fill.warn { background: var(--amber); }
+    .inline-bar-fill.crit { background: var(--red); }
+
+    /* Feedback box */
+    .feedback-box {
+      padding: 0.7rem 1rem;
+      border-left: 3px solid var(--green2);
+      background: var(--raised);
+      border-radius: 0 6px 6px 0;
+      font-size: 0.82rem;
+      color: var(--text);
+      line-height: 1.5;
+    }
+    .feedback-box.warn { border-left-color: var(--amber); }
+    .feedback-box.bad  { border-left-color: var(--red); }
+
+    /* Multi-sensor grid */
+    .sensor-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 0.8rem;
+    }
+    .sensor-card {
+      background: var(--raised);
+      border: 1px solid var(--border2);
+      border-radius: 6px;
+      padding: 0.8rem;
+    }
+    .sensor-card-title { font-size: 0.78rem; font-weight: 700; color: var(--text); margin-bottom: 0.5rem; }
+    .sensor-stat { display: flex; justify-content: space-between; font-size: 0.73rem; margin-bottom: 0.25rem; }
+    .sensor-stat .sk { color: var(--text2); }
+    .sensor-stat .sv { color: var(--text); font-weight: 600; }
+    .fault-tag {
+      display: inline-block;
+      font-size: 0.65rem;
+      font-weight: 700;
+      padding: 0.1rem 0.4rem;
+      border-radius: 3px;
+      margin-top: 0.4rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .ft-valid   { background: #1a3a1a; color: var(--green); }
+    .ft-drift   { background: #3a2c00; color: var(--amber); }
+    .ft-bias    { background: #3a1520; color: var(--red); }
+    .ft-noise   { background: #1a2a3a; color: var(--blue); }
+    .ft-missing { background: #2a2020; color: #cc9977; }
+    .ft-stuck   { background: #2a1a2a; color: #cc88cc; }
+
+    /* Raw JSON toggle */
+    .raw-toggle {
+      background: none;
+      border: 1px solid var(--border);
+      color: var(--text2);
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+      font-size: 0.7rem;
+      cursor: pointer;
+    }
+    .raw-toggle:hover { border-color: var(--text2); }
+    .raw-json {
+      background: var(--bg);
+      border: 1px solid var(--border2);
+      border-radius: 4px;
+      padding: 0.8rem;
+      font-family: 'Courier New', monospace;
+      font-size: 0.71rem;
+      white-space: pre-wrap;
+      overflow-x: auto;
+      max-height: 300px;
+      overflow-y: auto;
+      margin-top: 0.8rem;
+      display: none;
+      color: var(--text2);
+    }
+
+    /* Placeholder */
+    .placeholder {
+      padding: 2.5rem;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+    .placeholder strong { display: block; font-size: 1rem; color: var(--text2); margin-bottom: 0.5rem; }
+
+    /* Loader */
+    .loading { color: var(--muted); font-size: 0.82rem; padding: 1rem; }
+
+    @media (max-width: 800px) {
+      .layout { grid-template-columns: 1fr; }
+      aside { border-right: none; border-bottom: 1px solid var(--border); }
+    }
   </style>
 </head>
 <body>
-  <h1>🌍 ClimateWatch — Environmental Sensor AI Environment</h1>
-  <p class="subtitle">OpenEnv benchmark for AI agents on real-world climate sensor data quality tasks</p>
 
-  <div class="status-bar" id="statusBar">
-    <span>Episode: —</span>
-    <span>Task: —</span>
-    <span>Step: 0</span>
-    <span>Reward: 0.0000</span>
-    <span>Done: false</span>
+<header>
+  <div class="brand">
+    <span class="brand-title">ClimateWatch</span>
+    <span class="brand-sub">Environmental Sensor AI Environment &mdash; OpenEnv Hackathon</span>
   </div>
+  <div class="header-links">
+    <a href="/docs">API Docs</a>
+    <a href="/tasks">Task Catalog</a>
+    <a href="/health">Health</a>
+    <a href="/state">State</a>
+  </div>
+</header>
 
-  <div class="grid">
-    <div class="card">
-      <h3>▶ Start Episode</h3>
-      <button class="task-btn" onclick="startTask('task1_detect')">
-        Task 1 — Single Sensor Anomaly Detection
-        <span class="badge easy">EASY</span>
+<div id="episodeBar">
+  <div class="ep-item"><span class="ep-label">Episode</span><span class="ep-val" id="ep-id">No active episode</span></div>
+  <div class="ep-item"><span class="ep-label">Task</span><span class="ep-val" id="ep-task">—</span></div>
+  <div class="ep-item"><span class="ep-label">Step</span><span class="ep-val" id="ep-step">0 / 5</span></div>
+  <div class="ep-item"><span class="ep-label">Total Reward</span><span class="ep-val" id="ep-reward">0.0000</span></div>
+  <div class="ep-item"><span class="ep-label">Status</span><span class="ep-val" id="ep-done">Idle</span></div>
+</div>
+
+<div class="layout">
+  <aside>
+    <div>
+      <div class="section-label">Start Episode</div>
+      <button class="task-btn" id="btn-t1" onclick="startTask('task1_detect')">
+        <span class="task-btn-name">Task 1 <span class="badge easy">EASY</span></span>
+        <span class="task-btn-desc">Single Sensor Anomaly Detection</span>
       </button>
-      <button class="task-btn" onclick="startTask('task2_clean')">
-        Task 2 — Multi-Sensor Data Cleaning
-        <span class="badge medium">MEDIUM</span>
+      <button class="task-btn" id="btn-t2" onclick="startTask('task2_clean')">
+        <span class="task-btn-name">Task 2 <span class="badge medium">MEDIUM</span></span>
+        <span class="task-btn-desc">Multi-Sensor Data Cleaning</span>
       </button>
-      <button class="task-btn" onclick="startTask('task3_cascade')">
-        Task 3 — Cascade Failure &amp; Compliance
-        <span class="badge hard">HARD</span>
+      <button class="task-btn" id="btn-t3" onclick="startTask('task3_cascade')">
+        <span class="task-btn-name">Task 3 <span class="badge hard">HARD</span></span>
+        <span class="task-btn-desc">Cascade Failure &amp; Compliance</span>
       </button>
     </div>
 
-    <div class="card">
-      <h3>🔗 Quick Links</h3>
-      <div class="links">
-        <a href="/docs">Swagger UI</a>
-        <a href="/redoc">ReDoc</a>
-        <a href="/tasks">Task Catalog</a>
-        <a href="/health">Health</a>
-        <a href="/state">State</a>
+    <div>
+      <div class="section-label">Episode Score</div>
+      <div class="score-row"><span class="score-label">Last Step</span><span class="score-num" id="sc-step">—</span></div>
+      <div class="meter"><div class="meter-fill" id="mtr-step" style="width:0%"></div></div>
+      <div class="score-row"><span class="score-label">Total Reward</span><span class="score-num" id="sc-total">0.0000</span></div>
+      <div class="meter"><div class="meter-fill" id="mtr-total" style="width:0%"></div></div>
+    </div>
+
+    <div>
+      <div class="section-label">Environment</div>
+      <div class="info-box" id="envInfo">
+        <strong>ClimateWatch v1.0</strong><br>
+        3 tasks &mdash; 35 total scenarios<br>
+        Max 5 steps per episode<br>
+        Early stop at score &ge; 0.80<br>
+        Reward: F1 + partial credit
       </div>
-      <br>
-      <h3>📊 Environment Stats</h3>
-      <pre id="envStats">Loading...</pre>
     </div>
 
-    <div class="card full">
-      <h3>📡 Last Observation</h3>
-      <pre id="output">Click a task to start an episode...</pre>
+    <div>
+      <div class="section-label">Fault Types</div>
+      <div class="info-box">
+        <strong>outlier</strong> &mdash; single extreme spike<br>
+        <strong>stuck</strong> &mdash; frozen repeated value<br>
+        <strong>missing</strong> &mdash; null data gap<br>
+        <strong>drift</strong> &mdash; gradual baseline shift<br>
+        <strong>spike</strong> &mdash; short burst anomaly<br>
+        <strong>bias</strong> &mdash; constant offset error
+      </div>
     </div>
-  </div>
+  </aside>
+
+  <main id="mainPanel">
+    <div class="panel">
+      <div class="panel-body">
+        <div class="placeholder">
+          <strong>No active episode</strong>
+          Select a task from the sidebar to start an episode.<br>
+          Real sensor data will appear here with live readings.
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
 
 <script>
-const out = () => document.getElementById('output');
-const stats = () => document.getElementById('envStats');
-const bar = () => document.getElementById('statusBar');
+let currentObs = null;
+let currentTaskId = null;
 
+/* ── API helper ── */
 async function api(method, path, body) {
   const opts = { method, headers: {'Content-Type':'application/json'} };
-  if (body) opts.body = JSON.stringify(body);
+  if (body !== undefined) opts.body = JSON.stringify(body);
   const r = await fetch(path, opts);
   return r.json();
 }
 
+/* ── Start episode ── */
 async function startTask(tid) {
+  currentTaskId = tid;
+  ['t1','t2','t3'].forEach(x => document.getElementById('btn-'+x).classList.remove('active'));
+  const map = {task1_detect:'t1', task2_clean:'t2', task3_cascade:'t3'};
+  document.getElementById('btn-'+map[tid]).classList.add('active');
+
+  renderMain('<div class="loading">Loading scenario...</div>');
   const obs = await api('POST', '/reset', {task_id: tid});
-  out().textContent = JSON.stringify(obs, null, 2);
-  await refreshState();
+  currentObs = obs;
+  renderObs(obs);
+  await refreshEpisodeBar();
 }
 
-async function refreshState() {
+/* ── Refresh episode bar ── */
+async function refreshEpisodeBar() {
   try {
     const s = await api('GET', '/state');
-    const spans = bar().querySelectorAll('span');
-    spans[0].textContent = 'Episode: ' + (s.episode_id ? s.episode_id.slice(0,8)+'...' : '—');
-    spans[1].textContent = 'Task: ' + (s.task_id || '—');
-    spans[2].textContent = 'Step: ' + s.step_count;
-    spans[3].textContent = 'Reward: ' + s.total_reward;
-    spans[4].textContent = 'Done: ' + s.done;
+    document.getElementById('ep-id').textContent =
+      s.episode_id ? s.episode_id.slice(0,8) + '...' : 'No active episode';
+    document.getElementById('ep-task').textContent = s.task_id || '—';
+    document.getElementById('ep-step').textContent = s.step_count + ' / 5';
+    document.getElementById('ep-reward').textContent =
+      typeof s.total_reward === 'number' ? s.total_reward.toFixed(4) : '0.0000';
+
+    const doneEl = document.getElementById('ep-done');
+    if (s.done) {
+      doneEl.textContent = 'Done';
+      doneEl.className = 'ep-val done';
+    } else if (s.episode_id) {
+      doneEl.textContent = 'Running';
+      doneEl.className = 'ep-val good';
+    } else {
+      doneEl.textContent = 'Idle';
+      doneEl.className = 'ep-val';
+    }
+
+    document.getElementById('sc-total').textContent =
+      typeof s.total_reward === 'number' ? s.total_reward.toFixed(4) : '0.0000';
+    document.getElementById('mtr-total').style.width =
+      (Math.min(1, s.total_reward / 5) * 100) + '%';
   } catch(e) {}
 }
 
-async function loadStats() {
-  try {
-    const t = await api('GET', '/tasks');
-    const info = t.tasks.map(tk =>
-      tk.id + ' [' + tk.difficulty + '] max_steps=' + tk.max_steps
-    ).join('\\n');
-    stats().textContent = 'Tasks:\\n' + info + '\\n\\nHit /docs for full API reference.';
-  } catch(e) { stats().textContent = 'Error loading stats.'; }
+/* ── Render main panel ── */
+function renderMain(html) {
+  document.getElementById('mainPanel').innerHTML =
+    '<div class="panel"><div class="panel-body">' + html + '</div></div>';
 }
 
-loadStats();
-refreshState();
-setInterval(refreshState, 5000);
+/* ── Render observation ── */
+function renderObs(obs) {
+  const sd = obs.sensor_data;
+  if (!sd) { renderMain('<div class="loading">No sensor data returned.</div>'); return; }
+  const tid = obs.task_id;
+
+  if (tid === 'task1_detect') renderTask1(obs, sd);
+  else if (tid === 'task2_clean') renderTask2(obs, sd);
+  else renderTask3(obs, sd);
+}
+
+/* ── Task 1: single sensor readings table ── */
+function renderTask1(obs, sd) {
+  const readings = sd.readings || [];
+  const normal = sd.normal_range || [0, 1000];
+  const nMin = normal[0], nMax = normal[1];
+  const range = nMax - nMin || 1;
+
+  // Determine anomalies by comparing to normal range + detecting stuck values
+  const values = readings.map(r => r.value);
+  const validVals = values.filter(v => v !== null && v !== undefined);
+  const valueCounts = {};
+  values.forEach(v => { if (v !== null) valueCounts[v] = (valueCounts[v]||0)+1; });
+
+  let rows = '';
+  readings.forEach((r, i) => {
+    const v = r.value;
+    const isMissing = v === null || v === undefined;
+    const isOutlier = !isMissing && (v < nMin * 0.5 || v > nMax * 2.5 || Math.abs(v) > 9000);
+    const isStuck = !isMissing && valueCounts[v] >= 3 && readings.filter(x => x.value === v).length >= 3;
+    const isHigh  = !isMissing && !isOutlier && (v > nMax || v < nMin);
+
+    let cls = 'val-normal', barCls = '', label = '';
+    let pct = 0;
+    if (isMissing)      { cls = 'val-missing'; label = 'MISSING'; }
+    else if (isOutlier) { cls = 'val-outlier'; barCls = 'crit'; pct = 100; label = 'OUTLIER'; }
+    else if (isStuck)   { cls = 'val-anomaly'; barCls = 'warn'; pct = 50; label = 'STUCK'; }
+    else if (isHigh)    { cls = 'val-anomaly'; barCls = 'warn';
+                          pct = Math.min(100, Math.abs(v - nMax) / range * 100 + 60);
+                        }
+    else { pct = Math.min(100, Math.max(0, (v - nMin) / range * 100)); }
+
+    rows += '<tr>' +
+      '<td>' + r.hour.toString().padStart(2,'0') + ':00</td>' +
+      '<td class="' + cls + '">' + (isMissing ? 'null' : v) + '</td>' +
+      '<td>' + sd.unit + '</td>' +
+      '<td class="bar-cell"><div class="inline-bar"><div class="inline-bar-fill ' + barCls + '" style="width:' + pct.toFixed(0) + '%"></div></div></td>' +
+      '<td style="font-size:0.68rem;color:var(--' + (label?'amber':'muted') + ')">' + label + '</td>' +
+    '</tr>';
+  });
+
+  const feedCls = obs.reward > 0.7 ? '' : obs.reward > 0.3 ? 'warn' : 'bad';
+  const epScore = obs.metadata && obs.metadata.episode_score !== undefined
+    ? obs.metadata.episode_score : null;
+
+  if (epScore !== null) {
+    document.getElementById('sc-step').textContent = epScore.toFixed(4);
+    document.getElementById('mtr-step').style.width = (epScore * 100) + '%';
+  }
+
+  const main = document.getElementById('mainPanel');
+  main.innerHTML = `
+    <div class="panel">
+      <div class="panel-header">
+        <span>Sensor Readings &mdash; ${sd.sensor_id || ''}</span>
+        <button class="raw-toggle" onclick="toggleRaw(this)">Show Raw JSON</button>
+      </div>
+      <div class="panel-body">
+        <div class="sensor-meta">
+          <div class="sensor-meta-item"><span class="k">Sensor ID</span><span class="v">${sd.sensor_id||'—'}</span></div>
+          <div class="sensor-meta-item"><span class="k">Parameter</span><span class="v">${sd.parameter||'—'}</span></div>
+          <div class="sensor-meta-item"><span class="k">Unit</span><span class="v">${sd.unit||'—'}</span></div>
+          <div class="sensor-meta-item"><span class="k">Normal Range</span><span class="v">${nMin} &ndash; ${nMax} ${sd.unit||''}</span></div>
+          <div class="sensor-meta-item"><span class="k">Location</span><span class="v">${sd.location||'—'}</span></div>
+          <div class="sensor-meta-item"><span class="k">Readings</span><span class="v">${readings.length} hours</span></div>
+        </div>
+        <table class="readings-table">
+          <thead><tr><th>Time</th><th>Value</th><th>Unit</th><th>Level</th><th>Flag</th></tr></thead>
+          <tbody>${rows}</tbody>
+        </table>
+        ${obs.feedback ? '<div style="margin-top:1rem"><div class="feedback-box ' + feedCls + '">' + obs.feedback + '</div></div>' : ''}
+        <pre class="raw-json">${JSON.stringify(obs, null, 2)}</pre>
+      </div>
+    </div>`;
+}
+
+/* ── Task 2: multi-sensor cards ── */
+function renderTask2(obs, sd) {
+  const sensors = sd.sensors || [];
+  const epScore = obs.metadata && obs.metadata.episode_score !== undefined
+    ? obs.metadata.episode_score : null;
+  if (epScore !== null) {
+    document.getElementById('sc-step').textContent = epScore.toFixed(4);
+    document.getElementById('mtr-step').style.width = (epScore * 100) + '%';
+  }
+
+  let cards = '';
+  sensors.forEach(s => {
+    const st = s.stats || {};
+    const ds = s.daily_summaries || [];
+    const means = ds.map(d => d.mean).filter(v => v !== null);
+    const minV = means.length ? Math.min(...means).toFixed(2) : '—';
+    const maxV = means.length ? Math.max(...means).toFixed(2) : '—';
+    const nr = s.normal_range || [];
+
+    // Guess fault from stats
+    let faultHint = 'unknown';
+    if (st.total_missing_hours > 20) faultHint = 'missing';
+    else if (st.missing_pct > 10) faultHint = 'missing';
+    else if (parseFloat(st.std) > 8) faultHint = 'noise';
+    else {
+      const trend = (st.trend_7day || '').toLowerCase();
+      if (trend.includes('+') && parseFloat(trend) > 1) faultHint = 'drift';
+      else if (trend.includes('-') && Math.abs(parseFloat(trend)) > 1) faultHint = 'drift';
+    }
+    // Check if any day shows constant value
+    const dsMeans = ds.map(d => d.mean).filter(v=>v!==null);
+    const uniqueMeans = new Set(dsMeans.map(v => v.toFixed(2)));
+    if (uniqueMeans.size <= 2 && dsMeans.length > 3) faultHint = 'stuck';
+
+    const ftClass = 'ft-' + faultHint;
+
+    cards += `<div class="sensor-card">
+      <div class="sensor-card-title">${s.sensor_id} &mdash; ${s.parameter||''}</div>
+      <div class="sensor-stat"><span class="sk">Unit</span><span class="sv">${s.unit||'—'}</span></div>
+      <div class="sensor-stat"><span class="sk">Normal range</span><span class="sv">${nr[0]||'—'} &ndash; ${nr[1]||'—'}</span></div>
+      <div class="sensor-stat"><span class="sk">7-day mean</span><span class="sv">${st.overall_mean !== undefined ? st.overall_mean : '—'}</span></div>
+      <div class="sensor-stat"><span class="sk">7-day min / max</span><span class="sv">${minV} / ${maxV}</span></div>
+      <div class="sensor-stat"><span class="sk">Missing hours</span><span class="sv">${st.total_missing_hours !== undefined ? st.total_missing_hours : '—'} (${st.missing_pct !== undefined ? st.missing_pct : '—'}%)</span></div>
+      <div class="sensor-stat"><span class="sk">Trend</span><span class="sv">${st.trend_7day || '—'}</span></div>
+      <span class="fault-tag ${ftClass}">${faultHint}</span>
+    </div>`;
+  });
+
+  const feedCls = obs.reward > 0.7 ? '' : obs.reward > 0.3 ? 'warn' : 'bad';
+  document.getElementById('mainPanel').innerHTML = `
+    <div class="panel">
+      <div class="panel-header">
+        <span>Network &mdash; ${sd.network_id||''} &mdash; ${sd.location||''}</span>
+        <button class="raw-toggle" onclick="toggleRaw(this)">Show Raw JSON</button>
+      </div>
+      <div class="panel-body">
+        <div class="sensor-meta" style="margin-bottom:1rem">
+          <div class="sensor-meta-item"><span class="k">Network</span><span class="v">${sd.network_id||'—'}</span></div>
+          <div class="sensor-meta-item"><span class="k">Period</span><span class="v">${sd.period_days||7} days</span></div>
+          <div class="sensor-meta-item"><span class="k">Sensors</span><span class="v">${sensors.length}</span></div>
+          <div class="sensor-meta-item"><span class="k">Reference Station</span><span class="v">${(sd.reference_station||{}).id||'—'}</span></div>
+        </div>
+        <div class="sensor-grid">${cards}</div>
+        ${obs.feedback ? '<div style="margin-top:1rem"><div class="feedback-box ' + feedCls + '">' + obs.feedback + '</div></div>' : ''}
+        <pre class="raw-json">${JSON.stringify(obs, null, 2)}</pre>
+      </div>
+    </div>`;
+}
+
+/* ── Task 3: cascade network ── */
+function renderTask3(obs, sd) {
+  const sensors = sd.sensors || [];
+  const dg = sd.dependency_graph || {};
+  const thresholds = sd.regulatory_thresholds || {};
+  const facts = sd.known_facts || [];
+
+  const epScore = obs.metadata && obs.metadata.episode_score !== undefined
+    ? obs.metadata.episode_score : null;
+  if (epScore !== null) {
+    document.getElementById('sc-step').textContent = epScore.toFixed(4);
+    document.getElementById('mtr-step').style.width = (epScore * 100) + '%';
+  }
+
+  // Build dependency rows
+  let depRows = '';
+  Object.entries(dg).forEach(([sid, info]) => {
+    const role = info.role || (info.independent ? 'independent' : 'dependent');
+    const cals = (info.calibrates || []).join(', ') || '—';
+    const calBy = info.calibrated_by || '—';
+    depRows += `<tr>
+      <td>${sid}</td>
+      <td style="color:var(--${role==='reference'?'amber':role==='independent'?'blue':'text2'})">${role}</td>
+      <td>${cals}</td>
+      <td>${calBy}</td>
+    </tr>`;
+  });
+
+  // Sensor status
+  let sensorRows = '';
+  sensors.forEach(s => {
+    const st = s.stats || {};
+    const offline = st.offline_days || 0;
+    const corrupted = st.corrupted_days || 0;
+    const quality = st.data_quality_pct || 0;
+    const cls = offline > 0 ? 'val-outlier' : corrupted > 0 ? 'val-anomaly' : 'val-normal';
+    const status = offline > 0 ? 'OFFLINE' : corrupted > 0 ? 'CORRUPTED' : 'OK';
+    sensorRows += `<tr>
+      <td>${s.sensor_id}</td>
+      <td>${s.parameter||'—'}</td>
+      <td>${st.offline_days||0} days</td>
+      <td>${st.corrupted_days||0} days</td>
+      <td class="bar-cell"><div class="inline-bar"><div class="inline-bar-fill ${quality<70?'crit':quality<90?'warn':''}" style="width:${quality}%"></div></div></td>
+      <td class="${cls}" style="font-size:0.7rem">${status}</td>
+    </tr>`;
+  });
+
+  let factsHtml = facts.map(f => `<div style="padding:0.3rem 0;border-bottom:1px solid var(--border2);font-size:0.78rem">${f}</div>`).join('');
+
+  let threshHtml = Object.entries(thresholds).map(([p, t]) =>
+    `<div class="sensor-stat"><span class="sk">${p}</span><span class="sv">warn &ge;${t.warning} / viol &ge;${t.violation}</span></div>`
+  ).join('');
+
+  const feedCls = obs.reward > 0.7 ? '' : obs.reward > 0.3 ? 'warn' : 'bad';
+
+  document.getElementById('mainPanel').innerHTML = `
+    <div class="panel">
+      <div class="panel-header">
+        <span>Cascade Network &mdash; ${sd.network_id||''} &mdash; ${sd.location||''}</span>
+        <button class="raw-toggle" onclick="toggleRaw(this)">Show Raw JSON</button>
+      </div>
+      <div class="panel-body">
+        <div class="sensor-meta" style="margin-bottom:1rem">
+          <div class="sensor-meta-item"><span class="k">Network</span><span class="v">${sd.network_id||'—'}</span></div>
+          <div class="sensor-meta-item"><span class="k">Period</span><span class="v">${sd.period_days||30} days</span></div>
+          <div class="sensor-meta-item"><span class="k">Sensors</span><span class="v">${sensors.length}</span></div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem">
+          <div>
+            <div class="section-label" style="margin-bottom:0.4rem">Regulatory Thresholds (EPA)</div>
+            <div class="info-box">${threshHtml||'None specified'}</div>
+          </div>
+          <div>
+            <div class="section-label" style="margin-bottom:0.4rem">Known Facts</div>
+            <div class="info-box">${factsHtml||'None'}</div>
+          </div>
+        </div>
+
+        <div class="section-label" style="margin-bottom:0.5rem">Dependency Graph</div>
+        <table class="readings-table" style="margin-bottom:1rem">
+          <thead><tr><th>Sensor</th><th>Role</th><th>Calibrates</th><th>Calibrated By</th></tr></thead>
+          <tbody>${depRows}</tbody>
+        </table>
+
+        <div class="section-label" style="margin-bottom:0.5rem">30-Day Sensor Status</div>
+        <table class="readings-table">
+          <thead><tr><th>Sensor</th><th>Parameter</th><th>Offline</th><th>Corrupted</th><th>Data Quality</th><th>Status</th></tr></thead>
+          <tbody>${sensorRows}</tbody>
+        </table>
+        ${obs.feedback ? '<div style="margin-top:1rem"><div class="feedback-box ' + feedCls + '">' + obs.feedback + '</div></div>' : ''}
+        <pre class="raw-json">${JSON.stringify(obs, null, 2)}</pre>
+      </div>
+    </div>`;
+}
+
+/* ── Toggle raw JSON ── */
+function toggleRaw(btn) {
+  const pre = btn.closest('.panel').querySelector('.raw-json');
+  if (pre.style.display === 'block') {
+    pre.style.display = 'none';
+    btn.textContent = 'Show Raw JSON';
+  } else {
+    pre.style.display = 'block';
+    btn.textContent = 'Hide Raw JSON';
+  }
+}
+
+/* ── Auto-refresh state bar every 5s ── */
+setInterval(refreshEpisodeBar, 5000);
+refreshEpisodeBar();
 </script>
 </body>
 </html>"""
