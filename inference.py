@@ -229,6 +229,8 @@ def run_task(task_id: str, seed: int = 42) -> dict:
     Run one full episode for the given task.
     Returns {"score": float, "steps": int, "total_reward": float}.
     """
+    print(f"[START] task={task_id}", flush=True)
+
     # Reset
     resp = requests.post(
         f"{ENV_URL}/reset",
@@ -246,7 +248,7 @@ def run_task(task_id: str, seed: int = 42) -> dict:
         # Ask LLM
         action = ask_llm(obs, task_id, attempt=steps)
         if not action:
-            print(f"  [WARN] Empty action at step {steps + 1}, skipping.")
+            print(f"  [WARN] Empty action at step {steps + 1}, skipping.", flush=True)
             break
 
         # Submit action
@@ -265,7 +267,8 @@ def run_task(task_id: str, seed: int = 42) -> dict:
         steps        += 1
 
         ep_score = result.get("metadata", {}).get("episode_score", 0.0)
-        print(f"    Step {steps}: reward={reward:.4f}  episode_score={ep_score:.4f}")
+        print(f"[STEP] step={steps} reward={reward:.4f}", flush=True)
+        print(f"    episode_score={ep_score:.4f}", flush=True)
         time.sleep(0.3)   # gentle rate limiting
 
     # Final grade
@@ -273,6 +276,8 @@ def run_task(task_id: str, seed: int = 42) -> dict:
     final_score = 0.0
     if grade_resp.status_code == 200:
         final_score = grade_resp.json().get("final_score", 0.0)
+
+    print(f"[END] task={task_id} score={final_score:.4f} steps={steps}", flush=True)
 
     return {
         "score":        final_score,
