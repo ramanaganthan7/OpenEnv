@@ -12,13 +12,20 @@ Environment variables (all required):
   HF_TOKEN      →  HuggingFace API key  (also checked as API_KEY)
   ENV_URL       →  ClimateWatch server  (default: http://localhost:7860)
 
+STDOUT FORMAT (exact — parsed by validator):
+  [START] task=<task_name> env=climatewatch model=<model_name>
+  [STEP]  step=<n> action=<action_str> reward=<0.00> done=<true|false> error=<msg|null>
+  [END]   success=<true|false> steps=<n> score=<0.00> rewards=<r1,r2,...,rn>
+
 Runtime: < 20 minutes total for all 3 tasks.
 Temperature: 0.0 for reproducible scores.
 """
 
-import os
 import json
+import os
 import time
+from typing import List, Optional
+
 import requests
 from openai import OpenAI
 
@@ -28,12 +35,37 @@ API_KEY      = os.getenv("HF_TOKEN") or os.getenv("API_KEY", "")
 MODEL_NAME   = os.getenv("MODEL_NAME", "meta-llama/Llama-3.3-70B-Instruct")
 ENV_URL      = os.getenv("ENV_URL", "http://localhost:7860")
 
+BENCHMARK   = "climatewatch"
 MAX_STEPS   = 5
 TEMPERATURE = 0.0   # deterministic → reproducible scores
 TIMEOUT_S   = 30    # per HTTP request
+SUCCESS_THRESHOLD = 0.5  # score >= 0.5 counts as success
 
 # ── OpenAI client → HuggingFace router ───────────────────────────────────────
 client = OpenAI(base_url=API_BASE_URL, api_key=API_KEY)
+
+# ── Structured output helpers (validator-required format) ─────────────────────
+
+def log_start(task: str, env: str, model: str) -> None:
+    print(f"[START] task={task} env={env} model={model}", flush=True)
+
+
+def log_step(step: int, action: str, reward: float, done: bool, error: Optional[str]) -> None:
+    error_val = error if error else "null"
+    done_val  = str(done).lower()
+    print(
+        f"[STEP] step={step} action={action} reward={reward:.2f} done={done_val} error={error_val}",
+        flush=True,
+    )
+
+
+def log_end(success: bool, steps: int, score: float, rewards: List[float]) -> None:
+    rewards_str = ",".join(f"{r:.2f}" for r in rewards)
+    print(
+        f"[END] success={str(success).lower()} steps={steps} score={score:.2f} rewards={rewards_str}",
+        flush=True,
+    )
+
 
 # ── System prompt ─────────────────────────────────────────────────────────────
 SYSTEM_PROMPT = """You are an expert environmental data engineer specialising in \
@@ -123,7 +155,6 @@ Respond with ONLY this JSON:
 
 def _make_prompt_task3(obs: dict) -> str:
     sd = obs.get("sensor_data", obs)
-    # Build concise sensor status summary
     sensor_status = []
     for s in sd.get("sensors", []):
         sensor_status.append({
@@ -208,7 +239,6 @@ def ask_llm(obs: dict, task_id: str, attempt: int = 0) -> dict:
         raw = response.choices[0].message.content
         return json.loads(raw)
     except json.JSONDecodeError:
-        # Try to extract JSON from response
         import re
         try:
             raw_text = response.choices[0].message.content
@@ -217,19 +247,19 @@ def ask_llm(obs: dict, task_id: str, attempt: int = 0) -> dict:
                 return json.loads(match.group())
         except Exception:
             pass
-        print(f"  [WARN] JSON parse failed on attempt {attempt + 1}")
+        print(f"  [WARN] JSON parse failed on attempt {attempt + 1}", flush=True)
         return {}
     except Exception as e:
-        print(f"  [WARN] LLM call failed: {e}")
+        print(f"  [WARN] LLM call failed: {e}", flush=True)
         return {}
 
 
 def run_task(task_id: str, seed: int = 42) -> dict:
     """
     Run one full episode for the given task.
-    Returns {"score": float, "steps": int, "total_reward": float}.
+    Returns {"score": float, "steps": int, "rewards": list}.
     """
-    print(f"[START] task={task_id}", flush=True)
+    log_start(task=task_id, env=BENCHMARK, model=MODEL_NAME)
 
     # Reset
     resp = requests.post(
@@ -240,92 +270,98 @@ def run_task(task_id: str, seed: int = 42) -> dict:
     resp.raise_for_status()
     obs = resp.json()
 
-    total_reward = 0.0
-    steps        = 0
-    done         = obs.get("done", False)
+    rewards: List[float] = []
+    steps = 0
+    done  = obs.get("done", False)
+    score = 0.0
+    success = False
 
-    while not done and steps < MAX_STEPS:
-        # Ask LLM
-        action = ask_llm(obs, task_id, attempt=steps)
-        if not action:
-            print(f"  [WARN] Empty action at step {steps + 1}, skipping.", flush=True)
-            break
+    try:
+        while not done and steps < MAX_STEPS:
+            # Ask LLM
+            action = ask_llm(obs, task_id, attempt=steps)
+            if not action:
+                print(f"  [WARN] Empty action at step {steps + 1}, using empty dict.", flush=True)
+                action = {}
 
-        # Submit action
-        step_resp = requests.post(
-            f"{ENV_URL}/step",
-            json={"action": action},
-            timeout=TIMEOUT_S,
-        )
-        step_resp.raise_for_status()
-        result = step_resp.json()
+            # Compact action string for [STEP] line (no newlines)
+            action_str = json.dumps(action, separators=(",", ":"))
 
-        reward        = result.get("reward", 0.0)
-        total_reward += reward
-        done          = result.get("done", False)
-        obs           = result
-        steps        += 1
+            # Submit action
+            step_resp = requests.post(
+                f"{ENV_URL}/step",
+                json={"action": action},
+                timeout=TIMEOUT_S,
+            )
+            step_resp.raise_for_status()
+            result = step_resp.json()
 
-        ep_score = result.get("metadata", {}).get("episode_score", 0.0)
-        print(f"[STEP] step={steps} reward={reward:.4f}", flush=True)
-        print(f"    episode_score={ep_score:.4f}", flush=True)
-        time.sleep(0.3)   # gentle rate limiting
+            reward = result.get("reward", 0.0)
+            done   = result.get("done", False)
+            error  = result.get("metadata", {}).get("error") or None
+            obs    = result
+            steps += 1
 
-    # Final grade
-    grade_resp = requests.post(f"{ENV_URL}/grader", timeout=TIMEOUT_S)
-    final_score = 0.0
-    if grade_resp.status_code == 200:
-        final_score = grade_resp.json().get("final_score", 0.0)
+            rewards.append(reward)
+            log_step(step=steps, action=action_str, reward=reward, done=done, error=error)
+            time.sleep(0.3)  # gentle rate limiting
 
-    print(f"[END] task={task_id} score={final_score:.4f} steps={steps}", flush=True)
+        # Final grade
+        grade_resp = requests.post(f"{ENV_URL}/grader", timeout=TIMEOUT_S)
+        if grade_resp.status_code == 200:
+            score = grade_resp.json().get("final_score", 0.0)
+
+        success = score >= SUCCESS_THRESHOLD
+
+    finally:
+        log_end(success=success, steps=steps, score=score, rewards=rewards)
 
     return {
-        "score":        final_score,
-        "steps":        steps,
-        "total_reward": round(total_reward, 4),
+        "score":   score,
+        "steps":   steps,
+        "rewards": rewards,
     }
 
 
 def main():
-    print("=" * 60)
-    print("ClimateWatch — Baseline Inference")
-    print(f"Model:   {MODEL_NAME}")
-    print(f"EnvURL:  {ENV_URL}")
-    print("=" * 60)
+    print("=" * 60, flush=True)
+    print("ClimateWatch — Baseline Inference", flush=True)
+    print(f"Model:   {MODEL_NAME}", flush=True)
+    print(f"EnvURL:  {ENV_URL}", flush=True)
+    print("=" * 60, flush=True)
 
     # Verify server is up
     try:
         health = requests.get(f"{ENV_URL}/health", timeout=10)
         assert health.json().get("status") == "healthy"
-        print("Server: HEALTHY\n")
+        print("Server: HEALTHY\n", flush=True)
     except Exception as e:
-        print(f"[ERROR] Server not reachable at {ENV_URL}: {e}")
+        print(f"[ERROR] Server not reachable at {ENV_URL}: {e}", flush=True)
         raise SystemExit(1)
 
     tasks = [
-        ("task1_detect",  "Single Sensor Anomaly Detection",     42),
-        ("task2_clean",   "Multi-Sensor Data Cleaning",          42),
-        ("task3_cascade", "Cascade Failure & Compliance Audit",  42),
+        ("task1_detect",  42),
+        ("task2_clean",   42),
+        ("task3_cascade", 42),
     ]
 
-    scores = {}
-    for task_id, task_name, seed in tasks:
-        print(f"Running: {task_id} — {task_name}")
+    all_scores = {}
+    for task_id, seed in tasks:
         try:
             result = run_task(task_id, seed=seed)
-            scores[task_id] = result["score"]
-            print(f"  Final score: {result['score']:.4f}  "
-                  f"(steps={result['steps']}, total_reward={result['total_reward']:.4f})")
+            all_scores[task_id] = result["score"]
         except Exception as e:
-            print(f"  [ERROR] {task_id} failed: {e}")
-            scores[task_id] = 0.0
-        print()
+            print(f"  [ERROR] {task_id} failed: {e}", flush=True)
+            # Still emit [END] so validator can parse it
+            log_end(success=False, steps=0, score=0.0, rewards=[])
+            all_scores[task_id] = 0.0
+        print(flush=True)
 
-    avg = sum(scores.values()) / len(scores)
-    print("=" * 60)
-    print(f"Average score: {avg:.4f}")
-    print("=" * 60)
-    print(json.dumps(scores, indent=2))
+    avg = sum(all_scores.values()) / len(all_scores)
+    print("=" * 60, flush=True)
+    print(f"Average score: {avg:.4f}", flush=True)
+    print("=" * 60, flush=True)
+    print(json.dumps(all_scores, indent=2), flush=True)
 
 
 if __name__ == "__main__":
