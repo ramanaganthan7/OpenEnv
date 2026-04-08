@@ -238,10 +238,11 @@ def grade_task1(action: dict, ground_truth: dict) -> float:
     # All-valid scenario: agent must NOT flag anything
     if not actual:
         non_valid_count = len(predicted)
-        return max(0.0, round(1.0 - non_valid_count * 0.2, 4))
+        raw = 1.0 - non_valid_count * 0.2
+        return round(max(0.01, min(0.99, raw)), 4)
 
     if not predicted:
-        return 0.0
+        return 0.01
 
     correct   = predicted & actual
     precision = len(correct) / len(predicted)
@@ -253,4 +254,4 @@ def grade_task1(action: dict, ground_truth: dict) -> float:
     confidences = [f.get("confidence", 1.0) for f in flags]
     cal_bonus = 0.05 if len(set(round(c, 1) for c in confidences)) > 1 else 0.0
 
-    return round(max(0.0, min(1.0, f1 + cal_bonus)), 4)
+    return round(max(0.01, min(0.99, f1 + cal_bonus)), 4)

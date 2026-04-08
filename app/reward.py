@@ -47,20 +47,20 @@ def compute_reward(
         return 0.0
 
     base_score = grader(action, ground_truth)
-    base_score = max(0.0, min(1.0, base_score))   # safety clamp
+    base_score = max(0.01, min(0.99, base_score))   # safety clamp (strict bounds)
 
     # ── Anti-loop penalty ─────────────────────────────────────────
     if history and _actions_equal(action, history[-1]):
-        base_score = max(0.0, base_score - _LOOP_PENALTY)
+        base_score = max(0.01, base_score - _LOOP_PENALTY)
 
     # ── Regression penalty ────────────────────────────────────────
     if history:
         previous_scores = [grader(h, ground_truth) for h in history[-3:]]
         best_previous = max(previous_scores) if previous_scores else 0.0
         if base_score < best_previous - 0.05:
-            base_score = max(0.0, base_score - _REGRESSION_PENALTY)
+            base_score = max(0.01, base_score - _REGRESSION_PENALTY)
 
-    return round(max(0.0, min(1.0, base_score)), 4)
+    return round(max(0.01, min(0.99, base_score)), 4)
 
 
 def _actions_equal(a1: Dict, a2: Dict) -> bool:

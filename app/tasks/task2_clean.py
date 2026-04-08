@@ -296,7 +296,7 @@ def grade_task2(action: dict, ground_truth: dict) -> float:
     diagnoses = action.get("diagnoses", [])
     gt_list   = ground_truth.get("diagnoses", [])
     if not gt_list:
-        return 0.0
+        return 0.01
 
     gt_map = {d["sensor_id"]: d for d in gt_list}
     sensor_count = len(gt_map)
@@ -336,4 +336,4 @@ def grade_task2(action: dict, ground_truth: dict) -> float:
 
     fault_avg = sum(fault_scores) / sensor_count
     fix_avg   = sum(fix_scores)   / sensor_count
-    return round(max(0.0, min(1.0, 0.60 * fault_avg + 0.40 * fix_avg)), 4)
+    return round(max(0.01, min(0.99, 0.60 * fault_avg + 0.40 * fix_avg)), 4)

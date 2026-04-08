@@ -123,11 +123,12 @@ class ClimateWatchEnvironment:
             )
 
     def final_grade(self) -> float:
-        """Return final grader score for the last action submitted."""
+        """Return final grader score for the last action submitted (strictly in (0.01, 0.99))."""
         with self._lock:
             if self.last_action is None or self.ground_truth is None:
-                return 0.0
-            return TASK_GRADERS[self.task_id](self.last_action, self.ground_truth)
+                return 0.01
+            raw = TASK_GRADERS[self.task_id](self.last_action, self.ground_truth)
+            return round(max(0.01, min(0.99, raw)), 4)
 
     # ── Helpers ───────────────────────────────────────────────────────────────
 

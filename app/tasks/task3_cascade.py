@@ -476,4 +476,4 @@ def grade_task3(action: dict, ground_truth: dict) -> float:
 
     final = (0.35 * root_score + 0.30 * order_score +
              0.20 * window_score + 0.15 * compliance_score)
-    return round(max(0.0, min(1.0, final)), 4)
+    return round(max(0.01, min(0.99, final)), 4)
